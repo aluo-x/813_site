@@ -54,7 +54,7 @@ class Phone {
    * @param  {String} formatType [description]
    * @return {[type]}            [description]
    */
-  asString(formatType) {
+  getString(formatType) {
     switch (formatType) {
       case 'parensConsolidated':
         return '(' + this.areaCode + ') ' + this.exchangeNumber + '-' + this.number;
@@ -80,7 +80,7 @@ class Email {
     this.provider = provider;
   }
 
-  asString() {
+  getString() {
     return this.address + '@' + this.provider;
   }
 
@@ -116,7 +116,7 @@ class Address {
    *    Apt 1\n
    *    Cambridge, MA
    */
-  asString() {
+  getString() {
     var line1 = this.street + '\n';
     var line2 = (this.street2 !== undefined && this.street2 !== null)
       ? this.street2 + '\n'

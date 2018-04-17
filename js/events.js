@@ -50,7 +50,7 @@ class Address {
    *    Apt 1\n
    *    Cambridge, MA
    */
-  asString() {
+  getString() {
     var line1 = (this.name !== undefined && this.name !== null)
       ? this.name + '\n'
       : null;
