@@ -65,9 +65,9 @@ class Address {
 
 /** ENUMS **/
 const types = {
-  'VET_APPOINTMENT':  'Appointment with a veterinarian',
-  'ADOPTION_EVENT':   'Event where adoptable animals are present and people come to look at them',
-  'FUNDRAISER':       'Event aimed at generating funds for the rescue',
+  'VET_APPOINTMENT':  'vet appointment',  // 'Appointment with a veterinarian',
+  'ADOPTION_EVENT':   'adoption event',   // 'Event where adoptable animals are present and people come to look at them',
+  'FUNDRAISER':       'fundraiser',       // 'Event aimed at generating funds for the rescue',
 };
 
 /** EVENTS **/
