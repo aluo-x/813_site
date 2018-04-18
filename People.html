@@ -3,8 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="css/bulma.css" rel="stylesheet">
+    <!-- Datatable plugin -->
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+    <!-- Mock Data Classes/Enums -->
+    <script type="text/javascript" src="mock-data/Address.js"></script>
+    <script type="text/javascript" src="mock-data/AdoptionStatus.js"></script>
+    <script type="text/javascript" src="mock-data/Breeds.js"></script>
+    <script type="text/javascript" src="mock-data/Email.js"></script>
+    <script type="text/javascript" src="mock-data/EventTypes.js"></script>
+    <script type="text/javascript" src="mock-data/Gender.js"></script>
+    <script type="text/javascript" src="mock-data/Phone.js"></script>
+    <script type="text/javascript" src="mock-data/Roles.js"></script>
+    <script type="text/javascript" src="mock-data/Species.js"></script>
+    <!-- Mock Data -->
+    <script type="text/javascript" src="mock-data/animals.js"></script>
+    <script type="text/javascript" src="mock-data/events.js"></script>
+    <script type="text/javascript" src="mock-data/people.js"></script>
+    <!-- Generated HTML -->
+    <script type="text/javascript" src="js/animals.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
+    <script type="text/javascript" src="js/people.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
 </head>
-<body>
-
+<body style="display: flex; height: 100vh">
+<div style="width: 15%;">
+    <aside class="menu">
+        <p class="menu-label has-text-centered">
+            <a href="./index.html">
+                <img src="paw.png" style="padding:10px; max-width: 150px; max-height:150px" alt="Return to main page">
+            </a>
+        </p>
+        <ul class="menu-list">
+            <li>
+                <a class="button is-light" href="index.html">Animals</a>
+                <ul>
+                    <li><a class="button is-white">Dogs</a></li>
+                    <li><a class="button is-white">Cats</a></li>
+                    <li><a class="button is-white">Others</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="button is-light is-info" href="people.html">People</a>
+                <ul>
+                    <li><a class="button is-white">On site</a></li>
+                    <li><a class="button is-white">Volunteer</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="button is-light" href="events.html">Events</a>
+                <ul>
+                    <li><a class="button is-white">Vet</a></li>
+                    <li><a class="button is-white">Adoption</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="button is-light" href="stats.html">Statistics</a>
+            </li>
+        </ul>
+    </aside>
+</div>
+<div style="flex-grow: 1; background: hsl(0, 0%, 29%); color: white; padding: 100px;">
+    <div id="animal_table">SOME TABLE HERE</div>
+</div>
 </body>
 </html>
