@@ -33,6 +33,7 @@
 
     <!--Plotting library-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
 </head>
 <body style="display: flex; height: 100vh">
 <div style="width: 15%;">
@@ -76,35 +77,125 @@
         <div class="tile is-vertical is-12">
             <div class="tile">
                 <div class="tile is-parent">
-                    <article class="tile is-child box">
-                        <!-- Put any content you want -->
+                    <article class="tile is-child box has-text-centered">
+                        <canvas id="chart1"></canvas>
+                        <div class="is-2 is-bold">4/16 Available</div>
+                        <a class="button is-info" style="margin-top: 10px">Details</a>
                     </article>
                 </div>
                 <div class="tile is-parent">
-                    <article class="tile is-child box">
-                        <!-- Put any content you want -->
+                    <article class="tile is-child box has-text-centered">
+                        <canvas id="chart2"></canvas>
+                        <div class="is-2 is-bold">13/25 Fostered</div>
+                        <a class="button is-info" style="margin-top: 10px">Details</a>
                     </article>
                 </div>
                 <div class="tile is-parent">
-                    <article class="tile is-child box">
-                        <!-- Put any content you want -->
+                    <article class="tile is-child box has-text-centered">
+                        <canvas id="chart3"></canvas>
+                        <div class="is-2 is-bold">11/25 Dogs</div>
+                        <a class="button is-info" style="margin-top: 10px">Details</a>
                     </article>
                 </div>
             </div>
             <div class="tile">
-                <div class="tile is-parent">
+                <div class="tile is-parent is-6">
                     <article class="tile is-child box">
-                        <!-- Put any content you want -->
+                        <div style="max-width: 100%; overflow: hidden;">
+                            <div style="font-weight: bold; font-size: 2em">Animals counts: </div>
+                            <br>
+                            <div style="font-size: 1em">&emsp;<b>Cats:  </b> 14</div>
+                            <br>
+                            <div style="font-size: 1em">&emsp;<b>Dogs: </b> 11</div>
+                        </div>
                     </article>
                 </div>
-                <div class="tile is-parent">
+                <div class="tile is-parent is-6">
                     <article class="tile is-child box">
-                        <!-- Put any content you want -->
+                        <div style="max-width: 100%; overflow: hidden;">
+                            <div style="font-weight: bold; font-size: 2em">Adoptions: </div>
+                            <br>
+                            <div style="font-size: 1em">&emsp;<b>Last day:  </b> 1</div>
+                            <br>
+                            <div style="font-size: 1em">&emsp;<b>Last week: </b> 12</div>
+                            <br>
+                            <div style="font-size: 1em">&emsp;<b>Last month: </b> 31</div>
+                        </div>
                     </article>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+var ctx = document.getElementById("chart1").getContext('2d');
+var chart1 = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["Occupied", "Available"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 4],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    }
+});
+var ctx2 = document.getElementById("chart2").getContext('2d');
+var chart2 = new Chart(ctx2, {
+    type: 'pie',
+    data: {
+        labels: ["Fostered", "Un-Fostered"],
+        datasets: [{
+            label: '# of Votes',
+            data: [13, 12],
+            backgroundColor: [
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+            ],
+            borderColor: [
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    }
+
+});
+var ctx3 = document.getElementById("chart3").getContext('2d');
+var chart3 = new Chart(ctx3, {
+    type: 'pie',
+    data: {
+        labels: ["Dogs", "Cats"],
+        datasets: [{
+            label: '# of Votes',
+            data: [11, 14],
+            backgroundColor: [
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(12, 241, 32, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 159, 64, 1)',
+                'rgba(12, 241, 32, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    }
+
+});
+</script>
 </body>
 </html>
