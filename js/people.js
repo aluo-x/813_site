@@ -13,7 +13,6 @@ function generateTable() {
     } );
 };
 $( document ).ready(function() {
-    console.log( "ready!" );
     generateTable();
 
 });
