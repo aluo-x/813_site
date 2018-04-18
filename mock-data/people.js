@@ -67,8 +67,15 @@ const cat = {
   roles: [roles.ADMIN, roles.FOSTER, roles.CAGE_CLEANER],
 };
 
-const people_by_id = {
+var people_by_id = {
   0: raven,
   1: sam,
   2: cat,
+};
+
+const getNextPersonId = () => Math.max(...Object.keys(people_by_id)) + 1;
+
+const addPerson = (personProperties) => {
+  const id = getNextPersonId();
+  people_by_id[id] = Object.assign({}, personProperties, { id });
 };
