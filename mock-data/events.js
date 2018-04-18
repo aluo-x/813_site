@@ -44,14 +44,15 @@ const topOfThePup = {
   name: 'Top of the Pup Fundraiser',
 };
 
-var events_by_id = {
-  0: fidoHWTest,
-  1: topOfThePup,
-};
+var events = [fidoHWTest, topOfThePup];
 
-const getNextEventId = () => Math.max(...Object.keys(events_by_id)) + 1;
+const getNextEventId = () => {
+  var ids = [];
+  events.forEach(p => ids.push(p.id));
+  return Math.max(...ids) + 1;
+};
 
 const addEvent = (eventProperties) => {
   const id = getNextEventId();
-  events_by_id[id] = Object.assign({}, eventProperties, { id });
-}
+  events.push(Object.assign({}, eventProperties, { id }));
+};

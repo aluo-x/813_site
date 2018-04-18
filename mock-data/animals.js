@@ -67,15 +67,15 @@ const fae = {
   weightInPounds: 0.25,
 };
 
-var animals_by_id = {
-  0: fido,
-  1: felix,
-  2: fae,
-};
+var animals = [fido, felix, fae];
 
-const getNextAnimalId = () => Math.max(...Object.keys(animals_by_id)) + 1;
+const getNextAnimalId = () => {
+  var ids = [];
+  animals.forEach(a => ids.push(a.id));
+  return Math.max(...ids) + 1;
+};
 
 const addAnimal = (animalProperties) => {
   const id = getNextAnimalId();
-  animals_by_id[id] = Object.assign({}, animalProperties, { id });
-}
+  animals.push(Object.assign({}, animalProperties, { id }));
+};
