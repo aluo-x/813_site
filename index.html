@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <title>All Paws On Deck</title>
     <link href="css/bulma.css" rel="stylesheet">
-
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"></script>
+<<<<<<< HEAD
     <!-- Datatable plugin -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
   
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 
+=======
+    <!-- Datatable Plugin -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+>>>>>>> 0bfe28081ead94a2a4b7940c5b0acd3c67633ff8
     <!-- Mock Data Classes/Enums -->
     <script type="text/javascript" src="mock-data/Address.js"></script>
     <script type="text/javascript" src="mock-data/AdoptionStatus.js"></script>
@@ -43,7 +49,7 @@
         </p>
         <ul class="menu-list">
             <li>
-                <a class="button is-light is-info" href="index.html">Animals</a>
+                <a id='animalsTab' class="button is-light is-info" onclick="updateActiveTab('animals')" href="index.html">Animals</a>
                 <ul>
                     <li><a class="button is-white">Dogs</a></li>
                     <li><a class="button is-white">Cats</a></li>
@@ -51,21 +57,21 @@
                 </ul>
             </li>
             <li>
-                <a class="button is-light" href="people.html">People</a>
+                <a id='peopleTab' class="button is-light" onclick="updateActiveTab('people')" href="people.html">People</a>
                 <ul>
                     <li><a class="button is-white">On site</a></li>
                     <li><a class="button is-white">Volunteer</a></li>
                 </ul>
             </li>
             <li>
-                <a class="button is-light" href="events.html">Events</a>
+                <a id='eventsTab' class="button is-light" onclick="updateActiveTab('events')" href="events.html">Events</a>
                 <ul>
                     <li><a class="button is-white">Vet</a></li>
                     <li><a class="button is-white">Adoption</a></li>
                 </ul>
             </li>
             <li>
-                <a class="button is-light" href="stats.html">Statistics</a>
+                <a id='statsTab' class="button is-light" onclick="updateActiveTab('stats')" href="stats.html">Statistics</a>
             </li>
         </ul>
     </aside>

@@ -44,7 +44,14 @@ const topOfThePup = {
   name: 'Top of the Pup Fundraiser',
 };
 
-const events_by_id = {
+var events_by_id = {
   0: fidoHWTest,
   1: topOfThePup,
 };
+
+const getNextEventId = () => Math.max(...Object.keys(events_by_id)) + 1;
+
+const addEvent = (eventProperties) => {
+  const id = getNextEventId();
+  events_by_id[id] = Object.assign({}, eventProperties, { id });
+}

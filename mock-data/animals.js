@@ -67,8 +67,15 @@ const fae = {
   weightInPounds: 0.25,
 };
 
-const animals_by_id = {
+var animals_by_id = {
   0: fido,
   1: felix,
   2: fae,
 };
+
+const getNextAnimalId = () => Math.max(...Object.keys(animals_by_id)) + 1;
+
+const addAnimal = (animalProperties) => {
+  const id = getNextAnimalId();
+  animals_by_id[id] = Object.assign({}, animalProperties, { id });
+}

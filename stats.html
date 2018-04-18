@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="css/bulma.css" rel="stylesheet">
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"></script>
+<<<<<<< HEAD
     <!-- Datatable plugin -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
   
+=======
+    <!-- Datatable Plugin -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+>>>>>>> 0bfe28081ead94a2a4b7940c5b0acd3c67633ff8
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
     <!-- Mock Data Classes/Enums -->
     <script type="text/javascript" src="mock-data/Address.js"></script>
@@ -30,46 +36,81 @@
     <script type="text/javascript" src="js/events.js"></script>
     <script type="text/javascript" src="js/people.js"></script>
     <script type="text/javascript" src="js/page.js"></script>
+
+    <!--Plotting library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 </head>
 <body style="display: flex; height: 100vh">
 <div style="width: 15%;">
-    <aside class="menu">
-        <p class="menu-label has-text-centered">
-            <a href="./index.html">
-                <img src="paw.png" style="padding:10px; max-width: 150px; max-height:150px" alt="Return to main page">
-            </a>
-        </p>
-        <ul class="menu-list">
-            <li>
-                <a class="button is-light" href="index.html">Animals</a>
-                <ul>
-                    <li><a class="button is-white">Dogs</a></li>
-                    <li><a class="button is-white">Cats</a></li>
-                    <li><a class="button is-white">Others</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="button is-light" href="people.html">People</a>
-                <ul>
-                    <li><a class="button is-white">On site</a></li>
-                    <li><a class="button is-white">Volunteer</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="button is-light" href="events.html">Events</a>
-                <ul>
-                    <li><a class="button is-white">Vet</a></li>
-                    <li><a class="button is-white">Adoption</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="button is-light is-info" href="stats.html">Statistics</a>
-            </li>
-        </ul>
-    </aside>
+  <aside class="menu">
+      <p class="menu-label has-text-centered">
+          <a href="./index.html">
+              <img src="paw.png" style="padding:10px; max-width: 150px; max-height:150px" alt="Return to main page">
+          </a>
+      </p>
+      <ul class="menu-list">
+          <li>
+              <a id='animalsTab' class="button is-light" onclick="updateActiveTab('animals')" href="index.html">Animals</a>
+              <ul>
+                  <li><a class="button is-white">Dogs</a></li>
+                  <li><a class="button is-white">Cats</a></li>
+                  <li><a class="button is-white">Others</a></li>
+              </ul>
+          </li>
+          <li>
+              <a id='peopleTab' class="button is-light" onclick="updateActiveTab('people')" href="people.html">People</a>
+              <ul>
+                  <li><a class="button is-white">On site</a></li>
+                  <li><a class="button is-white">Volunteer</a></li>
+              </ul>
+          </li>
+          <li>
+              <a id='eventsTab' class="button is-light" onclick="updateActiveTab('events')" href="events.html">Events</a>
+              <ul>
+                  <li><a class="button is-white">Vet</a></li>
+                  <li><a class="button is-white">Adoption</a></li>
+              </ul>
+          </li>
+          <li>
+              <a id='statsTab' class="button is-light is-info" onclick="updateActiveTab('stats')" href="stats.html">Statistics</a>
+          </li>
+      </ul>
+  </aside>
 </div>
-<div style="flex-grow: 1; background: hsl(0, 0%, 29%); color: white; padding: 100px;">
-    <div id="animal_table">SOME TABLE HERE</div>
+<div style="flex-grow: 1; background: hsl(0, 0%, 29%); color: white; padding: 80px;">
+    <div class="tile is-ancestor box has-background-light" style="height: 100%">
+        <div class="tile is-vertical is-12">
+            <div class="tile">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <!-- Put any content you want -->
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <!-- Put any content you want -->
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <!-- Put any content you want -->
+                    </article>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <!-- Put any content you want -->
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <!-- Put any content you want -->
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
