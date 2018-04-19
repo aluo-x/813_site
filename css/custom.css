@@ -1,3 +1,11 @@
 #example_wrapper{
     width: 100%;
 }
+
+.modal-card-foot {
+  justify-content: right;
+}
+
+#addNewAnimal {
+  padding: 5px;
+}

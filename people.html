@@ -11,7 +11,7 @@
       crossorigin="anonymous"></script>
     <!-- Datatable plugin -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
-  
+
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
     <!-- Mock Data Classes/Enums -->
     <script type="text/javascript" src="mock-data/Address.js"></script>
@@ -29,6 +29,8 @@
     <script type="text/javascript" src="mock-data/people.js"></script>
     <!-- Generated HTML -->
     <script type="text/javascript" src="js/people.js"></script>
+
+    <script type="text/javascript" src="js/addEntity.js"></script>
 </head>
 <body style="display: flex; height: 100vh">
 <div style="width: 15%;">
@@ -56,13 +58,41 @@
 </div>
 <div style="flex-grow: 1; background: hsl(0, 0%, 29%); color: white; padding: 80px;">
     <div class="tile is-ancestor box has-background-light is-vertical" style="height: 100%">
-        <div class="tile is-parent is-12">
-            <div id="people_table">SOME TABLE HERE</div>
+      <button id="addNewAnimal" onclick="openModal()">Add</button>
+
+      <div class="modal is-active">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Add New Person</p>
+            <button class="delete" aria-label="close" onclick="closeModal()"></button>
+          </header>
+          <section class="modal-card-body">
+            <div class="field">
+              <label class="label">First Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="e.g. Jane">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Last Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="e.g. Doe">
+              </div>
+            </div>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button" onclick="closeModal()">Cancel</button>
+            <button class="button is-success" onclick="savePerson()">Save</button>
+          </footer>
         </div>
-        <div class="tile is-parent is-12">
-            <table id="example" class="display" width="100%"></table>
-        </div>
-    </div>
+      </div>
+
+
+      <div class="tile is-parent is-12">
+          <table id="example" class="display" width="100%"></table>
+      </div>
+  </div>
 </div>
 <!--<div style="flex-grow: 1;  padding: 100px;">-->
     <!--<div id="people_table">SOME TABLE HERE</div>-->
