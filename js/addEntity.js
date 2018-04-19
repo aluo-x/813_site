@@ -9,7 +9,6 @@ function closeModal() {
 
 function saveAnimal() {
   // get properties from modal input
-  // addAnimal()
   closeModal();
 }
 
@@ -30,6 +29,6 @@ function savePerson() {
     email: new Email(email),
     roles,
   });
-  refreshTable();
+  refreshPeopleTable();
   closeModal();
 }

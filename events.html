@@ -8,30 +8,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"></script>
-    
+
     <!-- Datatable plugin -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
-  
+
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
     <!-- Mock Data Classes/Enums -->
     <script type="text/javascript" src="mock-data/Address.js"></script>
-    <script type="text/javascript" src="mock-data/AdoptionStatus.js"></script>
-    <script type="text/javascript" src="mock-data/Breeds.js"></script>
-    <script type="text/javascript" src="mock-data/Email.js"></script>
     <script type="text/javascript" src="mock-data/EventTypes.js"></script>
-    <script type="text/javascript" src="mock-data/Gender.js"></script>
-    <script type="text/javascript" src="mock-data/Phone.js"></script>
-    <script type="text/javascript" src="mock-data/Roles.js"></script>
-    <script type="text/javascript" src="mock-data/Species.js"></script>
     <!-- Mock Data -->
-    <script type="text/javascript" src="mock-data/animals.js"></script>
     <script type="text/javascript" src="mock-data/events.js"></script>
-    <script type="text/javascript" src="mock-data/people.js"></script>
     <!-- Generated HTML -->
-    <script type="text/javascript" src="js/animals.js"></script>
     <script type="text/javascript" src="js/events.js"></script>
-    <script type="text/javascript" src="js/people.js"></script>
-    <script type="text/javascript" src="js/page.js"></script>
 </head>
 <body style="display: flex; height: 100vh">
 <div style="width: 15%;">
@@ -43,16 +31,16 @@
       </p>
       <ul class="menu-list">
           <li>
-              <a id='animalsTab' class="button is-light is-size-4" onclick="updateActiveTab('animals')" href="index.html">Animals</a>
+              <a id='animalsTab' class="button is-light is-size-4" href="index.html">Animals</a>
           </li>
           <li>
-              <a id='peopleTab' class="button is-light is-size-4" onclick="updateActiveTab('people')" href="people.html">People</a>
+              <a id='peopleTab' class="button is-light is-size-4" href="people.html">People</a>
           </li>
           <li>
-              <a id='eventsTab' class="button is-light is-info is-size-4" onclick="updateActiveTab('events')" href="events.html">Events</a>
+              <a id='eventsTab' class="button is-light is-info is-size-4" href="events.html">Events</a>
           </li>
           <li>
-              <a id='statsTab' class="button is-light is-size-4" onclick="updateActiveTab('stats')" href="stats.html">Statistics</a>
+              <a id='statsTab' class="button is-light is-size-4" href="stats.html">Statistics</a>
           </li>
       </ul>
   </aside>

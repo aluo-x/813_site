@@ -1,6 +1,6 @@
 // TODO write javascript that parses data and generates the appropriate HTML
-function generateTable() {
-    $('#example').DataTable( {
+function generatePeopleTable() {
+    $('#peopleTable').DataTable( {
         data: people,
         columns: [
             { data: "firstName", title: "First Name"},
@@ -13,12 +13,12 @@ function generateTable() {
     } );
 };
 $( document ).ready(function() {
-    generateTable();
+    generatePeopleTable();
 
 });
 
-function refreshTable() {
-  var datatable = $('#example').DataTable();
+function refreshPeopleTable() {
+  var datatable = $('#peopleTable').DataTable();
   datatable.clear();
   datatable.rows.add(people);
   datatable.draw();
