@@ -9,3 +9,33 @@
 #addNewAnimal {
   padding: 5px;
 }
+
+#nameSection {
+  display: flex;
+}
+
+#firstNameField {
+  flex: 1;
+  padding-right: 5px;
+}
+
+#lastNameField {
+  flex: 1;
+  padding-left: 5px;
+}
+
+#areaCodeInput, #exchangeNumberInput {
+  width: 3em;
+}
+
+#endNumberInput {
+  width: 4em;
+}
+
+#phoneNumberField {
+  display: flex;
+}
+
+.phoneNumberSeparator {
+  padding: 5px;
+}

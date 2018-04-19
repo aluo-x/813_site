@@ -10,13 +10,26 @@ function closeModal() {
 function saveAnimal() {
   // get properties from modal input
   // addAnimal()
-  console.log('add animal');
   closeModal();
 }
 
 function savePerson() {
-  // get properties from modal input
-  // addPerson();
-  console.log('add person');
+  const firstName = document.getElementById('firstNameInput').value;
+  const lastName = document.getElementById('lastNameInput').value;
+  const areaCode = document.getElementById('areaCodeInput').value;
+  const exchangeNumber = document.getElementById('exchangeNumberInput').value;
+  const endNumber = document.getElementById('endNumberInput').value;
+  const email = document.getElementById('emailInput').value.split('@');
+
+  const selectedRolesRaw = document.getElementById('rolesInput').selectedOptions;
+  const roles = Array.prototype.map.call(selectedRolesRaw, r => r.text);
+  addPerson({
+    firstName,
+    lastName,
+    phoneNumber: new Phone(areaCode, exchangeNumber, endNumber),
+    email: new Email(email),
+    roles,
+  });
+  refreshTable();
   closeModal();
 }
