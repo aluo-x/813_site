@@ -18,7 +18,7 @@ function savePerson() {
   const areaCode = document.getElementById('areaCodeInput').value;
   const exchangeNumber = document.getElementById('exchangeNumberInput').value;
   const endNumber = document.getElementById('endNumberInput').value;
-  const email = document.getElementById('emailInput').value.split('@');
+  const email = document.getElementById('emailInput').value;
 
   const selectedRolesRaw = document.getElementById('rolesInput').selectedOptions;
   const roles = Array.prototype.map.call(selectedRolesRaw, r => r.text);

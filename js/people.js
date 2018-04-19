@@ -23,9 +23,3 @@ function refreshPeopleTable() {
   datatable.rows.add(people);
   datatable.draw();
 }
-
-/**
- * TODO:
- *    - [ ] Change generateTable (either make separate functions for each page type, or make it accept params)
- *    - [ ] Change refreshTable (either make separate functions for each page type, or make it accept params)
- */
