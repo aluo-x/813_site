@@ -15,7 +15,6 @@ function generateAnimalTable() {
 };
 
 $(document).ready(function() {
-  console.log(animals);
   generateAnimalTable();
 });
 
