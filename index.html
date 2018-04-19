@@ -5,7 +5,7 @@
     <title>All Paws On Deck</title>
     <link href="css/bulma.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-    
+
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -22,6 +22,7 @@
     <script type="text/javascript" src="mock-data/animals.js"></script>
     <!-- Generated HTML -->
     <script type="text/javascript" src="js/animals.js"></script>
+    <script type="text/javascript" src="js/addEntity.js"></script>
 </head>
 <body style="display: flex; height: 100vh">
 <div style="width: 15%;">
@@ -49,9 +50,15 @@
 </div>
 <div style="flex-grow: 1; background: hsl(0, 0%, 29%); color: white; padding: 100px;">
   <div class="tile is-ancestor box has-background-light is-vertical" style="height: 100%">
-  <div class="tile is-parent is-12">
-      <table id="animalTable" class="display" width="100%"></table>
-  </div>
+    <button id="addNewAnimal" onclick="openModal()">Add</button>
+    <div id="animalModal" class="modal">
+      <script>
+        $('#animalModal').load('animalModal.html');
+      </script>
+    </div>
+    <div class="tile is-parent is-12">
+        <table id="animalTable" class="display" width="100%"></table>
+    </div>
 </div>
 </div>
 </body>

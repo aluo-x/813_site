@@ -50,69 +50,12 @@
 </div>
 <div style="flex-grow: 1; background: hsl(0, 0%, 29%); color: white; padding: 80px;">
     <div class="tile is-ancestor box has-background-light is-vertical" style="height: 100%">
-      <button id="addNewAnimal" onclick="openModal()">Add</button>
+      <button id="addNewPerson" onclick="openModal()">Add</button>
 
-      <div class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Add New Person</p>
-            <button class="delete" aria-label="close" onclick="closeModal()"></button>
-          </header>
-          <section class="modal-card-body">
-            <div id="nameSection">
-              <div class="field" id="firstNameField">
-                <label class="label">First Name</label>
-                <div class="control">
-                  <input id="firstNameInput" class="input" type="text" placeholder="e.g. Jane">
-                </div>
-              </div>
-              <div class="field" id="lastNameField">
-                <label class="label">Last Name</label>
-                <div class="control">
-                  <input id="lastNameInput" class="input" type="text" placeholder="e.g. Doe">
-                </div>
-              </div>
-            </div>
-
-            <div id="phoneNumberSection">
-              <label class="label">Phone Number</label>
-              <div class="field" id="phoneNumberField">
-                <input id="areaCodeInput" class="input" type="text" placeholder="000" maxlength="3" />
-                <div class="phoneNumberSeparator">-</div>
-                <input id="exchangeNumberInput" class="input" type="text" placeholder="000" maxlength="3" />
-                <div class="phoneNumberSeparator">-</div>
-                <input id="endNumberInput" class="input" type="text" placeholder="0000" maxlength="4" />
-              </div>
-            </div>
-
-            <div id="emailSection">
-              <div class="field">
-                <label class="label">Email</label>
-                <div class="control">
-                  <input id="emailInput" class="input" type="email" placeholder="e.g. you@example.com">
-                </div>
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label">Roles</label>
-              <div class="control">
-                <div class="select is-fullwidth is-multiple">
-                  <select id="rolesInput" multiple="true">
-                    <option>foster</option>
-                    <option>cage cleaner</option>
-                    <option>admin</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </section>
-          <footer class="modal-card-foot">
-            <button class="button" onclick="closeModal()">Cancel</button>
-            <button class="button is-success" onclick="savePerson()">Save</button>
-          </footer>
-        </div>
+      <div id="peopleModal" class="modal">
+        <script>
+          $('#peopleModal').load('peopleModal.html');
+        </script>
       </div>
 
 

@@ -12,6 +12,11 @@ function saveAnimal() {
   closeModal();
 }
 
+function saveEvent() {
+  // get properties from modal input
+  closeModal();
+}
+
 function savePerson() {
   const firstName = document.getElementById('firstNameInput').value;
   const lastName = document.getElementById('lastNameInput').value;

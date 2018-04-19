@@ -6,7 +6,7 @@
   justify-content: right;
 }
 
-#addNewAnimal {
+#addNewAnimal, #addNewPerson, #addNewEvent {
   padding: 5px;
 }
 
