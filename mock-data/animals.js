@@ -49,6 +49,7 @@ const felix = {
   name: 'Felix',
   adoptionStatus: adoption_status.PENDING,
   species: species.CAT,
+  breeds: [],
   gender: gender.MALE,
   fixed: true,
   birthdate: new Date('April 1, 2012'),
@@ -61,6 +62,7 @@ const fae = {
   name: 'Fae',
   adoptionStatus: adoption_status.ADOPTED,
   species: species.BIRD,
+  breeds: [],
   gender: gender.FEMALE,
   fixed: false,
   birthdate: new Date('January 1, 2018'),
@@ -77,5 +79,6 @@ const getNextAnimalId = () => {
 
 const addAnimal = (animalProperties) => {
   const id = getNextAnimalId();
-  animals.push(Object.assign({}, animalProperties, { id }));
+  const breeds = (animalProperties.breeds || []);
+  animals.push(Object.assign({}, animalProperties, { id, breeds }));
 };
