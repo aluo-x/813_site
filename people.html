@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="css/bulma.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -53,9 +54,19 @@
       </ul>
   </aside>
 </div>
-<div style="flex-grow: 1;  padding: 100px;">
-    <div id="people_table">SOME TABLE HERE</div>
-    <table id="example" class="display" width="100%"></table>
+<div style="flex-grow: 1; background: hsl(0, 0%, 29%); color: white; padding: 80px;">
+    <div class="tile is-ancestor box has-background-light is-vertical" style="height: 100%">
+        <div class="tile is-parent is-12">
+            <div id="people_table">SOME TABLE HERE</div>
+        </div>
+        <div class="tile is-parent is-12">
+            <table id="example" class="display" width="100%"></table>
+        </div>
+    </div>
 </div>
+<!--<div style="flex-grow: 1;  padding: 100px;">-->
+    <!--<div id="people_table">SOME TABLE HERE</div>-->
+    <!--<table id="example" class="display" width="100%"></table>-->
+<!--</div>-->
 </body>
 </html>
