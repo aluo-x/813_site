@@ -11,6 +11,12 @@ function generatePeopleTable() {
 
         ]
     } );
+    $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
+    $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
+    $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
+    $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
+    $('#peopleTable_filter label').addClass('mdl-textfield mdl-js-textfield');  
+    $('#peopleTable_filter input').addClass('mdl-textfield__input');
 };
 $( document ).ready(function() {
     generatePeopleTable();
