@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <div class="modal-background"></div>
-  <div class="modal-card">
+<div class="modal-background"></div>
+<div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Add New Animal</p>
-      <button class="delete" aria-label="close" onclick="closeModal()"></button>
+        <p class="modal-card-title">Add New Animal</p>
+        <button class="delete" aria-label="close" onclick="closeModal()"></button>
     </header>
     <section class="modal-card-body">
-      <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-          <input id="nameInput" class="input" type="text" placeholder="e.g. Fido" />
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+                <input id="nameInput" class="input" type="text" placeholder="e.g. Fido"/>
+            </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Adoption Status</label>
-        <div class="control">
-          <div class="select is-fullwidth">
-            <select id="adoptionStatusInput">
-              <option>available</option>
-              <option>pending</option>
-              <option>adopted</option>
-            </select>
-          </div>
+        <div class="field">
+            <label class="label">Adoption Status</label>
+            <div class="control">
+                <div class="select is-fullwidth">
+                    <select id="adoptionStatusInput">
+                        <option>available</option>
+                        <option>pending</option>
+                        <option>adopted</option>
+                    </select>
+                </div>
+            </div>
+
+            <label class="label" style="padding-top: 10px">Gender</label>
+            <div class="control">
+                <div class="select is-fullwidth">
+                    <select id="genderInput">
+                        <option>male</option>
+                        <option>female</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <label class="label" style="padding-top: 10px">Fixed</label>
+            <div class="control">
+                <div class="select is-fullwidth">
+                    <select id="fixedInput">
+                        <option>true</option>
+                        <option>false</option>
+                    </select>
+                </div>
+            </div>
+
+            <label class="label" style="padding-top: 10px">Species</label>
+            <div class="control">
+                <div class="select is-fullwidth">
+                    <select id="speciesInput">
+                        <option>dog</option>
+                        <option>cat</option>
+                        <option>bird</option>
+                    </select>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
     <footer class="modal-card-foot">
-      <button class="button" onclick="closeModal()">Cancel</button>
-      <button class="button is-success" onclick="savePerson()">Save</button>
+        <button class="button" onclick="closeModal()">Cancel</button>
+        <button class="button is-success" onclick="saveAnimal()">Save</button>
     </footer>
-  </div>
+</div>
 </html>
