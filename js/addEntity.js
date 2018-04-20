@@ -6,6 +6,36 @@ function closeModal() {
     document.getElementsByClassName('modal')[0].classList.remove('is-active');
 }
 
+function openAnimalModal(
+  name,
+  adoptionStatus,
+  gender,
+  fixed,
+  species,
+  breeds,
+) {
+  clearAnimalModal();
+
+  document.getElementById('nameInput').value = (name || '');
+  document.getElementById('adoptionStatusInput').value = (adoptionStatus === '' || adoptionStatus === undefined) ? 'available' : adoptionStatus;
+  document.getElementById('genderInput').value = (gender === '' || gender === undefined) ? 'male' : gender;
+  document.getElementById('fixedInput').value = (fixed === '' || fixed === undefined) ? true : fixed;
+  document.getElementById('speciesInput').value = (species === '' || species === undefined) ? 'dog' : species;
+  $('#breedInput').val((breeds === '' || breeds === undefined) ? [] : breeds.split(',')).trigger('change');
+
+  openModal();
+}
+
+function clearAnimalModal() {
+  document.getElementById('nameInput').value = '';
+  document.getElementById('adoptionStatusInput').value = 'available';
+  document.getElementById('genderInput').value = 'male';
+  document.getElementById('fixedInput').value = true;
+  document.getElementById('speciesInput').value = 'dog';
+
+  $('#breedInput').val([]).trigger('change');
+}
+
 function saveAnimal() {
     const animalName = document.getElementById('nameInput').value;
     const adoptionStat = document.getElementById('adoptionStatusInput').value;
