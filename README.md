@@ -23,3 +23,10 @@ streamline their workflow.
 * [Bulma](https://bulma.io/) - CSS framework
 * [MaterialDesign](https://getmdl.io/index.html) - CSS framework
 * [Select2](https://select2.org/) - Searchable multiselect input
+
+### Authors
+
+* [Andrew Luo](https://github.com/aluo-x)
+* [Alana Lidawer](https://github.com/ahlids)
+* [Rami Manna](https://github.com/ramimanna)
+* [Nikki Schmidt](https://github.com/nsylv/)
