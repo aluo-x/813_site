@@ -8,6 +8,8 @@
 
 #addNewAnimal, #addNewPerson, #addNewEvent {
   padding: 5px;
+  width:150px;
+  margin-left:auto;
 }
 
 #nameSection {
@@ -42,4 +44,37 @@
 
 .dataTables_wrapper {
   width: 100%;
+}
+
+#mainContainer {
+  width: 100%;
+  padding: 80px;
+  overflow-x: hidden;
+  height: 100vh;
+  background-color:hsl(0, 0%, 29%);
+}
+
+.selectedTab {
+  background: hsl(204, 86%, 53%);
+  color:white !important;
+  font-weight: bold;
+}
+/*.selectedTab a:hover{
+  background-color: hsl(171, 100%, 41%);
+}
+*/
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+  color: black;
+}
+.mdl-layout__drawer .mdl-navigation .selectedTab:hover {
+    background-color: hsl(171, 100%, 41%);
+}
+.dataTables_filter {
+/*  width: 1000px;
+*/}
+
+.dataTables_filter label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

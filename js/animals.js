@@ -12,6 +12,11 @@ function generateAnimalTable() {
       { data: 'breeds', title: 'Breeds' },
     ]
   });
+  $('#animalTable td').addClass('mdl-data-table__cell--non-numeric');
+  $('#animalTable th').addClass('mdl-data-table__cell--non-numeric');
+  $('#animalTable_filter label').addClass('mdl-textfield');  
+  $('#animalTable_filter label').addClass('mdl-js-textfield');  
+  $('#animalTable_filter input').addClass('mdl-textfield__input');
 };
 
 $(document).ready(function() {

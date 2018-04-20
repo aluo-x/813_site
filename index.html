@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>All Paws On Deck</title>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
     <link href="css/bulma.css" rel="stylesheet">
+
     <link href="css/custom.css" rel="stylesheet">
 
-    <!-- JQuery -->
+    <!-- JQuery-->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!--    <link rel="stylesheet"
+          href="node_modules/material-components-web/dist/material-components-web.css"> -->
 
     <!-- Datatable Plugin -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
@@ -25,14 +36,40 @@
     <script type="text/javascript" src="js/addEntity.js"></script>
 </head>
 <body style="display: flex; height: 100vh">
-<div style="width: 15%;">
-    <aside class="menu">
-        <p class="menu-label has-text-centered">
-            <a href="./index.html">
-                <img src="paw.png" style="padding:10px; max-width: 150px; max-height:150px" alt="Return to main page">
-            </a>
-        </p>
-        <ul class="menu-list">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer menu-list menu">
+    <div class="mdl-layout__drawer">
+      <p class="menu-label has-text-centered">
+          <a href="./index.html">
+              <img src="paw.png" style="padding:10px; max-width: 150px; max-height:150px" alt="Return to main page">
+          </a>
+      </p>
+      <nav class="mdl-navigation">
+        <a id="animalsTab" class="mdl-navigation__link selectedTab" href="index.html">Animals</a>
+        <a id="peopleTab" class="mdl-navigation__link" href="people.html">People</a>
+        <a id="eventsTab" class="mdl-navigation__link" href="events.html">Events</a>
+        <a id="statsTab" class="mdl-navigation__link" href="stats.html">Statistics</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div id="mainContainer">
+          <div class="tile is-ancestor box is-vertical" style="height: 100%">
+            <button id="addNewAnimal" class="button is-primary" onclick="openModal()">Add</button>
+            <div id="animalModal" class="modal">
+              <script>
+                $('#animalModal').load('animalModal.html');
+              </script>
+            </div>
+            <div class="tile is-parent is-12">
+                <table id="animalTable" class="mdl-data-table mdl-data-table--selectable mdl-shadow--2dp display" width="100%">
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+<!--         <ul class="menu-list">
             <li>
                 <a id='animalsTab' class="button is-light is-info is-size-4" href="index.html">Animals</a>
             </li>
@@ -45,21 +82,7 @@
             <li>
                 <a id='statsTab' class="button is-light is-size-4" href="stats.html">Statistics</a>
             </li>
-        </ul>
-    </aside>
-</div>
-<div style="width: 100%; background: hsl(0, 0%, 29%); color: white; padding: 80px; overflow-x: hidden">
-  <div class="tile is-ancestor box has-background-light is-vertical" style="height: 100%">
-    <button id="addNewAnimal" onclick="openModal()">Add</button>
-    <div id="animalModal" class="modal">
-      <script>
-        $('#animalModal').load('animalModal.html');
-      </script>
-    </div>
-    <div class="tile is-parent is-12">
-        <table id="animalTable" class="display" width="100%"></table>
-    </div>
-</div>
-</div>
+        </ul> -->
+
 </body>
 </html>
