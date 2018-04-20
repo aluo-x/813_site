@@ -12,12 +12,23 @@ function saveAnimal() {
     const animalGender = document.getElementById('genderInput').value;
     const fixedStat = document.getElementById('fixedInput').value;
     const animalSpecies = document.getElementById('speciesInput').value;
+
+    var breeds = [];
+    const breedsOptions = document.getElementById('breedInput');
+    for (var i = 0; i < breedsOptions.options.length; i++) {
+      const b = breedsOptions[i];
+      if (b.selected) {
+        breeds.push(b.text)
+      };
+    }
+
     addAnimal({
         name: animalName,
         adoptionStatus: adoptionStat,
         gender: animalGender,
         fixed: fixedStat,
-        species: animalSpecies
+        species: animalSpecies,
+        breeds,
     });
     refreshAnimalTable();
     closeModal();

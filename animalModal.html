@@ -57,6 +57,25 @@
                     </select>
                 </div>
             </div>
+
+            <div>
+              <label class="label" style="padding-top: 10px">Breeds</label>
+              <select id="breedInput" class="breed-selecter" style="width: 100%" multiple="multiple">
+                <option></option>
+                <option>Australian Cattle Dog</option>
+                <option>Australian Shepard</option>
+                <option>Beagle</option>
+                <option>Border Collie</option>
+                <option>Golden Retriever</option>
+                <option>Labrador Retriever</option>
+                <option>Poodle</option>
+                <option>Staffordshire Terrier</option>
+              </select>
+            </div>
+            <script>
+              $('.breed-selecter').select2();
+            </script>
+
         </div>
     </section>
     <footer class="modal-card-foot">
