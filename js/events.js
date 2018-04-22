@@ -4,7 +4,7 @@ function materializeEventTable(){
   $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
   $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
   $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable_filter label').addClass('mdl-textfield mdl-js-textfield');  
+  $('#eventTable_filter label').addClass('mdl-textfield mdl-js-textfield');
   $('#eventTable_filter input').addClass('mdl-textfield__input');
 }
 function generateEventTable() {
@@ -22,7 +22,8 @@ function generateEventTable() {
       { data: 'end.toUTCString()', title: 'Ends' },
       { data: 'location.getString()', title: 'Location' },
       { data: 'name', title: 'Name' },
-    ]
+    ],
+    dom: '<"top"f>rt<"bottom"lip>',
   });
   materializeEventTable();
 };

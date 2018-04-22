@@ -23,7 +23,8 @@ function generateAnimalTable() {
       { data: 'fixed', title: 'Fixed' },
       { data: 'species', title: 'Species' },
       { data: 'breeds', title: 'Breeds' },
-    ]
+    ],
+    dom: '<"top"f>rt<"bottom"lip>',
   });
   materializeAnimalTable();
 

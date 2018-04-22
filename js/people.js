@@ -4,7 +4,7 @@ function materializePeopleTable(){
   $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
   $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
   $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#peopleTable_filter label').addClass('mdl-textfield mdl-js-textfield');  
+  $('#peopleTable_filter label').addClass('mdl-textfield mdl-js-textfield');
   $('#peopleTable_filter input').addClass('mdl-textfield__input');
 }
 function generatePeopleTable() {
@@ -23,7 +23,8 @@ function generatePeopleTable() {
             { data: "email.getString()", title: "Email"},
             { data: "roles", title: "Role(s)"}
 
-        ]
+        ],
+        dom: '<"top"f>rt<"bottom"lip>',
     } );
     materializePeopleTable();
 };
