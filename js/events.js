@@ -4,7 +4,7 @@ function materializeEventTable(){
   $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
   $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
   $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable_filter label').addClass('mdl-textfield mdl-js-textfield');  
+  $('#eventTable_filter label').addClass('mdl-textfield mdl-js-textfield');
   $('#eventTable_filter input').addClass('mdl-textfield__input');
 }
 function generateEventTable() {
@@ -19,16 +19,7 @@ function generateEventTable() {
     ],
     dom: '<"top"f>rt<"bottom"lip>',
   });
-<<<<<<< HEAD
-  $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable_filter label').addClass('mdl-textfield mdl-js-textfield');
-  $('#eventTable_filter input').addClass('mdl-textfield__input');
-=======
   materializeEventTable();
->>>>>>> 221b64c495e666bfc020ab4ec479eca4ee0c11eb
 };
 
 $(document).ready(function() {

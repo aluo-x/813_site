@@ -4,7 +4,7 @@ function materializePeopleTable(){
   $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
   $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
   $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#peopleTable_filter label').addClass('mdl-textfield mdl-js-textfield');  
+  $('#peopleTable_filter label').addClass('mdl-textfield mdl-js-textfield');
   $('#peopleTable_filter input').addClass('mdl-textfield__input');
 }
 function generatePeopleTable() {
@@ -20,16 +20,7 @@ function generatePeopleTable() {
         ],
         dom: '<"top"f>rt<"bottom"lip>',
     } );
-<<<<<<< HEAD
-    $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
-    $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
-    $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
-    $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
-    $('#peopleTable_filter label').addClass('mdl-textfield mdl-js-textfield');
-    $('#peopleTable_filter input').addClass('mdl-textfield__input');
-=======
     materializePeopleTable();
->>>>>>> 221b64c495e666bfc020ab4ec479eca4ee0c11eb
 };
 $( document ).ready(function() {
     generatePeopleTable();
