@@ -1,4 +1,11 @@
 // TODO write javascript that parses data and generates the appropriate HTML
+function materializeAnimalTable(){
+  $('#animalTable td').addClass('mdl-data-table__cell--non-numeric');
+  $('#animalTable th').addClass('mdl-data-table__cell--non-numeric');
+  $('#animalTable_filter label').addClass('mdl-textfield');
+  $('#animalTable_filter label').addClass('mdl-js-textfield');
+  $('#animalTable_filter input').addClass('mdl-textfield__input');
+}
 
 function generateAnimalTable() {
   $('#animalTable').DataTable({
@@ -12,11 +19,8 @@ function generateAnimalTable() {
       { data: 'breeds', title: 'Breeds' },
     ]
   });
-  $('#animalTable td').addClass('mdl-data-table__cell--non-numeric');
-  $('#animalTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#animalTable_filter label').addClass('mdl-textfield');
-  $('#animalTable_filter label').addClass('mdl-js-textfield');
-  $('#animalTable_filter input').addClass('mdl-textfield__input');
+  materializeAnimalTable();
+
 };
 
 $(document).ready(function() {
@@ -41,4 +45,5 @@ function refreshAnimalTable() {
   datatable.clear();
   datatable.rows.add(animals);
   datatable.draw();
+  materializeAnimalTable();
 };

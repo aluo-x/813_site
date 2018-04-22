@@ -1,4 +1,12 @@
 // TODO write javascript that parses data and generates the appropriate HTML
+function materializePeopleTable(){
+  $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
+  $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
+  $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
+  $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
+  $('#peopleTable_filter label').addClass('mdl-textfield mdl-js-textfield');  
+  $('#peopleTable_filter input').addClass('mdl-textfield__input');
+}
 function generatePeopleTable() {
     $('#peopleTable').DataTable( {
         data: people,
@@ -11,12 +19,7 @@ function generatePeopleTable() {
 
         ]
     } );
-    $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
-    $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
-    $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
-    $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
-    $('#peopleTable_filter label').addClass('mdl-textfield mdl-js-textfield');  
-    $('#peopleTable_filter input').addClass('mdl-textfield__input');
+    materializePeopleTable();
 };
 $( document ).ready(function() {
     generatePeopleTable();
@@ -28,4 +31,5 @@ function refreshPeopleTable() {
   datatable.clear();
   datatable.rows.add(people);
   datatable.draw();
+  materializePeopleTable();
 }

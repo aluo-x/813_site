@@ -1,5 +1,12 @@
 // TODO write javascript that parses data and generates the appropriate HTML
-
+function materializeEventTable(){
+  $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
+  $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
+  $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
+  $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
+  $('#eventTable_filter label').addClass('mdl-textfield mdl-js-textfield');  
+  $('#eventTable_filter input').addClass('mdl-textfield__input');
+}
 function generateEventTable() {
   $('#eventTable').DataTable({
     data: events,
@@ -11,12 +18,7 @@ function generateEventTable() {
       { data: 'name', title: 'Name' },
     ]
   });
-  $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable_filter label').addClass('mdl-textfield mdl-js-textfield');  
-  $('#eventTable_filter input').addClass('mdl-textfield__input');
+  materializeEventTable();
 };
 
 $(document).ready(function() {
@@ -28,4 +30,5 @@ function refreshEventTable() {
   datatable.clear();
   datatable.rows.add(events);
   datatable.draw();
+  materializeEventTable();
 };
