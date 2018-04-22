@@ -10,7 +10,8 @@ function generateAnimalTable() {
       { data: 'fixed', title: 'Fixed' },
       { data: 'species', title: 'Species' },
       { data: 'breeds', title: 'Breeds' },
-    ]
+    ],
+    dom: '<"top"f>rt<"bottom"lip>',
   });
   $('#animalTable td').addClass('mdl-data-table__cell--non-numeric');
   $('#animalTable th').addClass('mdl-data-table__cell--non-numeric');
