@@ -19,7 +19,7 @@
 const template = {
   id: 0,
   name: '',
-  adoptionStatus: adoptionStatus.NONE,
+  adoptionStatus: adoption_status.NONE,
   species: species.DOG,
   breeds: [],
   gender: gender.MALE,
@@ -69,7 +69,124 @@ const fae = {
   weightInPounds: 0.25,
 };
 
-var animals = [fido, felix, fae];
+const gary = {
+  id: 3,
+  name: 'Gary',
+  adoptionStatus: adoption_status.NONE,
+  species: species.DOG,
+  breeds: [breeds.DOG.AUSTRALIAN_CATTLE_DOG],
+  gender: gender.MALE,
+  fixed: false,
+  birthdate: new Date('April 1, 2017'),
+  weightInPounds: 30.125,
+  distinctiveMarkings: ['white tip on tail', 'tan chest'],
+};
+
+const wilma = {
+  id: 4,
+  name: 'Wilma',
+  adoptionStatus: adoption_status.PENDING,
+  species: species.DOG,
+  breeds: [breeds.DOG.AUSTRALIAN_CATTLE_DOG],
+  gender: gender.FEMALE,
+  fixed: true,
+  birthdate: new Date('April 2, 2017'),
+  weightInPounds: 32.5,
+  distinctiveMarkings: [],
+};
+
+const bea = {
+  id: 5,
+  name: 'Bea',
+  adoptionStatus: adoption_status.NONE,
+  species: species.DOG,
+  breeds: [breeds.DOG.BORDER_COLLIE],
+  gender: gender.FEMALE,
+  fixed: true,
+  birthdate: new Date('June 17, 2016'),
+  weightInPounds: 33,
+  distinctiveMarkings: ['white collar', 'white tip on tail', 'curly hair'],
+};
+
+const barney = {
+  id: 6,
+  name: 'Barney',
+  adoptionStatus: adoption_status.ADOPTED,
+  species: species.CAT,
+  breeds: [],
+  gender: gender.MALE,
+  fixed: true,
+  birthdate: new Date('April 20, 2012'),
+  weightInPounds: 12.25,
+  distinctiveMarkings: ['black speckles on nose'],
+};
+
+const chimi = {
+  id: 7,
+  name: 'Chimichanga',
+  adoptionStatus: adoption_status.ADOPTED,
+  species: species.CAT,
+  breeds: [],
+  gender: gender.MALE,
+  fixed: true,
+  birthdate: new Date('July 17, 2011'),
+  weightInPounds: 12.15,
+  distinctiveMarkings: ['black speckling on nose'],
+};
+
+const tweetie = {
+  id: 8,
+  name: 'Tweetie',
+  adoptionStatus: adoption_status.NONE,
+  species: species.BIRD,
+  breeds: [],
+  gender: gender.MALE,
+  fixed: false,
+  birthdate: new Date('August 16, 2017'),
+  weightInPounds: 0.220462,
+  distinctiveMarkings: [],
+};
+
+const faith = {
+  id: 9,
+  name: 'Faith',
+  adoptionStatus: adoption_status.PENDING,
+  species: species.CAT,
+  breeds: [],
+  gender: gender.FEMALE,
+  fixed: true,
+  birthdate: new Date('March 11, 2013'),
+  weightInPounds: 8.7,
+  distinctiveMarkings: [],
+};
+
+const onyx = {
+  id: 10,
+  name: 'Onyx',
+  adoptionStatus: adoption_status.NONE,
+  species: species.DOG,
+  breeds: [breeds.DOG.GERMAN_SHEPHERD],
+  gender: gender.FEMALE,
+  fixed: true,
+  birthdate: new Date('April 1, 2017'),
+  weightInPounds: 44.55,
+  distinctiveMarkings: [],
+};
+
+const mae = {
+  id: 11,
+  name: 'Mae',
+  adoptionStatus: adoption_status.NONE,
+  species: species.DOG,
+  breeds: [breeds.DOG.BORDER_COLLIE],
+  gender: gender.FEMALE,
+  fixed: true,
+  birthdate: new Date('April 1, 2017'),
+  weightInPounds: 56.29,
+  distinctiveMarkings: ['gray mottling on legs'],
+};
+
+var animals = [barney, bea, chimi, faith, fido, felix, fae, gary, mae, onyx, tweetie, wilma];
 
 const getNextAnimalId = () => {
   var ids = [];

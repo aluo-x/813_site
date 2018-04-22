@@ -24,7 +24,7 @@ $(document).ready(function() {
 
   $('#animalTable tbody').on('click', 'tr', function() {
     var cells = $(this)[0].cells;
-    
+
     openAnimalModal(
       cells[0].innerText,
       cells[1].innerText,
