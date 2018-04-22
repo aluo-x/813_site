@@ -48,7 +48,6 @@
 
 #mainContainer {
   width: 100%;
-  padding: 80px;
   overflow-x: hidden;
   height: 100vh;
   background-color:hsl(0, 0%, 29%);
