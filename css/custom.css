@@ -77,3 +77,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+.mdl-data-table td {
+    text-align: left;
+}
