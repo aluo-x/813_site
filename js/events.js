@@ -10,6 +10,12 @@ function materializeEventTable(){
 function generateEventTable() {
   $('#eventTable').DataTable({
     data: events,
+    columnDefs: [
+    {
+        targets: [ 0, 1, 2 ],
+        className: 'mdl-data-table__cell--non-numeric'
+    }
+    ],   
     columns: [
       { data: 'type', title: 'Type' },
       { data: 'start.toUTCString()', title: 'Starts' },
@@ -26,7 +32,14 @@ $(document).ready(function() {
 });
 
 function refreshEventTable() {
-  var datatable = $('#eventTable').DataTable();
+  var datatable = $('#eventTable').DataTable({
+    columnDefs: [
+    {
+        targets: [ 0, 1, 2 ],
+        className: 'mdl-data-table__cell--non-numeric'
+    }
+    ],   
+  });
   datatable.clear();
   datatable.rows.add(events);
   datatable.draw();
