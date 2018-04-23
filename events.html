@@ -58,13 +58,21 @@
       <div class="page-content">
         <div id="mainContainer">
           <div class="tile is-ancestor box is-vertical" style="height: 100%">
-            <button id="addNewPerson" class="button is-primary" onclick="openModal()">Add</button>
+            <div class="level">
+                <div class="level-left">
+                    <p class="mdl-typography--display-3">Animals</p>
+                </div>
+                <div class="level-right">
+                    <button id="addNewPerson" class="button is-primary" onclick="openModal()">Add</button>
+                </div>
+            </div>
+            
             <div id="eventModal" class="modal">
               <script>
                 $('#eventModal').load('eventModal.html');
               </script>
             </div>
-            <div class="tile is-parent is-12">
+            <div class="tile">
                 <table id="eventTable" class="mdl-data-table dataTable" width="100%"></table>
             </div>
           </div>

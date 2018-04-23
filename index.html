@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 
     <link rel="stylesheet" href="css/bulma.css">
 
@@ -63,7 +64,14 @@
       <div class="page-content">
         <div id="mainContainer">
           <div class="tile is-ancestor box is-vertical" style="height: 100%">
-            <button id="addNewAnimal" class="button is-primary" onclick="openAnimalModal()">Add</button>
+            <div class="level">
+                <div class="level-left">
+                    <p class="mdl-typography--display-3">Animals</p>
+                </div>
+                <div class="level-right">
+                    <button id="addNewAnimal" class="button is-primary" onclick="openAnimalModal()">Add</button>
+                </div>
+            </div>
             <div id="animalModal" class="modal">
               <script>
                 $('#animalModal').load('animalModal.html');

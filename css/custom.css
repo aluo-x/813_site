@@ -85,7 +85,27 @@ table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.d
 }
 
 th:before,th:after {
-  color:blue;
+  color:hsl(204, 86%, 53%);
   font-weight: bold;
   font-size:100px;
+}
+
+.mdl-typography--display-3 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.level:not(:last-child) {
+  margin: 0;
+}
+
+.level-left{
+  width: 90%
+}
+.lefl-right{
+  width: 10%;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+  border-bottom: 1px solid hsl(204, 86%, 53%);
 }

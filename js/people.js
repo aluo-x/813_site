@@ -2,9 +2,8 @@
 function materializePeopleTable(){
   $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
   $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#peopleTable td').addClass('mdl-data-table__cell--non-numeric');
-  $('#peopleTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#peopleTable_filter label').addClass('mdl-textfield mdl-js-textfield');
+  $('#peopleTable_filter label').addClass('mdl-textfield');
+  $('#peopleTable_filter label').addClass('mdl-js-textfield');
   $('#peopleTable_filter input').addClass('mdl-textfield__input');
 }
 function generatePeopleTable() {

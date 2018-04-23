@@ -2,9 +2,8 @@
 function materializeEventTable(){
   $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
   $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable td').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable th').addClass('mdl-data-table__cell--non-numeric');
-  $('#eventTable_filter label').addClass('mdl-textfield mdl-js-textfield');
+  $('#eventTable_filter label').addClass('mdl-textfield');
+  $('#eventTable_filter label').addClass('mdl-js-textfield');
   $('#eventTable_filter input').addClass('mdl-textfield__input');
 }
 
