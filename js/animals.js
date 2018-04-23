@@ -7,6 +7,10 @@ function materializeAnimalTable(){
   $('#animalTable_filter input').addClass('mdl-textfield__input');
 }
 
+function trueFalseToYesNo(value) {
+  return (value) ? 'Yes' : 'No';
+}
+
 function generateAnimalTable() {
   $('#animalTable').DataTable({
     data: animals,
@@ -20,7 +24,7 @@ function generateAnimalTable() {
       { data: 'name', title: 'Name' },
       { data: 'adoptionStatus', title: 'Adoption Status' },
       { data: 'gender', title: 'Gender' },
-      { data: 'fixed', title: 'Fixed' },
+      { data: 'fixed', title: 'Fixed', render: trueFalseToYesNo },
       { data: 'species', title: 'Species' },
       { data: 'breeds', title: 'Breeds' },
     ],
