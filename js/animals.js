@@ -8,7 +8,7 @@ function materializeAnimalTable(){
 }
 
 function trueFalseToYesNo(value) {
-  return (value) ? 'Yes' : 'No';
+  return (value) ? 'yes' : 'no';
 }
 
 function generateAnimalTable() {
