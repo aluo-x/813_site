@@ -7,6 +7,15 @@ function materializeEventTable(){
   $('#eventTable_filter label').addClass('mdl-textfield mdl-js-textfield');
   $('#eventTable_filter input').addClass('mdl-textfield__input');
 }
+
+function renderDate(data) {
+  const date = new Date(data);
+  const options = {
+    year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'
+  };
+  return date.toLocaleDateString('en-US', options);
+}
+
 function generateEventTable() {
   $('#eventTable').DataTable({
     data: events,
@@ -18,8 +27,8 @@ function generateEventTable() {
     ],
     columns: [
       { data: 'type', title: 'Type' },
-      { data: 'start.toUTCString()', title: 'Starts' },
-      { data: 'end.toUTCString()', title: 'Ends' },
+      { data: 'start', title: 'Starts', render: renderDate },
+      { data: 'end', title: 'Ends', render: renderDate },
       { data: 'location.getString()', title: 'Location' },
       { data: 'name', title: 'Name' },
     ],
