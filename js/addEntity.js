@@ -23,6 +23,10 @@ function openAnimalModal(
   document.getElementById('speciesInput').value = (species === '' || species === undefined) ? 'dog' : species;
   $('#breedInput').val((breeds === '' || breeds === undefined) ? [] : breeds.split(',')).trigger('change');
 
+  document.getElementById('animalModalTitle').innerHTML = (name !== null && name !== undefined && name !== '')
+    ? 'Edit Animal'
+    : 'Add Animal';
+
   openModal();
 }
 
@@ -52,7 +56,7 @@ function saveAnimal() {
       };
     }
 
-    addAnimal({
+    editAnimal({
         name: animalName,
         adoptionStatus: adoptionStat,
         gender: animalGender,

@@ -195,7 +195,24 @@ const getNextAnimalId = () => {
 };
 
 const addAnimal = (animalProperties) => {
+  console.log('adding animal');
   const id = getNextAnimalId();
   const breeds = (animalProperties.breeds || []);
   animals.push(Object.assign({}, animalProperties, { id, breeds }));
 };
+
+const editAnimal = (animalProperties) => {
+  var existingAnimal, existingAnimalPosition;
+  for (var i = 0; i < animals.length; i++) {
+    if (animals[i].name === animalProperties.name) {
+      existingAnimal = animals[i];
+      existingAnimalPosition = i;
+    }
+  }
+  if (existingAnimal) {
+    animals[existingAnimalPosition] = Object.assign({}, existingAnimal, animalProperties)
+  } else {
+    console.log('no existing animal');
+    addAnimal(animalProperties);
+  }
+}
