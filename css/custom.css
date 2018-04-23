@@ -58,10 +58,10 @@
   color:white !important;
   font-weight: bold;
 }
-/*.selectedTab a:hover{
+.selectedTab a:hover{
   background-color: hsl(171, 100%, 41%);
 }
-*/
+
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
   color: black;
 }
@@ -69,8 +69,7 @@
     background-color: hsl(204, 86%, 53%);
 }
 .dataTables_filter {
-/*  width: 1000px;
-*/}
+}
 
 .dataTables_filter label {
   width: 100%;
@@ -80,4 +79,13 @@
 
 .mdl-data-table td {
     text-align: left;
+}
+table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting{
+  background-image:none;
+}
+
+th:before,th:after {
+  color:blue;
+  font-weight: bold;
+  font-size:100px;
 }
