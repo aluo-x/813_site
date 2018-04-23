@@ -120,3 +120,11 @@ table.dataTable thead th, table.dataTable thead td {
 button {
   margin:12px;
 }
+
+.mdl-button--raised.mdl-button--colored {
+  background: hsl(204, 86%, 53%);
+}
+
+.mdl-button--raised.mdl-button--colored:hover {
+  background-color: hsl(204, 86%, 43%);
+}
