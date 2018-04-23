@@ -63,12 +63,12 @@
     <main class="mdl-layout__content">
       <div class="page-content">
         <div id="mainContainer">
-          <div class="tile is-ancestor box is-vertical" style="height: 100%">
+          <div class="is-ancestor is-vertical" style="height: 100%">
             <div class="level">
                 <div class="level-left">
                     <p class="mdl-typography--display-3">Animals</p>
                 </div>
-                <div class="level-right">
+                <div class="level-right is-parent">
                     <button id="addNewAnimal" class="button is-primary" onclick="openAnimalModal()">Add</button>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                 $('#animalModal').load('animalModal.html');
               </script>
             </div>
-            <div class="tile">
+            <div class="tile is-parent">
                 <table id="animalTable" class="mdl-data-table dataTable" width="100%"></table>
             </div>
           </div>

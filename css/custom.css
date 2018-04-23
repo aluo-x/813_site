@@ -50,7 +50,6 @@
   width: 100%;
   overflow-x: hidden;
   height: 100vh;
-  background-color:hsl(0, 0%, 29%);
 }
 
 .selectedTab {
@@ -96,16 +95,24 @@ th:before,th:after {
 }
 
 .level:not(:last-child) {
-  margin: 0;
+  margin-bottom: 0;
 }
 
 .level-left{
   width: 90%;
 }
-.lefl-right{
+.level-right{
   width: 10%;
 }
 
+thead {
+  border-bottom: 1px solid hsl(204, 86%, 53%);
+
+}
 table.dataTable thead th, table.dataTable thead td {
   border-bottom: 1px solid hsl(204, 86%, 53%);
+}
+
+button {
+  margin:12px;
 }
