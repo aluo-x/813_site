@@ -15,7 +15,7 @@ function generateAnimalTable() {
         targets: [ 0, 1, 2 ],
         className: 'mdl-data-table__cell--non-numeric'
     }
-    ],   
+    ],
     columns: [
       { data: 'name', title: 'Name' },
       { data: 'adoptionStatus', title: 'Adoption Status' },
@@ -48,14 +48,7 @@ $(document).ready(function() {
 });
 
 function refreshAnimalTable() {
-  var datatable = $('#animalTable').DataTable({
-      columnDefs: [
-        {
-            targets: [ 0, 1, 2 ],
-            className: 'mdl-data-table__cell--non-numeric'
-        }
-  ],  
-  });
+  var datatable = $('#animalTable').DataTable();
   datatable.clear();
   datatable.rows.add(animals);
   datatable.draw();

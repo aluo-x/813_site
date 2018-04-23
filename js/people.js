@@ -15,7 +15,7 @@ function generatePeopleTable() {
             targets: [ 0, 1, 2 ],
             className: 'mdl-data-table__cell--non-numeric'
         }
-        ],   
+        ],
         columns: [
             { data: "firstName", title: "First Name"},
             { data: "lastName", title: "Last Name"},
@@ -34,14 +34,7 @@ $( document ).ready(function() {
 });
 
 function refreshPeopleTable() {
-  var datatable = $('#peopleTable').DataTable({
-    columnDefs: [
-    {
-        targets: [ 0, 1, 2 ],
-        className: 'mdl-data-table__cell--non-numeric'
-    }
-    ],   
-  });
+  var datatable = $('#peopleTable').DataTable();
   datatable.clear();
   datatable.rows.add(people);
   datatable.draw();
