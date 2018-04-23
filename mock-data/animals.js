@@ -195,7 +195,6 @@ const getNextAnimalId = () => {
 };
 
 const addAnimal = (animalProperties) => {
-  console.log('adding animal');
   const id = getNextAnimalId();
   const breeds = (animalProperties.breeds || []);
   animals.push(Object.assign({}, animalProperties, { id, breeds }));
@@ -212,7 +211,6 @@ const editAnimal = (animalProperties) => {
   if (existingAnimal) {
     animals[existingAnimalPosition] = Object.assign({}, existingAnimal, animalProperties)
   } else {
-    console.log('no existing animal');
     addAnimal(animalProperties);
   }
 }
