@@ -7,6 +7,7 @@
         <button class="delete" aria-label="close" onclick="closeModal()"></button>
     </header>
     <section class="modal-card-body">
+        <input id='idInput' style="display: none" value=''/>
         <div class="field">
             <label class="label">Name</label>
             <div class="control">
@@ -80,7 +81,7 @@
     </section>
     <footer class="modal-card-foot">
         <button class="button" onclick="closeModal()">Cancel</button>
-        <button class="button is-success" onclick="saveAnimal()">Save</button>
+        <button class="button is-success" onclick="saveModal('animal')">Save</button>
     </footer>
 </div>
 </html>
