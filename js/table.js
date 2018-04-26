@@ -63,7 +63,11 @@ function parseStringField(field) {
   return field ? field.stringValue : '';
 }
 function parseArrayField(field) {
-  return field ? field.arrayValue.values.map(v => parseStringField(v)) : [];
+  return field
+    ? field.arrayValue.values
+      ? field.arrayValue.values.map(v => parseStringField(v))
+      : []
+    : [];
 }
 // TODO helpers for other field types
 

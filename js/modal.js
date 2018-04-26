@@ -23,7 +23,7 @@ function saveModal(entityType) {
   $('.button.is-success').attr('disabled');
   const [id, data] = getModalData(entityType);
   (id === '')
-    ? createEntity(entityType, saveModalSuccess(entityType), saveModalError)
+    ? createEntity(entityType, data, saveModalSuccess(entityType), saveModalError)
     : updateEntity(entityType, id, data, saveModalSuccess(entityType), saveModalError);
 }
 
@@ -47,7 +47,6 @@ function errorOpeningModal(error) {
 const populateModalWithData = (entityType) => (data) => {
   $('.modal-card').removeClass('loading');
   $('#idInput').val(data.id);
-  console.log($('#idInput').val());
   var fields = inputs[entityType];
   fields.forEach(f => {
     var value = data[f];
