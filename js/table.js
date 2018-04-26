@@ -26,8 +26,9 @@ function generateTable(entityType, columns, parseServerResponse) {
     },
     rowId: 'id',
     columns,
+    dom: '<"top"f>rt<"bottom"lip>',
   });
-
+  materializeTable(entityType);
   handleClickRow(entityType);
 };
 
@@ -41,6 +42,14 @@ function handleClickRow(entityType) {
     const entityId = table.row(this).id();
     openModal(entityType, entityId);
   });
+}
+
+function materializeTable(entityType){
+  $(getTableId(entityType) + ' td').addClass('mdl-data-table__cell--non-numeric');
+  $(getTableId(entityType) + ' th').addClass('mdl-data-table__cell--non-numeric');
+  $(getTableId(entityType) + ' label').addClass('mdl-textfield');
+  $(getTableId(entityType) + '_filter label').addClass('mdl-js-textfield');
+  $(getTableId(entityType) + '_filter input').addClass('mdl-textfield__input');
 }
 
 const parseServerResponseWithDocumentParser = (parseDocumentFunction) => (raw) => {
