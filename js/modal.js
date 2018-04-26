@@ -4,7 +4,7 @@ function openModal(entityType, entityId) {
   $('.modal').addClass('is-active');
   $('button.is-success').removeAttr('disabled');
   if (entityId) {
-    $('.modal-card').addClass('loading'); // overlay loader until data loaded
+    $('#modalLoader').show();
     getEntities(
       entityType,
       entityId,
@@ -40,12 +40,12 @@ function saveModalError(error) {
 }
 
 function errorOpeningModal(error) {
-  $('.modal-card').removeClass('loading');
+  $('#modalLoader').hide();
   console.error(error);
 }
 
 const populateModalWithData = (entityType) => (data) => {
-  $('.modal-card').removeClass('loading');
+  $('#modalLoader').hide();
   $('#idInput').val(data.id);
   var fields = inputs[entityType];
   fields.forEach(f => {
