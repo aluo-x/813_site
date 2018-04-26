@@ -19,10 +19,11 @@ streamline their workflow.
 ### Built With
 
 * [jQuery](https://jquery.com/) - Utility
-* [DataTables](https://datatables.net/) - Used to make the tables of entities (animals/events/people)
+* [DataTables](https://datatables.net/) - Table plugin (used for animal/people/event tables)
 * [Bulma](https://bulma.io/) - CSS framework
 * [MaterialDesign](https://getmdl.io/index.html) - CSS framework
-* [Select2](https://select2.org/) - Searchable multiselect input
+* [FontAwesome Icons](https://fontawesome.com/icons) - Icons (used for loading spinner on modal)
+* [Firestore](https://firebase.google.com/docs/firestore/) - NoSQL cloud database (for storing animal/people/event data)
 
 ### Authors
 
