@@ -1,6 +1,6 @@
 function openModal(entityType, entityId) {
   // clear existing modal state
-  $('#animalForm')[0].reset();
+  $('#' + entityType + 'Form')[0].reset();
   $('.modal').addClass('is-active');
   $('button.is-success').removeAttr('disabled');
   if (entityId) {
@@ -77,5 +77,12 @@ const inputs = {
     'fixed',
     'species',
     'breeds',
-  ]
+  ],
+  'event': [
+    'name',
+    'type',
+    'location',
+    'starts',
+    'ends',
+  ],
 };

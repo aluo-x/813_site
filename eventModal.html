@@ -3,17 +3,53 @@
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Add New Event</p>
+      <p class="modal-card-title">Add Event</p>
       <button class="delete" aria-label="close" onclick="closeModal()"></button>
     </header>
     <section class="modal-card-body">
-      <div>
-        Event info goes here
-      </div>
+      <form id='eventForm'>
+        <input id='idInput' style="display: none" value=""  />
+
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input id="nameInput" class="input" type="text" placeholder="e.g. Petco Event"  />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Type</label>
+          <div class="control">
+            <div class="select is-fullwidth">
+              <select id="typeInput">
+                <option>adoption event</option>
+                <option>fundraiser event</option>
+                <option>vet appointment</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Location</label>
+          <!-- TODO -->
+        </div>
+
+        <div class="field">
+          <label class="label">Starts</label>
+          <!-- TODO -->
+        </div>
+
+        <div class="field">
+          <label class="label">Ends</label>
+          <!-- TODO -->
+        </div>
+
+      </form>
     </section>
     <footer class="modal-card-foot">
       <button class="button" onclick="closeModal()">Cancel</button>
-      <button class="button is-success" onclick="saveEvent()">Save</button>
+      <button class="button is-success" onclick="saveModal('event')">Save</button>
     </footer>
   </div>
 </html>

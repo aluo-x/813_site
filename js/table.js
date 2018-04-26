@@ -1,6 +1,6 @@
-$(function() {
-  generateAnimalTable();
-})
+// $(function() {
+//   generateAnimalTable();
+// })
 
 function generateAnimalTable() {
   generateTable('animal', animalColumns, parseServerResponseWithDocumentParser(animalDocumentParser));
@@ -10,9 +10,9 @@ function generateAnimalTable() {
 //   generateTable('person', personColumns, parseServerResponseWithDocumentParser(personDocumentParser));
 // }
 //
-// function generateEventTable() {
-//   generateTable('event', eventColumns, parseServerResponseWithDocumentParser(eventDocumentParser));
-// }
+function generateEventTable() {
+  generateTable('event', eventColumns, parseServerResponseWithDocumentParser(eventDocumentParser));
+}
 
 const BASE_DATA_URL = 'https://firestore.googleapis.com/v1beta1/projects/all-paws-on-deck/databases/(default)/documents/';
 
@@ -69,10 +69,24 @@ function parseArrayField(field) {
       : []
     : [];
 }
-// TODO helpers for other field types
+function parseTimestampField(field) {
+  return field
+    ? new Date(field.timestampValue)
+    : null; // TODO do we want a null here?
+}
+
+function parseAddressField(field) {
+  // TODO
+  var result = {};
+  if (field && field.mapValue.fields) {
+    Object.keys(field.mapValue.fields).forEach(k => {
+      result[k] = parseStringField(field.mapValue.fields[k]);
+    });
+  }
+  return result;
+}
 
 /** Document Parsers **/
-// TODO add more parsers
 function animalDocumentParser(doc) {
   // TODO parse other fields
   return ({
@@ -86,12 +100,72 @@ function animalDocumentParser(doc) {
   });
 }
 
+function personDocumentParser(doc) {
+  return ({
+    id: doc.name.replace('projects/all-paws-on-deck/databases/(default)/documents/person/', ''),
+    firstName: parseStringField(doc.fields.firstName),
+    lastName: parseStringField(doc.fields.lastName),
+  });
+}
+
+function eventDocumentParser(doc) {
+  return ({
+    id: doc.name.replace('projects/all-paws-on-deck/databases/(default)/documents/event/', ''),
+    name: parseStringField(doc.fields.name),
+    type: parseStringField(doc.fields.type),
+    starts: parseTimestampField(doc.fields.starts),
+    ends: parseTimestampField(doc.fields.ends),
+    location: parseAddressField(doc.fields.location),
+  });
+};
+
 /** Columns **/
 const animalColumns = [
-  { data: 'name',           title: 'Name',                            },
-  { data: 'adoptionStatus', title: 'Adoption Status',                 },
-  { data: 'gender',         title: 'Gender',                          },
-  { data: 'fixed',          title: 'Fixed',                           },
-  { data: 'species',        title: 'Species',                         },
-  { data: 'breeds',         title: 'Breeds',                          },
+  { data: 'name',           title: 'Name',                              },
+  { data: 'adoptionStatus', title: 'Adoption Status',                   },
+  { data: 'gender',         title: 'Gender',                            },
+  { data: 'fixed',          title: 'Fixed',                             },
+  { data: 'species',        title: 'Species',                           },
+  { data: 'breeds',         title: 'Breeds',                            },
 ];
+
+const eventColumns = [
+  { data: 'name',           title: 'Name',                              },
+  { data: 'type',           title: 'Type',                              },
+  { data: 'starts',         title: 'Starts',    render: renderDateTime  },
+  { data: 'ends',           title: 'Ends',      render: renderDateTime  },
+  { data: 'location',       title: 'Location',  render: renderAddress   },
+];
+
+// TODO
+function renderDate(value) {
+  if (value) {
+    const options = {
+      year: 'numeric', month: 'long', day: 'numeric'
+    };
+    return value.toLocaleDateString('en-US', options);
+  }
+  return '';
+};
+function renderDateTime(value) {
+  if (value) {
+    const options = {
+      year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'
+    };
+    return value.toLocaleDateString('en-US', options);
+  }
+  return '';
+};
+function renderAddress(value) {
+  const street = removeNulls([value.name, value.street1, value.steet2]).join('<br>');
+  const city = removeNulls([value.city, value.state]).join(', ');
+  return [street, city].join('<br>');
+};
+
+function removeNulls(l) {
+  var result = [];
+  for (var i = 0; i < l.length; i++) {
+    if (l[i]) result.push(l[i]);
+  }
+  return result;
+}
