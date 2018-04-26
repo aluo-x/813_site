@@ -1,5 +1,6 @@
 function openModal(entityType, entityId) {
   // clear existing modal state
+  $('#animalForm')[0].reset();
   $('.modal').addClass('is-active');
   $('button.is-success').removeAttr('disabled');
   if (entityId) {
