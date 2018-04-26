@@ -19,7 +19,7 @@ function closeModal() {
 }
 
 function saveModal(entityType) {
-  $('.button.is-success').addClass('loading'); // disable and show spinner
+  $('#modalSave').show();
   $('.button.is-success').attr('disabled');
   const [id, data] = getModalData(entityType);
   (id === '')
@@ -29,13 +29,13 @@ function saveModal(entityType) {
 
 const saveModalSuccess = (entityType) => () => {
   reloadTable(entityType);
-  $('.button.is-success').removeClass('loading');
+  $('#modalSave').hide();
   closeModal();
 }
 
 function saveModalError(error) {
   console.error('Error saving modal:', error);
-  $('.button.is-success').removeClass('loading');
+  $('#modalSave').hide();
   closeModal();
 }
 
