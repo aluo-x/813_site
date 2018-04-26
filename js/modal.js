@@ -78,6 +78,13 @@ const inputs = {
     'species',
     'breeds',
   ],
+  'person': [
+    'firstName',
+    'lastName',
+    'phoneNumber',
+    'email',
+    'roles',
+  ],
   'event': [
     'name',
     'type',

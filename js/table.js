@@ -1,15 +1,11 @@
-// $(function() {
-//   generateAnimalTable();
-// })
-
 function generateAnimalTable() {
   generateTable('animal', animalColumns, parseServerResponseWithDocumentParser(animalDocumentParser));
 }
 
-// function generatePersonTable() {
-//   generateTable('person', personColumns, parseServerResponseWithDocumentParser(personDocumentParser));
-// }
-//
+function generatePersonTable() {
+  generateTable('person', personColumns, parseServerResponseWithDocumentParser(personDocumentParser));
+}
+
 function generateEventTable() {
   generateTable('event', eventColumns, parseServerResponseWithDocumentParser(eventDocumentParser));
 }
@@ -105,6 +101,9 @@ function personDocumentParser(doc) {
     id: doc.name.replace('projects/all-paws-on-deck/databases/(default)/documents/person/', ''),
     firstName: parseStringField(doc.fields.firstName),
     lastName: parseStringField(doc.fields.lastName),
+    phoneNumber: parseStringField(doc.fields.phoneNumber),
+    email: parseStringField(doc.fields.email),
+    roles: parseArrayField(doc.fields.roles),
   });
 }
 
@@ -121,20 +120,28 @@ function eventDocumentParser(doc) {
 
 /** Columns **/
 const animalColumns = [
-  { data: 'name',           title: 'Name',                              },
-  { data: 'adoptionStatus', title: 'Adoption Status',                   },
-  { data: 'gender',         title: 'Gender',                            },
-  { data: 'fixed',          title: 'Fixed',                             },
-  { data: 'species',        title: 'Species',                           },
-  { data: 'breeds',         title: 'Breeds',                            },
+  { data: 'name',           title: 'Name',                                    },
+  { data: 'adoptionStatus', title: 'Adoption Status',                         },
+  { data: 'gender',         title: 'Gender',                                  },
+  { data: 'fixed',          title: 'Fixed',                                   },
+  { data: 'species',        title: 'Species',                                 },
+  { data: 'breeds',         title: 'Breeds',                                  },
 ];
 
+const personColumns = [
+  { data: 'firstName',      title: 'First Name',                              },
+  { data: 'lastName',       title: 'Last Name',                               },
+  { data: 'phoneNumber',    title: 'Phone Number',  render: renderPhoneNumber },
+  { data: 'email',          title: 'Email',                                   },
+  { data: 'roles',          title: 'Roles',                                   },
+]
+
 const eventColumns = [
-  { data: 'name',           title: 'Name',                              },
-  { data: 'type',           title: 'Type',                              },
-  { data: 'starts',         title: 'Starts',    render: renderDateTime  },
-  { data: 'ends',           title: 'Ends',      render: renderDateTime  },
-  { data: 'location',       title: 'Location',  render: renderAddress   },
+  { data: 'name',           title: 'Name',                                    },
+  { data: 'type',           title: 'Type',                                    },
+  { data: 'starts',         title: 'Starts',    render: renderDateTime        },
+  { data: 'ends',           title: 'Ends',      render: renderDateTime        },
+  { data: 'location',       title: 'Location',  render: renderAddress         },
 ];
 
 // TODO
@@ -161,6 +168,16 @@ function renderAddress(value) {
   const city = removeNulls([value.city, value.state]).join(', ');
   return [street, city].join('<br>');
 };
+
+function renderPhoneNumber(value) {
+  if (value.length === 10) {
+    return '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
+  }
+  else if (value.length === 11) {
+    return value.substring(0, 1) + ' (' + value.substring(1, 4) + ') ' + value.substring(4, 7) + '-' + value.substring(7, 11);
+  }
+  return '';
+}
 
 function removeNulls(l) {
   var result = [];

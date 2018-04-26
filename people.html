@@ -31,18 +31,17 @@
 
     <link rel="stylesheet" href="css/custom.css">
 
-    <!-- Mock Data Classes/Enums -->
-    <script type="text/javascript" src="mock-data/Address.js"></script>
-    <script type="text/javascript" src="mock-data/Email.js"></script>
-    <script type="text/javascript" src="mock-data/Phone.js"></script>
-    <script type="text/javascript" src="mock-data/Roles.js"></script>
-    <!-- Mock Data -->
-    <script type="text/javascript" src="mock-data/people.js"></script>
+    <!-- Firebase and Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
     <!-- Generated HTML -->
-    <script type="text/javascript" src="js/people.js"></script>
-    <script type="text/javascript" src="js/addEntity.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+
 </head>
-<body style="display: flex; height: 100vh">
+<body style="display: flex; height: 100vh" onload="generatePersonTable()">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer menu-list menu">
     <div class="mdl-layout__drawer">
       <p class="menu-label has-text-centered">
@@ -66,10 +65,10 @@
                     <p class="mdl-typography--display-3">People</p>
                 </div>
                 <div class="level-right">
-                    <button id="addNewPerson" class="button is-primary" onclick="openModal()">Add</button>
+                    <button id="addNewPerson" class="button is-primary" onclick="openModal('person')">Add</button>
                 </div>
             </div>
-            
+
 
             <div id="peopleModal" class="modal">
               <script>
@@ -79,7 +78,7 @@
 
 
             <div class="tile is-parent">
-                <table id="peopleTable" class="mdl-data-table dataTable" width="100%"></table>
+                <table id="personTable" class="mdl-data-table dataTable" width="100%"></table>
             </div>
         </div>
         </div>
