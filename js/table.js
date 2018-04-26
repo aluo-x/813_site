@@ -62,21 +62,24 @@ const parseServerResponseWithDocumentParser = (parseDocumentFunction) => (raw) =
 function parseStringField(field) {
   return field ? field.stringValue : '';
 }
+function parseArrayField(field) {
+  return field ? field.arrayValue.values.map(v => parseStringField(v)) : [];
+}
 // TODO helpers for other field types
 
 /** Document Parsers **/
 // TODO add more parsers
 function animalDocumentParser(doc) {
-  const id = doc.name.replace('projects/all-paws-on-deck/databases/(default)/documents/animal/', '');
-
-  const name = parseStringField(doc.fields.name);
-  const adoptionStatus = parseStringField(doc.fields.adoptionStatus);
-  const gender = parseStringField(doc.fields.gender);
-  const species = parseStringField(doc.fields.species);
-
   // TODO parse other fields
-
-  return ({ id, name, adoptionStatus, gender, species });
+  return ({
+    id: doc.name.replace('projects/all-paws-on-deck/databases/(default)/documents/animal/', ''),
+    name: parseStringField(doc.fields.name),
+    adoptionStatus: parseStringField(doc.fields.adoptionStatus),
+    gender: parseStringField(doc.fields.gender),
+    fixed: parseStringField(doc.fields.fixed),
+    species: parseStringField(doc.fields.species),
+    breeds: parseArrayField(doc.fields.breeds),
+  });
 }
 
 /** Columns **/
@@ -84,5 +87,7 @@ const animalColumns = [
   { data: 'name',           title: 'Name',                            },
   { data: 'adoptionStatus', title: 'Adoption Status',                 },
   { data: 'gender',         title: 'Gender',                          },
+  { data: 'fixed',          title: 'Fixed',                           },
   { data: 'species',        title: 'Species',                         },
+  { data: 'breeds',         title: 'Breeds',                          },
 ];
