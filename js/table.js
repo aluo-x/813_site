@@ -70,17 +70,19 @@ function animalDocumentParser(doc) {
   const id = doc.name.replace('projects/all-paws-on-deck/databases/(default)/documents/animal/', '');
 
   const name = parseStringField(doc.fields.name);
+  const adoptionStatus = parseStringField(doc.fields.adoptionStatus);
   const gender = parseStringField(doc.fields.gender);
   const species = parseStringField(doc.fields.species);
 
   // TODO parse other fields
 
-  return ({ id, name, gender, species });
+  return ({ id, name, adoptionStatus, gender, species });
 }
 
 /** Columns **/
 const animalColumns = [
-  { data: 'name',         title: 'Name',                  },
-  { data: 'gender',       title: 'Gender',                },
-  { data: 'species',      title: 'Species',               },
+  { data: 'name',           title: 'Name',                            },
+  { data: 'adoptionStatus', title: 'Adoption Status',                 },
+  { data: 'gender',         title: 'Gender',                          },
+  { data: 'species',        title: 'Species',                         },
 ];
