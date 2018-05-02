@@ -29,6 +29,7 @@ function generateTable(entityType, columns, parseServerResponse) {
     paging: false,
     scrollY: "60vh",
     scrollCollapse: true,
+    bInfo: false
   });
   // table.columns().iterator( 'column', function (ctx, idx) {
   //   $( table.column(idx).header() ).append('<span class="sort-icon"/>');

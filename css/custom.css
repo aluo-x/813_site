@@ -165,10 +165,6 @@ button {
   background-color: hsl(204, 86%, 43%);
 }
 
-.dataTables_length {
-  visibility: hidden;
-}
-
 .dataTables_scroll {
   margin-top:40px;
 }
