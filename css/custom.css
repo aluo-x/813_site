@@ -112,6 +112,9 @@ th:before,th:after {
   border-bottom: 1px solid hsl(204, 86%, 53%);
 }*/
 table.dataTable thead th, table.dataTable thead td {
+  border-bottom: none;
+}
+tr {
   border-bottom: 1px solid hsl(204, 86%, 53%);
 }
 
@@ -159,8 +162,21 @@ tbody, thead tr { display: block; }
 
 tbody {
     height: 50vh;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-left:1px solid #ddd;
 }
 
 tbody td, thead th {
