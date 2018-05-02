@@ -23,6 +23,7 @@ function generateTable(entityType, columns, parseServerResponse) {
     rowId: 'id',
     columns,
     dom: '<"top"f>rt<"bottom"lip>',
+    paging: false
   });
   materializeTable(entityType);
   handleClickRow(entityType);
