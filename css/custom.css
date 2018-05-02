@@ -47,9 +47,12 @@
 }
 
 #mainContainer {
-  width: 100%;
+  width: 80%;
   overflow-x: hidden;
+  max-height: 100vh;
   height: 100vh;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .selectedTab {
@@ -90,8 +93,8 @@ th:before,th:after {
 }
 
 .mdl-typography--display-3 {
-  margin-left: 50%;
-  margin-right: 50%;
+  width:100%;
+  text-align: center;
 }
 
 .level:not(:last-child) {
@@ -105,10 +108,9 @@ th:before,th:after {
   width: 10%;
 }
 
-thead {
+/*thead {
   border-bottom: 1px solid hsl(204, 86%, 53%);
-
-}
+}*/
 table.dataTable thead th, table.dataTable thead td {
   border-bottom: 1px solid hsl(204, 86%, 53%);
 }
@@ -127,4 +129,75 @@ button {
 
 .mdl-button--raised.mdl-button--colored:hover {
   background-color: hsl(204, 86%, 43%);
+}
+
+.dataTables_length {
+  visibility: hidden;
+}
+
+.dataTable {
+  margin-top:40px !important;
+}
+/*
+thead, tbody {
+  display: block;
+}
+
+tbody { 
+  height:100px !important;
+  overflow-y: auto;
+  overflow-x: hidden; 
+}*/
+
+/*Stack overflow solution: https://stackoverflow.com/questions/17067294/html-table-with-100-width-with-vertical-scroll-inside-tbody */
+table {
+    width: 716px; /* 140px * 5 column + 16px scrollbar width */
+    border-spacing: 0;
+}
+
+tbody, thead tr { display: block; }
+
+tbody {
+    height: 50vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+tbody td, thead th {
+    width: 140px;
+}
+
+thead th:last-child {
+    width: 156px; /* 140px + 16px scrollbar width */
+}
+/*End stack overflow solution*/
+
+
+
+.fixedAdd {
+  position: fixed;
+  bottom:25px;
+  right:25px;
+  z-index: 2;
+}
+
+.blue {
+  background-color:hsl(204, 86%, 43%);
+}
+
+.green {
+  background-color: #00d1b2;
+  color:white;
+}
+
+.green:hover {
+  background-color: #00d1b2;
+}
+
+input {
+  outline:none;
+}
+
+.mdl-data-table thead {
+  padding-bottom: 0;
 }
