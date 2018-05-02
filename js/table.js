@@ -15,16 +15,24 @@ const BASE_DATA_URL = 'https://firestore.googleapis.com/v1beta1/projects/all-paw
 const getTableId = (entityType) => '#' + entityType + 'Table';
 
 function generateTable(entityType, columns, parseServerResponse) {
-  $(getTableId(entityType)).DataTable({
+  var table = $(getTableId(entityType)).DataTable({
     ajax: {
       url: BASE_DATA_URL + entityType,
       dataSrc: parseServerResponse,
     },
+    "columnDefs": [
+      { className: "dt-left", "targets": '_all' }
+    ],
     rowId: 'id',
     columns,
     dom: '<"top"f>rt<"bottom"lip>',
-    paging: false
+    paging: false,
+    scrollY: "60vh",
+    scrollCollapse: true,
   });
+  // table.columns().iterator( 'column', function (ctx, idx) {
+  //   $( table.column(idx).header() ).append('<span class="sort-icon"/>');
+  // } );
   materializeTable(entityType);
   handleClickRow(entityType);
 };

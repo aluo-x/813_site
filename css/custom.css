@@ -44,6 +44,7 @@
 
 .dataTables_wrapper {
   width: 100%;
+  height: 60vh;
 }
 
 #mainContainer {
@@ -79,17 +80,33 @@
   justify-content: space-between;
 }
 
-.mdl-data-table td {
-    text-align: left;
-}
+
 table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting{
   background-image:none;
 }
+th {
+  text-indent:15px;
+}
 
 th:before,th:after {
+  text-indent:5px;
+  display:inline;
   color:hsl(204, 86%, 53%);
   font-weight: bold;
   font-size:100px;
+}
+
+th:before {
+  position:relative;
+  left:0;
+}
+th:after {
+  position:relative;
+  left:10px;
+}
+
+.mdl-data-table th:first-of-type{ 
+  padding-left:18px; /*makes distance between column name and arrows the same in the first col as other cols*/
 }
 
 .mdl-typography--display-3 {
@@ -97,26 +114,40 @@ th:before,th:after {
   text-align: center;
 }
 
-.level:not(:last-child) {
-  margin-bottom: 0;
+.dataTables_scrollHeadInner {
+    border:1px solid rgba(0,0,0,.12);
+    border-bottom: 1px solid hsl(204, 86%, 53%);
+    z-index: 4;
 }
 
-.level-left{
-  width: 90%;
-}
-.level-right{
-  width: 10%;
+table, thead, tr,th {
+  border:none !important;
 }
 
-/*thead {
-  border-bottom: 1px solid hsl(204, 86%, 53%);
-}*/
+.dataTables_scrollBody {
+  border: 1px solid rgba(0,0,0,.12);
+}
+
 table.dataTable thead th, table.dataTable thead td {
-  border-bottom: none;
+  outline:none;
+  border-bottom:none;
+/*  border-bottom: 1px solid hsl(204, 86%, 53%);
+*/
 }
-tr {
-  border-bottom: 1px solid hsl(204, 86%, 53%);
+
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
 }
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+::-webkit-scrollbar-track {
+  border-left: 1px solid rgba(0,0,0,.12);
+};
 
 #animalTable tr:hover {
   cursor:pointer;
@@ -138,63 +169,15 @@ button {
   visibility: hidden;
 }
 
-.dataTable {
-  margin-top:40px !important;
+.dataTables_scroll {
+  margin-top:40px;
 }
-/*
-thead, tbody {
-  display: block;
-}
-
-tbody { 
-  height:100px !important;
-  overflow-y: auto;
-  overflow-x: hidden; 
-}*/
-
-/*Stack overflow solution: https://stackoverflow.com/questions/17067294/html-table-with-100-width-with-vertical-scroll-inside-tbody */
-table {
-    width: 716px; /* 140px * 5 column + 16px scrollbar width */
-    border-spacing: 0;
-}
-
-tbody, thead tr { display: block; }
-
-tbody {
-    height: 50vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
-}
-::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-  border-left:1px solid #ddd;
-}
-
-tbody td, thead th {
-    width: 140px;
-}
-
-thead th:last-child {
-    width: 156px; /* 140px + 16px scrollbar width */
-}
-/*End stack overflow solution*/
-
-
 
 .fixedAdd {
   position: fixed;
   bottom:25px;
   right:25px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .blue {
