@@ -58,16 +58,7 @@
       <div class="page-content">
         <div id="mainContainer">
           <div class="is-ancestor is-vertical" style="height: 100%">
-            <div class="level">
-                <div class="level-left">
-                    <p class="mdl-typography--display-3">People</p>
-                </div>
-                <div class="level-right">
-                    <button id="addNewPerson" class="button is-primary" onclick="openModal('person')">Add</button>
-                </div>
-            </div>
-
-
+            <p class="mdl-typography--display-3">People</p>
             <div id="peopleModal" class="modal">
               <script>
                 $('#peopleModal').load('peopleModal.html');
@@ -83,5 +74,9 @@
       </div>
     </main>
   </div>
+  <!-- Colored FAB button -->
+  <button class="fixedAdd mdl-button mdl-js-button mdl-button--fab green" onclick="openModal('person')">
+    <i class="material-icons">add</i>
+  </button>
 </body>
 </html>
