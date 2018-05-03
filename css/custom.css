@@ -1,3 +1,7 @@
+body {
+  font-family: "Roboto", -apple-system, "Helvetica Neue", Sans-serif;
+}
+
 #example_wrapper{
     width: 100%;
 }
@@ -108,10 +112,7 @@ th:after {
   padding-left:18px; /*makes distance between column name and arrows the same in the first col as other cols*/
 }
 
-.mdl-typography--display-3 {
-  width:100%;
-  text-align: center;
-}
+
 
 .dataTables_scrollHeadInner {
     border:1px solid rgba(0,0,0,.12);
@@ -178,6 +179,12 @@ button {
 
 .blue {
   background-color:hsl(204, 86%, 43%);
+  color:white;
+}
+
+.blue:hover {
+  background-color:hsl(204, 86%, 43%);
+
 }
 
 .green {
@@ -209,4 +216,26 @@ input {
 
 label i.material-icons {
   color:rgba(0,0,0,0.54);
+}
+
+.detailsButton {
+  margin-top:10px;
+}
+
+.titleText {
+  font-size:56px;
+  color:#4a4a4a;
+  line-height: 1.5;
+  width:100%;
+  text-align: center;
+}
+
+.sectionTitleText {
+  font-size:34px;
+  color:#4a4a4a;
+  line-height: 1.5;
+}
+
+.bodyText {
+
 }

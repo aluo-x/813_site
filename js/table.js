@@ -31,9 +31,6 @@ function generateTable(entityType, columns, parseServerResponse) {
     scrollCollapse: true,
     bInfo: false
   });
-  // table.columns().iterator( 'column', function (ctx, idx) {
-  //   $( table.column(idx).header() ).append('<span class="sort-icon"/>');
-  // } );
   materializeTable(entityType);
   handleClickRow(entityType);
 };

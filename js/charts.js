@@ -7,12 +7,12 @@ var chart1 = new Chart(ctx, {
             label: '# of Votes',
             data: [12, 4],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
+                'hsl(204, 86%, 53%)',
+                '#00d1b2'
             ],
             borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)'
+                'hsl(204, 86%, 53%)',
+                '#00d1b2'
             ],
             borderWidth: 1
         }]
@@ -29,14 +29,14 @@ var chart2 = new Chart(ctx2, {
             label: '# of Votes',
             data: [13, 12],
             backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)'
+                'hsl(204, 86%, 53%)',
+                '#00d1b2'
             ],
             borderColor: [
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
+                'hsl(204, 86%, 53%)',
+                '#00d1b2'
             ],
-            borderWidth: 1
+            borderWidth: 0
         }]
     },
     options: {
@@ -52,14 +52,14 @@ var chart3 = new Chart(ctx3, {
             label: '# of Votes',
             data: [11, 14],
             backgroundColor: [
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(12, 241, 32, 0.2)'
+                'hsl(204, 86%, 53%)',
+                '#00d1b2'
             ],
             borderColor: [
-                'rgba(255, 159, 64, 1)',
-                'rgba(12, 241, 32, 1)'
+                'hsl(204, 86%, 53%)',
+                '#00d1b2'
             ],
-            borderWidth: 1
+            borderWidth: 0
         }]
     },
     options: {

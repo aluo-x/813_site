@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<!--    <link rel="stylesheet"
-          href="node_modules/material-components-web/dist/material-components-web.css"> -->
+
     <link href="css/bulma.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
 
@@ -20,6 +19,8 @@
 
     <!--Plotting library-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 </head>
 <body style="display: flex; height: 100vh">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer menu-list menu">
@@ -40,33 +41,36 @@
       <div class="page-content">
         <div id="mainContainer">
             <div class="is-ancestor is-vertical" style="height: 100%; overflow-x: hidden">
-                <p class="mdl-typography--display-3">Overview</p>
+                <p class="titleText">Overview</p>
                 <div class="tile is-vertical is-12">
                     <div class="tile">
                         <div class="tile is-parent">
                             <article class="tile is-child box has-text-centered mdl-shadow--2dp">
+                                <p class="sectionTitleText">Kennel Availability</p>
                                 <canvas id="chart1"></canvas>
                                 <div class="is-2 is-bold">4/16 Available</div>
-                                <a class="button is-info" style="margin-top: 10px">Details</a>
+                                <button class="mdl-button mdl-js-button mdl-button--raised green detailsButton">Details</button>
                             </article>
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box has-text-centered mdl-shadow--2dp">
+                                <p class="sectionTitleText">Foster Status</p>
                                 <canvas id="chart2"></canvas>
                                 <div class="is-2 is-bold">13/25 Fostered</div>
-                                <a class="button is-info" style="margin-top: 10px">Details</a>
+                                <button class="mdl-button mdl-js-button mdl-button--raised green detailsButton">Details</button>
                             </article>
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box has-text-centered mdl-shadow--2dp">
+                                <p class="sectionTitleText">Species Breakdown</p>
                                 <canvas id="chart3"></canvas>
                                 <div class="is-2 is-bold">11/25 Dogs</div>
-                                <a class="button is-info" style="margin-top: 10px">Details</a>
+                                <button class="mdl-button mdl-js-button mdl-button--raised green detailsButton">Details</button>
                             </article>
                         </div>
                     </div>
                     <div class="tile">
-                        <div class="tile is-parent is-6">
+<!--                         <div class="tile is-parent is-6">
                             <article class="tile is-child box mdl-shadow--2dp">
                                 <div style="max-width: 100%; overflow: hidden;">
                                     <div style="font-weight: bold; font-size: 2em">Animal Counts: </div>
@@ -76,17 +80,17 @@
                                     <div style="font-size: 1em">&emsp;<b>Dogs: </b> 11</div>
                                 </div>
                             </article>
-                        </div>
-                        <div class="tile is-parent is-6">
+                        </div> -->
+                        <div class="tile is-parent is-12">
                             <article class="tile is-child box mdl-shadow--2dp">
                                 <div style="max-width: 100%; overflow: hidden;">
-                                    <div style="font-weight: bold; font-size: 2em">Adoptions: </div>
+                                    <div class="sectionTitleText">Adoptions: </div>
                                     <br>
-                                    <div style="font-size: 1em">&emsp;<b>Last day:  </b> 1</div>
+                                    <div>&emsp;<b>Last day:  </b> 1</div>
                                     <br>
-                                    <div style="font-size: 1em">&emsp;<b>Last week: </b> 12</div>
+                                    <div>&emsp;<b>Last week: </b> 12</div>
                                     <br>
-                                    <div style="font-size: 1em">&emsp;<b>Last month: </b> 31</div>
+                                    <div>&emsp;<b>Last month: </b> 31</div>
                                 </div>
                             </article>
                         </div>
