@@ -28,6 +28,7 @@ function generateTable(entityType, columns, parseServerResponse) {
     dom: '<"top"f>rt<"bottom"lip>',
     paging: false,
     scrollY: "70vh",
+    scrollX: true,
     scrollCollapse: true,
     bInfo: false
   });
