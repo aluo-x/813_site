@@ -134,7 +134,7 @@ table.dataTable thead th, table.dataTable thead td {
 */
 }
 
-
+/* Make Scrollbar persistent */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;

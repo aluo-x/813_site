@@ -2,44 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>All Paws On Deck</title>
-
+    <title>All Paws On Deck - Stats</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<!--    <link rel="stylesheet"
+          href="node_modules/material-components-web/dist/material-components-web.css"> -->
+    <link href="css/bulma.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/bulma.css">
-
-
-    <!-- JQuery-->
+    <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Datatable Plugin -->
+    <!-- Datatable plugin -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.material.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.material.min.css">
-
-    <link rel="stylesheet" href="css/custom.css">
-
-    <!-- FontAwesome Icon Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Firebase and Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-
-    <!-- Generated HTML -->
-    <script type="text/javascript" src="js/api.js"></script>
-    <script type="text/javascript" src="js/table.js"></script>
-    <script type="text/javascript" src="js/modal.js"></script>
-
+    <!--Plotting library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 </head>
-<body style="display: flex; height: 100vh" onload="generateAnimalTable()">
+<body style="display: flex; height: 100vh">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer menu-list menu">
     <div class="mdl-layout__drawer">
       <p class="menu-label has-text-centered">
@@ -48,33 +30,73 @@
           </a>
       </p>
       <nav class="mdl-navigation">
-        <a id="animalsTab" class="mdl-navigation__link selectedTab" href="index.html">Animals</a>
+        <a id="overviewTab" class="mdl-navigation__link selectedTab" href="index.html">Overview</a>
+        <a id="animalsTab" class="mdl-navigation__link" href="animals.html">Animals</a>
         <a id="peopleTab" class="mdl-navigation__link" href="people.html">People</a>
         <a id="eventsTab" class="mdl-navigation__link" href="events.html">Events</a>
-        <a id="statsTab" class="mdl-navigation__link" href="stats.html">Statistics</a>
       </nav>
     </div>
     <main class="mdl-layout__content">
       <div class="page-content">
         <div id="mainContainer">
-          <div class="is-ancestor is-vertical" style="height: 100%">
-            <p class="mdl-typography--display-3">Animals</p>
-            <div id="animalModal" class="modal">
-              <script>
-                $('#animalModal').load('animalModal.html');
-              </script>
+            <div class="is-ancestor is-vertical" style="height: 100%; overflow-x: hidden">
+                <p class="mdl-typography--display-3">Overview</p>
+                <div class="tile is-vertical is-12">
+                    <div class="tile">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box has-text-centered mdl-shadow--2dp">
+                                <canvas id="chart1"></canvas>
+                                <div class="is-2 is-bold">4/16 Available</div>
+                                <a class="button is-info" style="margin-top: 10px">Details</a>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box has-text-centered mdl-shadow--2dp">
+                                <canvas id="chart2"></canvas>
+                                <div class="is-2 is-bold">13/25 Fostered</div>
+                                <a class="button is-info" style="margin-top: 10px">Details</a>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box has-text-centered mdl-shadow--2dp">
+                                <canvas id="chart3"></canvas>
+                                <div class="is-2 is-bold">11/25 Dogs</div>
+                                <a class="button is-info" style="margin-top: 10px">Details</a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="tile">
+                        <div class="tile is-parent is-6">
+                            <article class="tile is-child box mdl-shadow--2dp">
+                                <div style="max-width: 100%; overflow: hidden;">
+                                    <div style="font-weight: bold; font-size: 2em">Animal Counts: </div>
+                                    <br>
+                                    <div style="font-size: 1em">&emsp;<b>Cats:  </b> 14</div>
+                                    <br>
+                                    <div style="font-size: 1em">&emsp;<b>Dogs: </b> 11</div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="tile is-parent is-6">
+                            <article class="tile is-child box mdl-shadow--2dp">
+                                <div style="max-width: 100%; overflow: hidden;">
+                                    <div style="font-weight: bold; font-size: 2em">Adoptions: </div>
+                                    <br>
+                                    <div style="font-size: 1em">&emsp;<b>Last day:  </b> 1</div>
+                                    <br>
+                                    <div style="font-size: 1em">&emsp;<b>Last week: </b> 12</div>
+                                    <br>
+                                    <div style="font-size: 1em">&emsp;<b>Last month: </b> 31</div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="tile is-parent">
-                <table id="animalTable" class="mdl-data-table dataTable" width="100%"></table>
-            </div>
-          </div>
         </div>
       </div>
     </main>
   </div>
-    <!-- Colored FAB button -->
-  <button class="fixedAdd mdl-button mdl-js-button mdl-button--fab green" onclick="openModal('animal')">
-    <i class="material-icons">add</i>
-  </button>
+<script src="js/charts.js"></script>
 </body>
 </html>
