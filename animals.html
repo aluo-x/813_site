@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Paws On Deck</title>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+    <link rel="stylesheet" href="css/bulma.css">
+
+
+    <!-- JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Datatable Plugin -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.material.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.material.min.css">
+
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- FontAwesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Firebase and Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+    <!-- Generated HTML -->
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+<body style="display: flex; height: 100vh" onload="generateAnimalTable()">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer menu-list menu">
+    <div class="mdl-layout__drawer">
+      <p class="menu-label has-text-centered">
+          <a href="./index.html">
+              <img src="paw.png" style="padding:10px; max-width: 150px; max-height:150px" alt="Return to main page">
+          </a>
+      </p>
+      <nav class="mdl-navigation">
+        <a id="overviewTab" class="mdl-navigation__link" href="index.html">Overview</a>
+        <a id="animalsTab" class="mdl-navigation__link selectedTab" href="animals.html">Animals</a>
+        <a id="peopleTab" class="mdl-navigation__link" href="people.html">People</a>
+        <a id="eventsTab" class="mdl-navigation__link" href="events.html">Events</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div id="mainContainer">
+          <div class="is-ancestor is-vertical" style="height: 100%">
+            <p class="titleText" style="height:10%">Animals</p>
+            <div id="animalModal" class="modal">
+              <script>
+                $('#animalModal').load('animalModal.html');
+              </script>
+            </div>
+            <div class="tile is-parent tableWrapper">
+                <table id="animalTable" class="mdl-data-table dataTable" width="100%"></table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+    <!-- Colored FAB button -->
+  <button class="fixedAdd mdl-button mdl-js-button mdl-button--fab green" onclick="openModal('animal')">
+    <i class="material-icons">add</i>
+  </button>
+</body>
+</html>
