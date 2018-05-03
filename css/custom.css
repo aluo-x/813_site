@@ -237,10 +237,6 @@ label i.material-icons {
   line-height: 1.5;
 }
 
-.bodyText {
-
-}
-
-.mdl-layout__drawer {
-  z-index: 0;
+.modal-card {
+  z-index: 6;
 }

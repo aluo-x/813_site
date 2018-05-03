@@ -3,6 +3,8 @@ function openModal(entityType, entityId) {
   $('#' + entityType + 'Form')[0].reset();
   $('.modal').addClass('is-active');
   $('button.is-success').removeAttr('disabled');
+  $('.mdl-layout__drawer').get(0).style['z-index'] = 0;
+  $('.mdl-layout__drawer-button').get(0).style['z-index'] = 0;
   if (entityId) {
     $('#modalLoader').show();
     getEntities(
@@ -15,6 +17,8 @@ function openModal(entityType, entityId) {
 }
 
 function closeModal() {
+  $('.mdl-layout__drawer').css('z-index',5);
+  $('.mdl-layout__drawer-button').get(0).style['z-index'] = 4;
   $('.modal').removeClass('is-active');
 }
 
