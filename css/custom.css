@@ -239,3 +239,7 @@ label i.material-icons {
 .bodyText {
 
 }
+
+.mdl-layout__drawer {
+  z-index: -1;
+}
