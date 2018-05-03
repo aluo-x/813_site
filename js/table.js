@@ -27,7 +27,7 @@ function generateTable(entityType, columns, parseServerResponse) {
     columns,
     dom: '<"top"f>rt<"bottom"lip>',
     paging: false,
-    scrollY: "60vh",
+    scrollY: "70vh",
     scrollCollapse: true,
     bInfo: false
   });
@@ -54,8 +54,17 @@ function materializeTable(entityType){
   $(getTableId(entityType) + ' td').addClass('mdl-data-table__cell--non-numeric');
   $(getTableId(entityType) + ' th').addClass('mdl-data-table__cell--non-numeric');
   $(getTableId(entityType) + ' label').addClass('mdl-textfield');
-  $(getTableId(entityType) + '_filter label').addClass('mdl-js-textfield');
   $(getTableId(entityType) + '_filter input').addClass('mdl-textfield__input');
+  
+  var filterLabel = $(getTableId(entityType) + '_filter label');
+  filterLabel.addClass('mdl-js-textfield');
+  
+  //Replace "Search:" with search icon
+  filterLabel.get(0).childNodes[0].nodeValue = '';
+  var searchIcon = document.createElement("i");
+  searchIcon.classList.add("material-icons");
+  searchIcon.innerHTML = "search";
+  filterLabel.get(0).prepend(searchIcon);
 }
 
 const parseServerResponseWithDocumentParser = (parseDocumentFunction) => (raw) => {

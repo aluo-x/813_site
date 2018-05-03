@@ -44,11 +44,10 @@
 
 .dataTables_wrapper {
   width: 100%;
-  height: 60vh;
 }
 
 #mainContainer {
-  width: 80%;
+  width: 100%;
   overflow-x: hidden;
   max-height: 100vh;
   height: 100vh;
@@ -171,9 +170,10 @@ button {
 
 .fixedAdd {
   position: fixed;
-  bottom:25px;
-  right:25px;
+  bottom:50px;
+  right:50px;
   z-index: 3;
+  color:white;
 }
 
 .blue {
@@ -195,4 +195,18 @@ input {
 
 .mdl-data-table thead {
   padding-bottom: 0;
+}
+
+.mdl-textfield__input {
+  border-bottom-color:rgba(0,0,0,.54);
+  color:rgba(0,0,0,0.54);
+}
+
+.mdl-textfield__input:focus {
+  border-bottom-width: 2px;
+  border-bottom-color: hsl(204, 86%, 43%);
+}
+
+label i.material-icons {
+  color:rgba(0,0,0,0.54);
 }
