@@ -1,5 +1,6 @@
 body {
   font-family: "Roboto", -apple-system, "Helvetica Neue", Sans-serif;
+  z-index: -3;
 }
 
 #example_wrapper{
@@ -241,5 +242,5 @@ label i.material-icons {
 }
 
 .mdl-layout__drawer {
-  z-index: -1;
+  z-index: 0;
 }
