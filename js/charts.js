@@ -45,11 +45,11 @@ var chart2 = new Chart(ctx2, {
 });
 var ctx3 = document.getElementById("chart3").getContext('2d');
 var chart3 = new Chart(ctx3, {
-    type: 'pie',
+    type: 'bar',
     data: {
         labels: ["Dogs", "Cats"],
         datasets: [{
-            label: '# of Votes',
+            label:"Count",
             data: [11, 14],
             backgroundColor: [
                 'hsl(204, 86%, 53%)',
@@ -62,7 +62,38 @@ var chart3 = new Chart(ctx3, {
             borderWidth: 0
         }]
     },
-    options: {
+    options : {
+        scales : {
+            xAxes : [ {
+                gridLines : {
+                    display : false
+                }
+            } ],
+            yAxes : [ {
+                gridLines : {
+                    display : false
+                },
+                ticks: {
+                    min:0
+                }
+            } ]
+        },
+        legend:{
+            display:false
+        }
     }
+        // ticks:{
+        //     display:false
+        // },
+        // gridLines : {
+        //     display:false
+        // }
+        // scale: {
+            // gridLines:{
+                // display:false
+                // drawOnChartArea: false,
+                // drawTicks:false
+            // }        
+        // }
 
 });
