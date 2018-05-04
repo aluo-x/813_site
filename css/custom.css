@@ -242,3 +242,7 @@ label i.material-icons {
 .modal-card {
   z-index: 6;
 }
+
+.modal-image{
+  width: 400px;
+}
