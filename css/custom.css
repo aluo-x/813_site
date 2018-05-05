@@ -117,9 +117,9 @@ th:after {
   padding-left:calc(10px + 14px + 8px); /*makes distance between column name and arrows the same in the first col as other cols*/
 }
 
-.dataTables_scrollHeadInner {
-    border:1px solid rgba(0,0,0,.12);
-    border-bottom: 1px solid hsl(204, 86%, 53%);
+.dataTables_scrollHead {
+    border:1px solid rgba(0,0,0,.12) !important;
+    border-bottom: 1px solid hsl(204, 86%, 53%) !important;
     z-index: 4;
 }
 
