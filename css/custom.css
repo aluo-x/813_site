@@ -129,6 +129,11 @@ th:after {
   padding-left:calc(10px + 14px + 8px); /*makes distance between column name and arrows the same in the first col as other cols*/
 }
 
+
+table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting{
+  padding-right:18px;
+}
+
 .dataTables_scrollHead {
     border:1px solid rgba(0,0,0,.12) !important;
     border-bottom: 1px solid hsl(204, 86%, 53%) !important;
