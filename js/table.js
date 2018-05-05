@@ -15,13 +15,20 @@ const BASE_DATA_URL = 'https://firestore.googleapis.com/v1beta1/projects/all-paw
 const getTableId = (entityType) => '#' + entityType + 'Table';
 
 function generateTable(entityType, columns, parseServerResponse) {
+  console.log("entityType",entityType);
+  var unorderableTargets = [0];
+  if(entityType === "event") {
+    unorderableTargets = [];
+  }
+  console.log(unorderableTargets);
   var table = $(getTableId(entityType)).DataTable({
     ajax: {
       url: BASE_DATA_URL + entityType,
       dataSrc: parseServerResponse,
     },
-    "columnDefs": [
-      { className: "dt-left", "targets": '_all' }
+    columnDefs: [
+      { className: "dt-left", "targets": '_all' },
+      {orderable: false, targets: unorderableTargets}
     ],
     rowId: 'id',
     columns,
@@ -104,6 +111,7 @@ function animalDocumentParser(doc) {
   // TODO parse other fields
   return ({
     id: doc.name.replace('projects/all-paws-on-deck/databases/(default)/documents/animal/', ''),
+    picture: parseStringField(doc.fields.picture),
     name: parseStringField(doc.fields.name),
     adoptionStatus: parseStringField(doc.fields.adoptionStatus),
     gender: parseStringField(doc.fields.gender),
@@ -116,6 +124,7 @@ function animalDocumentParser(doc) {
 function personDocumentParser(doc) {
   return ({
     id: doc.name.replace('projects/all-paws-on-deck/databases/(default)/documents/person/', ''),
+    picture: parseStringField(doc.fields.picture),
     firstName: parseStringField(doc.fields.firstName),
     lastName: parseStringField(doc.fields.lastName),
     phoneNumber: parseStringField(doc.fields.phoneNumber),
@@ -137,6 +146,7 @@ function eventDocumentParser(doc) {
 
 /** Columns **/
 const animalColumns = [
+  { data: 'picture',        title: 'Picture',       render: renderPicture     },
   { data: 'name',           title: 'Name',                                    },
   { data: 'adoptionStatus', title: 'Adoption Status',                         },
   { data: 'gender',         title: 'Gender',                                  },
@@ -146,6 +156,7 @@ const animalColumns = [
 ];
 
 const personColumns = [
+  { data: 'picture',        title: 'Picture',       render: renderPicture     },
   { data: 'firstName',      title: 'First Name',                              },
   { data: 'lastName',       title: 'Last Name',                               },
   { data: 'phoneNumber',    title: 'Phone Number',  render: renderPhoneNumber },
@@ -192,6 +203,13 @@ function renderPhoneNumber(value) {
   }
   else if (value.length === 11) {
     return value.substring(0, 1) + ' (' + value.substring(1, 4) + ') ' + value.substring(4, 7) + '-' + value.substring(7, 11);
+  }
+  return '';
+}
+
+function renderPicture(value) {
+  if (value) {
+    return '<img class="tableImage" src="' + value + '"></img>'
   }
   return '';
 }

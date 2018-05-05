@@ -101,7 +101,7 @@ th:before,th:after {
   font-size:100px;
 }
 
-th:first-of-type:before,th:first-of-type:after {
+th:first-of-type:before, th:first-of-type:after {
   text-indent:calc(14px + 8px);
 }
 
@@ -114,7 +114,18 @@ th:after {
   left:10px;
 }
 
-.mdl-data-table th:first-of-type{ 
+#animalTable_wrapper th:first-of-type, #personTable_wrapper th:first-of-type{
+  text-indent: 5px;
+  cursor:default;
+}
+#animalTable_wrapper th:first-of-type:before, 
+#animalTable_wrapper th:first-of-type:after,
+#personTable_wrapper th:first-of-type:before, 
+#personTable_wrapper th:first-of-type:after {
+  display: none;
+}
+
+#eventTable_wrapper th:first-of-type{ 
   padding-left:calc(10px + 14px + 8px); /*makes distance between column name and arrows the same in the first col as other cols*/
 }
 
@@ -258,4 +269,11 @@ canvas {
 
 .mdl-navigation__link i.material-icons {
   padding-right:8px;
+}
+
+.tableImage {
+/*  border:3px solid hsl(204, 86%, 53%) ;
+*/  height: 50px;
+  width:50px;
+  border-radius: 50%;
 }
