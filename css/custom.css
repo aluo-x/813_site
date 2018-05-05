@@ -139,16 +139,16 @@ table.dataTable thead th, table.dataTable thead td {
 }
 
 /* Make Scrollbar persistent */
-::-webkit-scrollbar {
+.dataTables_scroll ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
 }
-::-webkit-scrollbar-thumb {
+.dataTables_scroll ::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
-::-webkit-scrollbar-track {
+.dataTables_scroll ::-webkit-scrollbar-track {
   border-left: 1px solid rgba(0,0,0,.12);
 };
 
