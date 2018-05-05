@@ -72,6 +72,25 @@ const populateModalWithData = (entityType) => (data) => {
         $("input[name='" + f + "Input']").val(value);
       } else if (type === 'date') {
         $("input[name='" + f + "Input']").val(value.toISOString().substr(0, 10));
+      } else if (type === 'dateTime') {
+        var year = value.getFullYear();
+        var month = parseInt(value.getMonth(), 10) + 1 + '';
+        var day = value.getDate();
+        if (parseInt(month, 10) < 10) {
+          month = '0' + month;
+        }
+        if (parseInt(day, 10) < 10) {
+          day = '0' + day;
+        }
+        $("input[name='" + f + "DateInput']").val(year + '-' + month + '-' + day);
+        $("input[name='" + f + "TimeInput']").val(value.getHours() + ':' + value.getMinutes()) // TODO change this to local time
+      } else if (type === 'address') {
+        const { name, street1, street2, city, state } = value;
+        $("input[name='" + f + "NameInput']").val(name);
+        $("input[name='" + f + "Street1Input']").val(street1);
+        $("input[name='" + f + "Street2Input']").val(street2);
+        $("input[name='" + f + "CityInput']").val(city);
+        $("select[name='" + f + "StateInput']").val(state);
       }
     }
   });
@@ -99,6 +118,17 @@ function getModalData(entityType) {
     } else if (type === 'date') {
       var rawVal = $("input[name='" + f + "Input']").val();
       value = (rawVal) ? new Date(rawVal) : null;
+    } else if (type === 'dateTime') {
+      var rawDate = $("input[name='" + f + "DateInput']").val();
+      var rawTime = $("input[name='" + f + "TimeInput']").val();
+      value = (rawDate && rawTime) ? new Date(rawDate + 'T' + rawTime) : null;
+    } else if (type === 'address') {
+      var name = $("input[name='" + f + "NameInput']").val();
+      var street1 = $("input[name='" + f + "Street1Input']").val();
+      var street2 = $("input[name='" + f + "Street2Input']").val();
+      var city = $("input[name='" + f + "CityInput']").val();
+      var state = $("select[name='" + f + "StateInput']").val();
+      value = { name, street1, street2, city, state };
     }
     // console.log(f + ':', type, ',', value); // DEBUG:
     if (value) {
@@ -151,11 +181,11 @@ const inputs = {
     { f: 'roles',               type: 'select'    },
   ],
   'event': [
-    'name',
-    'type',
-    'location',
-    'starts',
-    'ends',
+    { f: 'name',                type: 'text'      },
+    { f: 'type',                type: 'select'    },
+    { f: 'location',            type: 'address'   },
+    { f: 'starts',              type: 'dateTime'  },
+    { f: 'ends',                type: 'dateTime'  },
   ],
 };
 

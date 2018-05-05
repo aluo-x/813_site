@@ -15,41 +15,93 @@
     </header>
     <section class="modal-card-body">
       <form id='eventForm'>
-        <input id='idInput' style="display: none" value=""  />
+        <input name='idInput' style="display: none" />
 
         <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input id="nameInput" class="input" type="text" placeholder="e.g. Petco Event"  />
-          </div>
+          <label>Name</label>
+          <input name="nameInput" type="text" placeholder="e.g. Petco Event"  />
         </div>
 
         <div class="field">
-          <label class="label">Type</label>
-          <div class="control">
-            <div class="select is-fullwidth">
-              <select id="typeInput">
-                <option>adoption event</option>
-                <option>fundraiser event</option>
-                <option>vet appointment</option>
-              </select>
-            </div>
-          </div>
+          <label>Type</label>
+          <select name="typeInput">
+            <option value="adoption event">Adoption Event</option>
+            <option value="fundraiser event">Fundraiser Event</option>
+            <option value="vet appointment">Vet Appointment</option>
+          </select>
         </div>
 
         <div class="field">
           <label class="label">Location</label>
-          <!-- TODO -->
+          <input name="locationNameInput" type="text" />
+          <input name="locationStreet1Input" type="text" />
+          <input name="locationStreet2Input" type="text" />
+          <input name="locationCityInput" type="text" />
+          <select name="locationStateInput">
+            <option value="AL">Alabama</option>
+          	<option value="AK">Alaska</option>
+          	<option value="AZ">Arizona</option>
+          	<option value="AR">Arkansas</option>
+          	<option value="CA">California</option>
+          	<option value="CO">Colorado</option>
+          	<option value="CT">Connecticut</option>
+          	<option value="DE">Delaware</option>
+          	<option value="DC">District Of Columbia</option>
+          	<option value="FL">Florida</option>
+          	<option value="GA">Georgia</option>
+          	<option value="HI">Hawaii</option>
+          	<option value="ID">Idaho</option>
+          	<option value="IL">Illinois</option>
+          	<option value="IN">Indiana</option>
+          	<option value="IA">Iowa</option>
+          	<option value="KS">Kansas</option>
+          	<option value="KY">Kentucky</option>
+          	<option value="LA">Louisiana</option>
+          	<option value="ME">Maine</option>
+          	<option value="MD">Maryland</option>
+          	<option value="MA">Massachusetts</option>
+          	<option value="MI">Michigan</option>
+          	<option value="MN">Minnesota</option>
+          	<option value="MS">Mississippi</option>
+          	<option value="MO">Missouri</option>
+          	<option value="MT">Montana</option>
+          	<option value="NE">Nebraska</option>
+          	<option value="NV">Nevada</option>
+          	<option value="NH">New Hampshire</option>
+          	<option value="NJ">New Jersey</option>
+          	<option value="NM">New Mexico</option>
+          	<option value="NY">New York</option>
+          	<option value="NC">North Carolina</option>
+          	<option value="ND">North Dakota</option>
+          	<option value="OH">Ohio</option>
+          	<option value="OK">Oklahoma</option>
+          	<option value="OR">Oregon</option>
+          	<option value="PA">Pennsylvania</option>
+          	<option value="RI">Rhode Island</option>
+          	<option value="SC">South Carolina</option>
+          	<option value="SD">South Dakota</option>
+          	<option value="TN">Tennessee</option>
+          	<option value="TX">Texas</option>
+          	<option value="UT">Utah</option>
+          	<option value="VT">Vermont</option>
+          	<option value="VA">Virginia</option>
+          	<option value="WA">Washington</option>
+          	<option value="WV">West Virginia</option>
+          	<option value="WI">Wisconsin</option>
+          	<option value="WY">Wyoming</option>
+          </select>
         </div>
 
         <div class="field">
           <label class="label">Starts</label>
-          <!-- TODO -->
+          <input name="startsDateInput" type="date" />
+          <input name="startsTimeInput" type="time" />
         </div>
 
         <div class="field">
           <label class="label">Ends</label>
-          <!-- TODO -->
+          <input name="endsDateInput" type="date" />
+          <input name="endsTimeInput" type="time" />
         </div>
 
       </form>

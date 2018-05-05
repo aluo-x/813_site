@@ -60,10 +60,10 @@ function materializeTable(entityType){
   $(getTableId(entityType) + ' th').addClass('mdl-data-table__cell--non-numeric');
   $(getTableId(entityType) + ' label').addClass('mdl-textfield');
   $(getTableId(entityType) + '_filter input').addClass('mdl-textfield__input');
-  
+
   var filterLabel = $(getTableId(entityType) + '_filter label');
   filterLabel.addClass('mdl-js-textfield');
-  
+
   //Replace "Search:" with search icon
   filterLabel.get(0).childNodes[0].nodeValue = '';
   var searchIcon = document.createElement("i");
@@ -192,7 +192,7 @@ function renderDateTime(value) {
   return '';
 };
 function renderAddress(value) {
-  const street = removeNulls([value.name, value.street1, value.steet2]).join('<br>');
+  const street = removeNulls([value.name, value.street1, value.street2]).join('<br>');
   const city = removeNulls([value.city, value.state]).join(', ');
   return [street, city].join('<br>');
 };
