@@ -1,158 +1,162 @@
 body {
-  color:#1a1a1a;
-  font-family: "Roboto", -apple-system, "Helvetica Neue", Sans-serif;
-  z-index: -3;
+    color: #1a1a1a;
+    font-family: "Roboto", -apple-system, "Helvetica Neue", Sans-serif;
+    z-index: -3;
 }
 
-#example_wrapper{
+#example_wrapper {
     width: 100%;
 }
 
 .modal-card-foot {
-  justify-content: right;
+    justify-content: right;
 }
 
 #addNewAnimal, #addNewPerson, #addNewEvent {
-  padding: 5px;
-  width:150px;
-  margin-left:auto;
+    padding: 5px;
+    width: 150px;
+    margin-left: auto;
 }
 
 #nameSection {
-  display: flex;
+    display: flex;
 }
 
 #firstNameField {
-  flex: 1;
-  padding-right: 5px;
+    flex: 1;
+    padding-right: 5px;
 }
 
 #lastNameField {
-  flex: 1;
-  padding-left: 5px;
+    flex: 1;
+    padding-left: 5px;
 }
 
 #areaCodeInput, #exchangeNumberInput {
-  width: 3em;
+    width: 3em;
 }
 
 #endNumberInput {
-  width: 4em;
+    width: 4em;
 }
 
 #phoneNumberField {
-  display: flex;
+    display: flex;
 }
 
 .phoneNumberSeparator {
-  padding: 5px;
+    padding: 5px;
 }
 
 .dataTables_wrapper {
-  width: 100%;
+    width: 100%;
 }
 
 #mainContainer {
-  width: 100%;
-  overflow-x: hidden;
-  max-height: 100vh;
-  height: 100vh;
-  margin-left:auto;
-  margin-right:auto;
+    width: 100%;
+    overflow-x: hidden;
+    max-height: 100vh;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .selectedTab {
-  background: hsl(204, 86%, 53%);
-  color:white !important;
-  font-weight: bold;
+    background: hsl(204, 86%, 53%);
+    color: white !important;
+    font-weight: bold;
 }
-.selectedTab a:hover{
-  background-color: hsl(171, 100%, 41%);
+
+.selectedTab a:hover {
+    background-color: hsl(171, 100%, 41%);
 }
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
-  color: #1a1a1a;
+    color: #1a1a1a;
 }
+
 .mdl-layout__drawer .mdl-navigation .selectedTab:hover {
     background-color: hsl(204, 86%, 53%);
 }
+
 .dataTables_filter {
 }
 
 .dataTables_filter label {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
-
-table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting{
-  background-image:none;
+table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting {
+    background-image: none;
 }
+
 th {
-  text-indent:14px;
+    text-indent: 14px;
 }
 
-th:before,th:after {
-  text-indent:8px;
-  display:inline;
-  color:hsl(204, 86%, 53%);
-  font-weight: bold;
-  font-size:100px;
+th:before, th:after {
+    text-indent: 8px;
+    display: inline;
+    color: hsl(204, 86%, 53%);
+    font-weight: bold;
+    font-size: 100px;
 }
 
 th:first-of-type:before, th:first-of-type:after {
-  text-indent:calc(14px + 8px);
+    text-indent: calc(14px + 8px);
 }
 
 th:before {
-  position:relative;
-  left:0;
+    position: relative;
+    left: 0;
 }
+
 th:after {
-  position:relative;
-  left:10px;
+    position: relative;
+    left: 10px;
 }
 
-#animalTable_wrapper th:first-of-type, #personTable_wrapper th:first-of-type{
-  text-indent: 5px;
-  cursor:default;
+#animalTable_wrapper th:first-of-type, #personTable_wrapper th:first-of-type {
+    text-indent: 5px;
+    cursor: default;
 }
-#animalTable_wrapper th:first-of-type:before, 
+
+#animalTable_wrapper th:first-of-type:before,
 #animalTable_wrapper th:first-of-type:after,
-#personTable_wrapper th:first-of-type:before, 
+#personTable_wrapper th:first-of-type:before,
 #personTable_wrapper th:first-of-type:after {
-  display: none;
+    display: none;
 }
 
-#eventTable_wrapper th:first-of-type{ 
-  padding-left:calc(10px + 14px + 8px); /*makes distance between column name and arrows the same in the first col as other cols*/
+#eventTable_wrapper th:first-of-type {
+    padding-left: calc(10px + 14px + 8px); /*makes distance between column name and arrows the same in the first col as other cols*/
 }
 
-
-table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting{
-  padding-right:18px;
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
+    padding-right: 18px;
 }
 
 .dataTables_scrollHead {
-    border:1px solid rgba(0,0,0,.12) !important;
+    border: 1px solid rgba(0, 0, 0, .12) !important;
     border-bottom: 1px solid hsl(204, 86%, 53%) !important;
     z-index: 4;
 }
 
-table, thead, tr,th {
-  border:none !important;
+table, thead, tr, th {
+    border: none !important;
 }
 
 .dataTables_scrollBody {
-  border: 1px solid rgba(0,0,0,.12);
+    border: 1px solid rgba(0, 0, 0, .12);
 }
 
 table.dataTable thead th, table.dataTable thead td {
-  outline:none;
-  border-bottom:none;
-/*  border-bottom: 1px solid hsl(204, 86%, 53%);
-*/
+    outline: none;
+    border-bottom: none;
+    /*  border-bottom: 1px solid hsl(204, 86%, 53%);
+    */
 }
 
 /* Make Scrollbar persistent */
@@ -160,125 +164,132 @@ table.dataTable thead th, table.dataTable thead td {
     -webkit-appearance: none;
     width: 7px;
 }
+
 .dataTables_scroll ::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
+
 .dataTables_scroll ::-webkit-scrollbar-track {
-  border-left: 1px solid rgba(0,0,0,.12);
+    border-left: 1px solid rgba(0, 0, 0, .12);
 }
 
 tr:hover {
-  cursor:pointer;
+    cursor: pointer;
 }
 
 button {
-  margin:12px;
+    margin: 12px;
 }
 
 .mdl-button--raised.mdl-button--colored {
-  background: hsl(204, 86%, 53%);
+    background: hsl(204, 86%, 53%);
 }
 
 .mdl-button--raised.mdl-button--colored:hover {
-  background-color: hsl(204, 86%, 43%);
+    background-color: hsl(204, 86%, 43%);
 }
 
 .dataTables_scroll {
-  margin-top:40px;
+    margin-top: 40px;
 }
 
 .fixedAdd {
-  position: fixed;
-  bottom:50px;
-  right:50px;
-  z-index: 3;
-  color:white;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 3;
+    color: white;
 }
 
 .blue {
-  background-color:hsl(204, 86%, 43%);
-  color:white;
+    background-color: hsl(204, 86%, 43%);
+    color: white;
 }
 
 .blue:hover {
-  background-color:hsl(204, 86%, 43%);
+    background-color: hsl(204, 86%, 43%);
 
 }
 
 .green {
-  background-color: #00d1b2;
-  color:white;
+    background-color: #00d1b2;
+    color: white;
 }
 
 .green:hover {
-  background-color: #00d1b2;
+    background-color: #00d1b2;
 }
 
 input {
-  outline:none;
+    outline: none;
 }
 
 .mdl-data-table thead {
-  padding-bottom: 0;
+    padding-bottom: 0;
 }
 
 .mdl-textfield__input {
-  border-bottom-color:rgba(0,0,0,.54);
-  color:rgba(0,0,0,0.54);
+    border-bottom-color: rgba(0, 0, 0, .54);
+    color: rgba(0, 0, 0, 0.54);
 }
 
 .mdl-textfield__input:focus {
-  border-bottom-width: 2px;
-  border-bottom-color: hsl(204, 86%, 43%);
+    border-bottom-width: 2px;
+    border-bottom-color: hsl(204, 86%, 43%);
 }
 
 label i.material-icons {
-  color:rgba(0,0,0,0.54);
+    color: rgba(0, 0, 0, 0.54);
 }
 
 .detailsButton {
-  margin-top:10px;
+    margin-top: 10px;
 }
 
 .titleText {
-  font-size:56px;
-  color:#1a1a1a;
-  line-height: 1.5;
-  width:100%;
-  text-align: center;
+    font-size: 56px;
+    color: #1a1a1a;
+    line-height: 1.5;
+    width: 100%;
+    text-align: center;
 }
 
 .sectionTitleText {
-  font-size:34px;
-  color:#1a1a1a;
-  line-height: 1.5;
+    font-size: 34px;
+    color: #1a1a1a;
+    line-height: 1.5;
 }
 
 .modal-card {
-  z-index: 6;
+    z-index: 6;
 }
 
-.modal-image{
-  width: 400px;
+.modal-image {
+    width: 400px;
 }
 
 canvas {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .mdl-navigation__link {
-  outline:none;
+    outline: none;
 }
 
 .mdl-navigation__link i.material-icons {
-  padding-right:8px;
+    padding-right: 8px;
 }
 
 .tableImage {
-/*  border:3px solid hsl(204, 86%, 53%) ;
-*/  height: 50px;
-  width:50px;
-  border-radius: 50%;
+    /*  border:3px solid hsl(204, 86%, 53%) ;
+    */
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.top-block {
+    max-width: 33.3333%
 }
