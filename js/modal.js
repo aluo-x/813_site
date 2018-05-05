@@ -27,12 +27,12 @@ function saveModal(entityType) {
   $('#modalSave').show();
   $('.button.is-success').attr('disabled');
   const [id, data] = getModalData(entityType);
-  // (id === '')
-  //   ? createEntity(entityType, data, saveModalSuccess(entityType), saveModalError)
-  //   : updateEntity(entityType, id, data, saveModalSuccess(entityType), saveModalError);
-  console.log('[MOCK SAVE]'); // DEBUG:
-  console.log(id); // DEBUG:
-  console.log(data); // DEBUG:
+  (id === '')
+    ? createEntity(entityType, data, saveModalSuccess(entityType), saveModalError)
+    : updateEntity(entityType, id, data, saveModalSuccess(entityType), saveModalError);
+  // console.log('[MOCK SAVE]'); // DEBUG:
+  // console.log(id); // DEBUG:
+  // console.log(data); // DEBUG:
   // saveModalSuccess(entityType); // DEBUG:
 }
 
