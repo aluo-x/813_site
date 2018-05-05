@@ -1,4 +1,5 @@
 body {
+  color:#1a1a1a;
   font-family: "Roboto", -apple-system, "Helvetica Neue", Sans-serif;
   z-index: -3;
 }
@@ -70,7 +71,7 @@ body {
 }
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
-  color: black;
+  color: #1a1a1a;
 }
 .mdl-layout__drawer .mdl-navigation .selectedTab:hover {
     background-color: hsl(204, 86%, 53%);
@@ -227,7 +228,7 @@ label i.material-icons {
 
 .titleText {
   font-size:56px;
-  color:#4a4a4a;
+  color:#1a1a1a;
   line-height: 1.5;
   width:100%;
   text-align: center;
@@ -235,7 +236,7 @@ label i.material-icons {
 
 .sectionTitleText {
   font-size:34px;
-  color:#4a4a4a;
+  color:#1a1a1a;
   line-height: 1.5;
 }
 
@@ -249,4 +250,12 @@ label i.material-icons {
 
 canvas {
   margin-bottom: 10px;
+}
+
+.mdl-navigation__link {
+  outline:none;
+}
+
+.mdl-navigation__link i.material-icons {
+  padding-right:8px;
 }
