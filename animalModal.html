@@ -15,80 +15,62 @@
     </header>
     <section class="modal-card-body">
       <form id='animalForm'>
-        <input id="idInput" style="display: none" value="" />
+        <input name="idInput" style="display: none" />
 
         <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input id="nameInput" class="input" type="text" placeholder="e.g. Fido" />
+          <label>Name</label>
+          <input name='nameInput' type="text" placeholder="e.g. Fido" />
+        </div>
+
+        <div class="field">
+          <label>Adoption Status</label>
+          <select name='adoptionStatusInput'>
+              <option value="available">Available</option>
+              <option value="pending">Pending</option>
+              <option value="adopted">Adopted</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Gender</label>
+          <div>
+            <label>Female</label>
+            <input name="genderInput" type="radio" value="female" checked />
+            <label>Male</label>
+            <input name="genderInput" type="radio" value="male" />
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Adoption Status</label>
-          <div class="control">
-            <div class="select is-fullwidth">
-                <select id="adoptionStatusInput">
-                    <option>available</option>
-                    <option>pending</option>
-                    <option>adopted</option>
-                </select>
-            </div>
-          </div>
+          <label>Fixed</label>
+          <input name="fixedInput" type="checkbox" checked />
         </div>
 
         <div class="field">
-          <label class="label">Gender</label>
-          <div class="control">
-              <div class="select is-fullwidth">
-                  <select id="genderInput">
-                      <option>male</option>
-                      <option>female</option>
-                  </select>
-              </div>
-          </div>
+          <label>Species</label>
+          <select name="speciesInput">
+            <option value="bird">Bird</option>
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+          </select>
+        </div>
+
+        <div class="field" id="breedsField">
+          <label>Breed</label>
+          <select name="breedsInput" multiple>
+          </select>
         </div>
 
         <div class="field">
-          <label class="label">Fixed</label>
-          <div class="control">
-              <div class="select is-fullwidth">
-                  <select id="fixedInput">
-                      <option>yes</option>
-                      <option>no</option>
-                  </select>
-              </div>
-          </div>
+          <label>Birthday</label>
+          <input name="birthdateInput" type="date" />
         </div>
 
         <div class="field">
-          <label class="label">Species</label>
-          <div class="control">
-              <div class="select is-fullwidth">
-                  <select id="speciesInput">
-                      <option>dog</option>
-                      <option>cat</option>
-                      <option>bird</option>
-                  </select>
-              </div>
-          </div>
+          <label>Microchip #</label>
+          <input name="microchipNumberInput" type="text" placeholder="e.g. 000000000" />
         </div>
 
-        <div class="field">
-          <label class="label">Breeds</label>
-          <div class="control">
-            <select id="breedsInput" class="breed-selecter" style="width: 100%" multiple="multiple">
-              <option>Australian Cattle Dog</option>
-              <option>Australian Shepard</option>
-              <option>Beagle</option>
-              <option>Border Collie</option>
-              <option>Golden Retriever</option>
-              <option>Labrador Retriever</option>
-              <option>Poodle</option>
-              <option>Staffordshire Terrier</option>
-            </select>
-          </div>
-        </div>
       </form>
     </section>
     <footer class="modal-card-foot">

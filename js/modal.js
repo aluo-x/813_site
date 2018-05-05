@@ -1,6 +1,7 @@
 function openModal(entityType, entityId) {
   // clear existing modal state
   $('#' + entityType + 'Form')[0].reset();
+  if (entityType === 'animal') populateBreedsInput();
   $('.modal').addClass('is-active');
   $('button.is-success').removeAttr('disabled');
   $('.mdl-layout__drawer').get(0).style['z-index'] = 0;
@@ -26,9 +27,13 @@ function saveModal(entityType) {
   $('#modalSave').show();
   $('.button.is-success').attr('disabled');
   const [id, data] = getModalData(entityType);
-  (id === '')
-    ? createEntity(entityType, data, saveModalSuccess(entityType), saveModalError)
-    : updateEntity(entityType, id, data, saveModalSuccess(entityType), saveModalError);
+  // (id === '')
+  //   ? createEntity(entityType, data, saveModalSuccess(entityType), saveModalError)
+  //   : updateEntity(entityType, id, data, saveModalSuccess(entityType), saveModalError);
+  console.log('[MOCK SAVE]'); // DEBUG:
+  console.log(id); // DEBUG:
+  console.log(data); // DEBUG:
+  // saveModalSuccess(entityType); // DEBUG:
 }
 
 const saveModalSuccess = (entityType) => () => {
@@ -49,23 +54,53 @@ function errorOpeningModal(error) {
 }
 
 const populateModalWithData = (entityType) => (data) => {
-  $('#modalLoader').hide();
-  $('#idInput').val(data.id);
+  $("input[name='idInput']").val(data.id);
   var fields = inputs[entityType];
-  fields.forEach(f => {
+  fields.forEach(fBlob => {
+    var { f, type } = fBlob;
     var value = data[f];
-    if (value) {
-      $('#' + f + 'Input').val(value);
+    if (value !== null && value !== undefined) {
+      if (type === 'checkbox') {
+        $("input[name='" + f + "Input']").prop('checked', (value === 'yes'));
+      } else if (type === 'radio') {
+        $("input[name='" + f + "Input']")
+          .filter("[value=" + value + "]")
+          .prop('checked', true);
+      } else if (type === 'select') {
+        $("select[name='" + f + "Input']").val(value).trigger('change');
+      } else if (type === 'text') {
+        $("input[name='" + f + "Input']").val(value);
+      } else if (type === 'date') {
+        $("input[name='" + f + "Input']").val(value.toISOString().substr(0, 10));
+      }
     }
   });
+  $('#modalLoader').hide();
 }
 
 function getModalData(entityType) {
-  const id = $('#idInput').val();
+  const id = $("input[name='idInput']").val();
   var fields = inputs[entityType];
   var data = {};
-  fields.forEach(f => {
-    var value = $('#' + f + 'Input').val();
+  fields.forEach(fBlob => {
+    var { f, type } = fBlob;
+    var value;
+    if (type === 'checkbox') {
+      value = $("input[name='" + f + "Input']").prop('checked');
+      value = (f === 'fixed')
+        ? (value) ? 'yes' : 'no'
+        : value;
+    } else if (type === 'radio') {
+      value = $("input[name='" + f + "Input']:checked").val();
+    } else if (type === 'select') {
+      value = $("select[name='" + f + "Input']").val();
+    } else if (type === 'text') {
+      value = $("input[name='" + f + "Input']").val();
+    } else if (type === 'date') {
+      var rawVal = $("input[name='" + f + "Input']").val();
+      value = (rawVal) ? new Date(rawVal) : null;
+    }
+    // console.log(f + ':', type, ',', value); // DEBUG:
     if (value) {
       data[f] = value;
     }
@@ -73,14 +108,40 @@ function getModalData(entityType) {
   return [id, data];
 }
 
+function populateBreedsInput() {
+  const species = $('select[name="speciesInput"]').val();
+  const selector = 'select[name="breedsInput"]';
+  // hide the breeds field by default
+  $('#breedsField').hide();
+  // empty out existing breed options
+  $(selector).empty();
+  // if there are breed options for the species, populate the select with them and show it
+  if (breeds.hasOwnProperty(species)) {
+    breeds[species].forEach(b => {
+      $('<option></option>')
+        .attr('value', b)
+        .append(b)
+        .appendTo($(selector));
+    });
+    $('#breedsField').show();
+    $(selector).trigger('change');
+  }
+}
+
+$(document).ready(function() {
+  $('select[name="speciesInput"]').on('change', populateBreedsInput);
+})
+
 const inputs = {
   'animal': [
-    'name',
-    'adoptionStatus',
-    'gender',
-    'fixed',
-    'species',
-    'breeds',
+    { f: 'name',                type: 'text'      },
+    { f: 'adoptionStatus',      type: 'select'    },
+    { f: 'gender',              type: 'radio'     },
+    { f: 'fixed',               type: 'checkbox'  },
+    { f: 'species',             type: 'select'    },
+    { f: 'breeds',              type: 'select'    },
+    { f: 'birthdate',           type: 'date'      },
+    { f: 'microchipNumber',     type: 'text'      },
   ],
   'person': [
     'firstName',
@@ -97,3 +158,8 @@ const inputs = {
     'ends',
   ],
 };
+
+const breeds = {
+  'dog': ['Australian Cattle Dog', 'Australian Shepard', 'Border Collie', 'Labrador Retriever', 'Poodle'],
+  'cat': ['Maine Coon', 'Siamese'],
+}
