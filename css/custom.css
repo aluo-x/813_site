@@ -246,3 +246,7 @@ label i.material-icons {
 .modal-image{
   width: 400px;
 }
+
+canvas {
+  margin-bottom: 10px;
+}
