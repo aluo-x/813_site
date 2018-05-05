@@ -144,11 +144,11 @@ const inputs = {
     { f: 'microchipNumber',     type: 'text'      },
   ],
   'person': [
-    'firstName',
-    'lastName',
-    'phoneNumber',
-    'email',
-    'roles',
+    { f: 'firstName',           type: 'text'      },
+    { f: 'lastName',            type: 'text'      },
+    { f: 'phoneNumber',         type: 'text'      },
+    { f: 'email',               type: 'text'      },
+    { f: 'roles',               type: 'select'    },
   ],
   'event': [
     'name',

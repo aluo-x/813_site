@@ -15,45 +15,35 @@
     </header>
     <section class="modal-card-body">
       <form id='personForm'>
-        <input id='idInput' style="display: none" value=""  />
+        <input name="idInput" style="display: none" />
 
         <div class="field">
-          <label class="label">First Name</label>
-          <div class="control">
-            <input id="firstNameInput" class="input" type="text" placeholder="e.g. Jane"  />
-          </div>
+          <label>First Name</label>
+          <input name="firstNameInput" type="text" placeholder="e.g. Jane" />
         </div>
 
         <div class="field">
-          <label class="label">Last Name</label>
-          <div class="control">
-            <input id="lastNameInput" class="input" type="text" placeholder="e.g. Doe"  />
-          </div>
+          <label>Last Name</label>
+          <input name="lastNameInput" type="text" placeholder="e.g. Doe" />
         </div>
 
         <div class="field">
-          <label class="label">Phone Number</label>
-          <div class="control">
-            <input id="phoneNumberInput" class="input" type="text"  />
-          </div>
+          <label>Phone Number</label>
+          <input name="phoneNumberInput" type="text" placeholder="e.g. 555-555-5555" />
         </div>
 
         <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input id="emailInput" class="input" type="text" />
-          </div>
+          <label>Email</label>
+          <input name="emailInput" type="email" />
         </div>
 
         <div class="field">
-          <label class="label">Roles</label>
-          <div class="control">
-            <select id="rolesInput" class="select is-fullwidth" multiple="multiple">
-              <option>admin</option>
-              <option>cage cleaner</option>
-              <option>foster</option>
-            </select>
-          </div>
+          <label>Roles</label>
+          <select name="rolesInput" multiple>
+            <option value="admin">Administrator</option>
+            <option value="cage cleaner">Cage Cleaner</option>
+            <option value="foster">Foster</option>
+          </select>
         </div>
 
       </form>
