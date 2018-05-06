@@ -211,7 +211,7 @@ function renderPicture(value) {
   if (value) {
     return '<img class="tableImage" src="' + value + '"></img>'
   }
-  return '';
+  return '<img class="tableImage" src="' + 'https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png' + '"></img>';
 }
 
 function removeNulls(l) {
