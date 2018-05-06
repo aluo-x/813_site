@@ -33,7 +33,7 @@ function saveModal(entityType) {
   $('#modalSave').show();
   $('.button.is-success').attr('disabled');
   const [id, data] = getModalData(entityType);
-  console.log(data);
+  // console.log(data);
   (id === '')
     ? createEntity(entityType, data, saveModalSuccess(entityType), saveModalError)
     : updateEntity(entityType, id, data, saveModalSuccess(entityType), saveModalError);
@@ -100,6 +100,9 @@ const populateModalWithData = (entityType) => (data) => {
         $("input[name='" + f + "Street2Input']").val(street2);
         $("input[name='" + f + "CityInput']").val(city);
         $("select[name='" + f + "StateInput']").val(state);
+      } else if (type === 'mdlselect') {
+        $("input[name='" + f + "Input']").val(value);
+        $("input[name='" + f + "VisibleInput']").val($("li[data-val='" + value + "']").text());
       }
     }
   });
@@ -141,6 +144,8 @@ function getModalData(entityType) {
       var city = $("input[name='" + f + "CityInput']").val();
       var state = $("select[name='" + f + "StateInput']").val();
       value = { name, street1, street2, city, state };
+    } else if (type === 'mdlselect') {
+      value = $("input[name='" + f + "Input']").val();
     }
     // console.log(f + ':', type, ',', value); // DEBUG:
     if (value) {
@@ -151,9 +156,7 @@ function getModalData(entityType) {
 }
 
 function populateBreedsInput() {
-  console.log("populateBreedsInput called");
   const species = $('input[name="speciesInput"]').val();
-  console.log("species",species);
   const selector = 'select[name="breedsInput"]';
   // hide the breeds field by default
   $('#breedsField').hide();
@@ -174,7 +177,7 @@ function populateBreedsInput() {
 imageFile = '';
 /* stackoverflow */
 function getImage() {
-    
+
     var reader = new FileReader();
     var f = document.getElementById("file-select").files;
 
@@ -194,7 +197,7 @@ const inputs = {
   'animal': [
     { f: 'picture',             type: 'file'      },
     { f: 'name',                type: 'text'      },
-    { f: 'adoptionStatus',      type: 'text'      },
+    { f: 'adoptionStatus',      type: 'mdlselect' },
     { f: 'gender',              type: 'radio'     },
     { f: 'fixed',               type: 'checkbox'  },
     { f: 'species',             type: 'text'      },

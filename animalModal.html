@@ -30,19 +30,14 @@
 
           <div class="field">
             <label>Adoption Status</label>
-  <!--           <select name='adoptionStatusInput'>
-                <option value="available">Available</option>
-                <option value="pending">Pending</option>
-                <option value="adopted">Adopted</option>
-            </select> -->
             <div>
               <div class="mdl-textfield mdl-js-textfield mdl-textfield getmdl-select getmdl-select__fix-height">
-                  <input type="text" value="" class="mdl-textfield__input" id="adoptionStatusInput" readonly>
+                  <input type="text" value="" class="mdl-textfield__input" name="adoptionStatusVisibleInput" id='adoptionStatusInput' readonly>
                   <input type="hidden" value="" name="adoptionStatusInput">
                   <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
                   <label for="adoptionStatusInput" class="mdl-textfield__label"></label>
                   <ul for="adoptionStatusInput" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                      <li class="mdl-menu__item" data-val="available">Available</li>
+                      <li class="mdl-menu__item" data-val="available" data-selected="true">Available</li>
                       <li class="mdl-menu__item" data-val="pending">Pending</li>
                       <li class="mdl-menu__item" data-val="adopted">Adopted</li>
                   </ul>
@@ -71,9 +66,7 @@
 
           <div class="field">
             <label>Altered</label>
-  <!--           <label>Altered</label>
-   --><!--           <input name="fixedInput" type="checkbox" checked />
-   -->      <div>
+            <div>
               <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="fixedInput">
                 <span class="mdl-checkbox__label"></span>
                 <input type="checkbox" id="fixedInput" class="mdl-checkbox__input" checked>
@@ -83,11 +76,6 @@
 
           <div class="field">
             <label>Species</label>
-  <!--           <select name="speciesInput">
-              <option value="bird">Bird</option>
-              <option value="cat">Cat</option>
-              <option value="dog">Dog</option>
-            </select> -->
             <div>
               <div class="mdl-textfield mdl-js-textfield mdl-textfield getmdl-select getmdl-select__fix-height">
                   <input type="text" value="" class="mdl-textfield__input" id="speciesInput" readonly>
@@ -130,6 +118,7 @@
             </div>
           </div>
         </div>
+
         <div class="column modalRightCol">
           <div class="field">
            <div id="fileUploadWrapper">
