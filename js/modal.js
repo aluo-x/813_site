@@ -79,13 +79,8 @@ const populateModalWithData = (entityType) => (data) => {
         $("input[name='" + f + "Input']").val(value);
       } else if (type === 'date') {
         $("input[name='" + f + "Input']").val(value.toISOString().substr(0, 10));
-<<<<<<< HEAD
       } else if (type === 'file') {
-        // $("input[name='" + f + "Input']").val(value);
-        console.log("value",value);
-        console.log($("#currentImg"));
         $("#currentImg").get(0).src = value;
-=======
       } else if (type === 'dateTime') {
         var year = value.getFullYear();
         var month = parseInt(value.getMonth(), 10) + 1 + '';
