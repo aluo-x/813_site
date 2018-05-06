@@ -76,7 +76,7 @@ const populateModalWithData = (entityType) => (data) => {
       } else if (type === 'select') {
         $("select[name='" + f + "Input']").val(value).trigger('change');
       } else if (type === 'text') {
-        $("input[name='" + f + "Input']").val(value);
+        $("input[name='" + f + "Input']").val(value).trigger('change');
       } else if (type === 'date') {
         $("input[name='" + f + "Input']").val(value.toISOString().substr(0, 10));
       } else if (type === 'file') {
@@ -151,7 +151,9 @@ function getModalData(entityType) {
 }
 
 function populateBreedsInput() {
-  const species = $('select[name="speciesInput"]').val();
+  console.log("populateBreedsInput called");
+  const species = $('input[name="speciesInput"]').val();
+  console.log("species",species);
   const selector = 'select[name="breedsInput"]';
   // hide the breeds field by default
   $('#breedsField').hide();
@@ -183,37 +185,20 @@ function getImage() {
     reader.readAsDataURL(f[0]);
 
 }
-// var getImage = function() {
-//   return new Promise(function(resolve, reject){
-//       var reader = new FileReader();
-//       var modalSave = $('modalSave');
-//       var ready = false;
-//       modalSave.disabled = true;
-//       var fileSelect = document.getElementById("file-select")
-//       var f = fileSelect.files;
-//       // var result = '';
-//       // reader.onloadend = function () {
-//       //     modalSave.disabled = false;
-//       //     ready = true;
-//       //     resolve(result);
-//       // }
-//       result = reader.readAsDataURL(f[0]);
-//     });
-// }
 
 $(document).ready(function() {
-  $('select[name="speciesInput"]').on('change', populateBreedsInput);
+  $('#speciesInput').on('change', populateBreedsInput);
 })
 
 const inputs = {
   'animal': [
     { f: 'picture',             type: 'file'      },
     { f: 'name',                type: 'text'      },
-    { f: 'adoptionStatus',      type: 'select'    },
+    { f: 'adoptionStatus',      type: 'text'      },
     { f: 'gender',              type: 'radio'     },
     { f: 'fixed',               type: 'checkbox'  },
-    { f: 'species',             type: 'select'    },
-    { f: 'breeds',              type: 'select'    },
+    { f: 'species',             type: 'text'      },
+    { f: 'breeds',              type: 'text'      },
     { f: 'birthdate',           type: 'date'      },
     { f: 'microchipNumber',     type: 'text'      },
   ],
@@ -223,11 +208,11 @@ const inputs = {
     { f: 'lastName',            type: 'text'      },
     { f: 'phoneNumber',         type: 'text'      },
     { f: 'email',               type: 'text'      },
-    { f: 'roles',               type: 'select'    },
+    { f: 'roles',               type: 'text'      },
   ],
   'event': [
     { f: 'name',                type: 'text'      },
-    { f: 'type',                type: 'select'    },
+    { f: 'type',                type: 'text'      },
     { f: 'location',            type: 'address'   },
     { f: 'starts',              type: 'dateTime'  },
     { f: 'ends',                type: 'dateTime'  },

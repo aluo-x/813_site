@@ -14,74 +14,136 @@
         <button class="delete" aria-label="close" onclick="closeModal()"></button>
     </header>
     <section class="modal-card-body">
-      <form id='animalForm'>
-        <input name="idInput" style="display: none" />
+      <form id='animalForm' class="columns">
+        <div class="column">
+          <input name="idInput" style="display: none" />
 
-        <div class="field">
-          <label>Name</label>
-          <input name='nameInput' type="text" placeholder="e.g. Fido" />
-        </div>
-
-        <div class="field">
-         <div id="fileUploadWrapper">
+          <div class="field control">
+            <label>Name</label>
             <div>
-              <img id="currentImg" src="https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" />
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" id="nameInput" name='nameInput' type="text" placeholder="">
+                <label class="mdl-textfield__label" for="nameInput"></label>
+              </div>
             </div>
+          </div>
+
+          <div class="field">
+            <label>Adoption Status</label>
+  <!--           <select name='adoptionStatusInput'>
+                <option value="available">Available</option>
+                <option value="pending">Pending</option>
+                <option value="adopted">Adopted</option>
+            </select> -->
             <div>
-              <input type="file" id="file-select" title="" name="pictureInput" onchange="getImage()" class="hidden"/>
-              <label class="button is-success" id="browseButton" for="file-select" id="#browseButton">Change Picture</label>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield getmdl-select getmdl-select__fix-height">
+                  <input type="text" value="" class="mdl-textfield__input" id="adoptionStatusInput" readonly>
+                  <input type="hidden" value="" name="adoptionStatusInput">
+                  <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                  <label for="adoptionStatusInput" class="mdl-textfield__label"></label>
+                  <ul for="adoptionStatusInput" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                      <li class="mdl-menu__item" data-val="available">Available</li>
+                      <li class="mdl-menu__item" data-val="pending">Pending</li>
+                      <li class="mdl-menu__item" data-val="adopted">Adopted</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Gender</label>
+            <div>
+              <div>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="gender-option-1">
+                  <input type="radio" id="gender-option-1" class="mdl-radio__button" name="genderInput" value="male" checked>
+                  <span class="mdl-radio__label">Male</span>
+                </label>
+              </div>
+              <div>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="gender-option-2">
+                  <input type="radio" id="gender-option-2" class="mdl-radio__button" name="genderInput" value="female">
+                  <span class="mdl-radio__label">Female</span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="field">
+            <label>Fixed</label>
+  <!--           <label>Fixed? </label>
+   --><!--           <input name="fixedInput" type="checkbox" checked />
+   -->      <div>
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="fixedInput">
+                <span class="mdl-checkbox__label"></span>
+                <input type="checkbox" id="fixedInput" class="mdl-checkbox__input" checked>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Species</label>
+  <!--           <select name="speciesInput">
+              <option value="bird">Bird</option>
+              <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
+            </select> -->
+            <div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield getmdl-select getmdl-select__fix-height">
+                  <input type="text" value="" class="mdl-textfield__input" id="speciesInput" readonly>
+                  <input type="hidden" value="" name="speciesInput">
+                  <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                  <label for="speciesInput" class="mdl-textfield__label"></label>
+                  <ul for="speciesInput" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                      <li class="mdl-menu__item" data-val="bird">Bird</li>
+                      <li class="mdl-menu__item" data-val="cat">Cat</li>
+                      <li class="mdl-menu__item" data-val="dog">Dog</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="field" id="breedsField">
+            <label>Breed</label>
+            <select name="breedsInput" multiple>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Birthday</label>
+            <div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield">
+                <input class="mdl-textfield__input" id="nameInput" name="birthdateInput" type="date">
+                <label class="mdl-textfield__label" for="nameInput"></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Microchip #</label>
+            <div>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" id="microchipNumberInput" name='microchipNumberInput' type="text" pattern="-?[0-9]*(\.[0-9]+)?" >
+                <label class="mdl-textfield__label" for="microchipNumberInput"></label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column modalRightCol">
+          <div class="field">
+           <div id="fileUploadWrapper">
+              <div>
+                <img id="currentImg" src="https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" />
+              </div>
+              <div>
+                <input type="file" id="file-select" title="" name="pictureInput" onchange="getImage()" class="hidden"/>
+                <label class="button is-success" id="browseButton" for="file-select" id="#browseButton">Change Picture</label>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="field">
-          <label>Adoption Status</label>
-          <select name='adoptionStatusInput'>
-              <option value="available">Available</option>
-              <option value="pending">Pending</option>
-              <option value="adopted">Adopted</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Gender</label>
-          <div>
-            <label>Female</label>
-            <input name="genderInput" type="radio" value="female" checked />
-            <label>Male</label>
-            <input name="genderInput" type="radio" value="male" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Fixed</label>
-          <input name="fixedInput" type="checkbox" checked />
-        </div>
-
-        <div class="field">
-          <label>Species</label>
-          <select name="speciesInput">
-            <option value="bird">Bird</option>
-            <option value="cat">Cat</option>
-            <option value="dog">Dog</option>
-          </select>
-        </div>
-
-        <div class="field" id="breedsField">
-          <label>Breed</label>
-          <select name="breedsInput" multiple>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Birthday</label>
-          <input name="birthdateInput" type="date" />
-        </div>
-
-        <div class="field">
-          <label>Microchip #</label>
-          <input name="microchipNumberInput" type="text" placeholder="e.g. 000000000" />
-        </div>
 
       </form>
     </section>
