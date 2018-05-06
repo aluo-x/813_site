@@ -293,3 +293,22 @@ canvas {
 .top-block {
     max-width: 33.3333%
 }
+
+#currentImg {
+  width:150px;
+  height:150px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#fileUploadWrapper {
+  float:right;
+  text-align: center;
+}
+
+#browseButton {
+  margin-top:20px;
+  display:inline-block;
+}
