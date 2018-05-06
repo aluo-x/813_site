@@ -7,6 +7,8 @@ function openModal(entityType, entityId) {
   $('.mdl-layout__drawer').get(0).style['z-index'] = 0;
   $('.mdl-layout__drawer-button').get(0).style['z-index'] = 0;
   if (entityId) {
+    // editing entity
+    $('#' + entityType + 'ModalTitle').text('Edit ' + entityType.charAt(0).toUpperCase() + entityType.substr(1));
     $('#modalLoader').show();
     getEntities(
       entityType,
@@ -14,6 +16,9 @@ function openModal(entityType, entityId) {
       populateModalWithData(entityType),
       errorOpeningModal
     );
+  } else {
+    // adding entity
+    $('#' + entityType + 'ModalTitle').text('Add ' + entityType.charAt(0).toUpperCase() + entityType.substr(1));
   }
 }
 
