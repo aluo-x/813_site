@@ -100,7 +100,6 @@ const populateModalWithData = (entityType) => (data) => {
         $("input[name='" + f + "Street2Input']").val(street2);
         $("input[name='" + f + "CityInput']").val(city);
         $("select[name='" + f + "StateInput']").val(state);
->>>>>>> 847d7d0979f1cfa833b25d23bc90134c9713ee87
       }
     }
   });
