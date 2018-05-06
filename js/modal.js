@@ -102,7 +102,7 @@ const populateModalWithData = (entityType) => (data) => {
         $("select[name='" + f + "StateInput']").val(state);
       } else if (type === 'mdlselect') {
         $("input[name='" + f + "Input']").val(value);
-        $("input[name='" + f + "VisibleInput']").val($("li[data-val='" + value + "']").text());
+        $("input[name='" + f + "VisibleInput']").val($("li[data-val='" + value + "']").text()).trigger('change');
       }
     }
   });
@@ -160,6 +160,8 @@ function populateBreedsInput() {
   const selector = 'select[name="breedsInput"]';
   // hide the breeds field by default
   $('#breedsField').hide();
+  // deselect existing selection
+  $(selector).val(null);
   // empty out existing breed options
   $(selector).empty();
   // if there are breed options for the species, populate the select with them and show it
@@ -190,7 +192,9 @@ function getImage() {
 }
 
 $(document).ready(function() {
-  $('#speciesInput').on('change', populateBreedsInput);
+  $("#speciesInput").on('change', populateBreedsInput);
+
+  $('select[name="breedsInput"]').select2();
 })
 
 const inputs = {
@@ -201,7 +205,7 @@ const inputs = {
     { f: 'gender',              type: 'radio'     },
     { f: 'fixed',               type: 'checkbox'  },
     { f: 'species',             type: 'mdlselect' },
-    { f: 'breeds',              type: 'text'      },
+    { f: 'breeds',              type: 'select'    },
     { f: 'birthdate',           type: 'date'      },
     { f: 'microchipNumber',     type: 'text'      },
   ],
