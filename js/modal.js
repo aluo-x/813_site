@@ -200,7 +200,7 @@ const inputs = {
     { f: 'adoptionStatus',      type: 'mdlselect' },
     { f: 'gender',              type: 'radio'     },
     { f: 'fixed',               type: 'checkbox'  },
-    { f: 'species',             type: 'text'      },
+    { f: 'species',             type: 'mdlselect' },
     { f: 'breeds',              type: 'text'      },
     { f: 'birthdate',           type: 'date'      },
     { f: 'microchipNumber',     type: 'text'      },
@@ -224,5 +224,5 @@ const inputs = {
 
 const breeds = {
   'dog': ['Australian Cattle Dog', 'Australian Shepard', 'Border Collie', 'Labrador Retriever', 'Poodle'],
-  'cat': ['Maine Coon', 'Siamese'],
+  'cat': ['Domestic Shorthair', 'Maine Coon', 'Russian Blue', 'Siamese'],
 }
