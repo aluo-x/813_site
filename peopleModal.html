@@ -14,50 +14,80 @@
       <button class="delete" aria-label="close" onclick="closeModal()"></button>
     </header>
     <section class="modal-card-body">
-      <form id='personForm'>
-        <input name="idInput" style="display: none" />
+      <form id='personForm' class='columns'>
+        <div class="column">
+          <input name="idInput" style="display: none" />
 
-        <div class="field">
-          <label>First Name</label>
-          <input name="firstNameInput" type="text" placeholder="e.g. Jane" />
-        </div>
-        
-        <div class="field">
-         <div id="fileUploadWrapper">
+          <div class="field control">
+            <label>First Name</label>
             <div>
-              <img id="currentImg" src="https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" />
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" id="firstNameInput" name='firstNameInput' type="text" placeholder="">
+                <label class="mdl-textfield__label" for="firstNameInput"></label>
+              </div>
             </div>
+          </div>
+
+          <div class="field control">
+              <label>Last Name</label>
+              <div>
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" id="lastNameInput" name='lastNameInput' type="text" placeholder="">
+                  <label class="mdl-textfield__label" for="lastNameInput"></label>
+                </div>
+              </div>
+          </div>
+
+          <div class="field control">
+              <label>Phone Number</label>
+              <div>
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" id="phoneNumberInput" name='phoneNumberInput' type="text" placeholder="">
+                  <label class="mdl-textfield__label" for="phoneNumberInput"></label>
+                </div>
+              </div>
+          </div>
+
+          <div class="field control">
+              <label>Email</label>
+              <div>
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" id="emailInput" name='emailInput' type="text" placeholder="">
+                  <label class="mdl-textfield__label" for="emailInput"></label>
+                </div>
+              </div>
+          </div>
+
+          <div class="field">
+            <label>Roles</label>
             <div>
-              <input type="file" id="file-select" title="" name="pictureInput" onchange="getImage()" class="hidden"/>
-              <label class="button is-success" id="browseButton" for="file-select" id="#browseButton">Change Picture</label>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield getmdl-select getmdl-select__fix-height">
+                  <input type="text" value="" class="mdl-textfield__input" name="adoptionStatusVisibleInput" id='adoptionStatusInput' readonly>
+                  <input type="hidden" value="" name="adoptionStatusInput">
+                  <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                  <label for="adoptionStatusInput" class="mdl-textfield__label"></label>
+                  <ul for="adoptionStatusInput" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                      <li class="mdl-menu__item" data-val="admin" data-selected="true">Administrator</li>
+                      <li class="mdl-menu__item" data-val="cage cleaner">Cage Cleaner</li>
+                      <li class="mdl-menu__item" data-val="foster">Foster</li>
+                  </ul>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="field">
-          <label>Last Name</label>
-          <input name="lastNameInput" type="text" placeholder="e.g. Doe" />
+        <div class="column modalRightCol">
+          <div class="field">
+           <div id="fileUploadWrapper">
+              <div>
+                <img id="currentImg" src="https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" />
+              </div>
+              <div>
+                <input type="file" id="file-select" title="" name="pictureInput" onchange="getImage()" class="hidden"/>
+                <label class="button is-success" id="browseButton" for="file-select" id="#browseButton">Change Picture</label>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="field">
-          <label>Phone Number</label>
-          <input name="phoneNumberInput" type="text" placeholder="e.g. 555-555-5555" />
-        </div>
-
-        <div class="field">
-          <label>Email</label>
-          <input name="emailInput" type="email" />
-        </div>
-
-        <div class="field">
-          <label>Roles</label>
-          <select name="rolesInput" multiple>
-            <option value="admin">Administrator</option>
-            <option value="cage cleaner">Cage Cleaner</option>
-            <option value="foster">Foster</option>
-          </select>
-        </div>
-
       </form>
     </section>
     <footer class="modal-card-foot">

@@ -334,6 +334,7 @@ canvas {
 
 .modal-card-body {
   padding-bottom: 0;
+  overflow: auto;
 }
 
 .modal-card-foot, .modal-card-head {
@@ -342,6 +343,7 @@ canvas {
 
 .modal-card {
   height: calc(90vh);
+  overflow:auto;
 }
 .select2-selection__rendered {
   display: flex;
