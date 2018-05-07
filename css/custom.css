@@ -163,6 +163,7 @@ table.dataTable thead th, table.dataTable thead td {
 .dataTables_scroll ::-webkit-scrollbar, .modal-card ::-webkit-scrollbar, .select2-dropdown ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
+    height:7px;
 }
 
 .dataTables_scroll ::-webkit-scrollbar-thumb, .modal-card ::-webkit-scrollbar-thumb, .select2-dropdown ::-webkit-scrollbar-thumb{
