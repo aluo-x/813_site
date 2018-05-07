@@ -68,7 +68,9 @@ const populateModalWithData = (entityType) => (data) => {
     var value = data[f];
     if (value !== null && value !== undefined) {
       if (type === 'checkbox') {
-        $("input[name='" + f + "Input']").prop('checked', (value === 'yes'));
+        if(value === 'yes'){
+          $("input[name='" + f + "Input']").trigger('click');
+        }
       } else if (type === 'radio') {
         $("input[name='" + f + "Input']")
           .filter("[value=" + value + "]")
@@ -191,7 +193,6 @@ $(document).ready(function() {
   $('select[name="breedsInput"]').select2();
   $('select[name="speciesInput"]').select2();
   $('select[name="adoptionStatusInput"]').select2();
-
   // $('.select2-results__options').addClass('mdl-menu');
   // $('.select2-results__options').addClass('mdl-menu--bottom-left');
   // $('.select2-results__options').addClass('mdl-js-menu');
