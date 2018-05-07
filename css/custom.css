@@ -1,3 +1,6 @@
+* {
+  outline: none;
+}
 body {
     color: #1a1a1a;
     font-family: "Roboto", -apple-system, "Helvetica Neue", Sans-serif;
@@ -414,6 +417,20 @@ canvas {
   color:#e4e4e4 !important;
 }
 
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left:0;
+}
+
+.select2-selection.select2-selection--single {
+  width:300px;
+}
+.select2-hidden-accessible {
+  width:300px !important;
+}
+
+.select2-search.select2-search--dropdown {
+  display: none;
+}
 /*
 .cross:before {
     height: 2px;

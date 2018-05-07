@@ -61,17 +61,18 @@
           <div class="field">
             <label>Roles</label>
             <div>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield getmdl-select getmdl-select__fix-height">
-                  <input type="text" value="" class="mdl-textfield__input" name="adoptionStatusVisibleInput" id='adoptionStatusInput' readonly>
-                  <input type="hidden" value="" name="adoptionStatusInput">
-                  <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                  <label for="adoptionStatusInput" class="mdl-textfield__label"></label>
-                  <ul for="adoptionStatusInput" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                      <li class="mdl-menu__item" data-val="admin">Administrator</li>
-                      <li class="mdl-menu__item" data-val="cage cleaner">Cage Cleaner</li>
-                      <li class="mdl-menu__item" data-val="foster">Foster</li>
-                  </ul>
-              </div>
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="rolesInput1">
+                <span class="mdl-checkbox__label">Administrator</span>
+                <input type="checkbox" id="rolesInput1" name="rolesInput1" class="mdl-checkbox__input">
+              </label>
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="rolesInput2">
+                <span class="mdl-checkbox__label">Cage Cleaner</span>
+                <input type="checkbox" id="rolesInput2" name="rolesInput2" class="mdl-checkbox__input">
+              </label>
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="rolesInput3">
+                <span class="mdl-checkbox__label">Foster</span>
+                <input type="checkbox" id="rolesInput3" name="rolesInput3" class="mdl-checkbox__input">
+              </label>
             </div>
           </div>
         </div>

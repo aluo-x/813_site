@@ -22,7 +22,7 @@
             <label>Name</label>
             <div>
               <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" id="nameInput" name='nameInput' type="text" placeholder="">
+                <input class="mdl-textfield__input" id="nameInput" name='nameInput' type="text" placeholder=""/>
                 <label class="mdl-textfield__label" for="nameInput"></label>
               </div>
             </div>
@@ -31,17 +31,11 @@
           <div class="field">
             <label>Adoption Status</label>
             <div>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield getmdl-select getmdl-select__fix-height">
-                  <input type="text" value="" class="mdl-textfield__input" name="adoptionStatusVisibleInput" id='adoptionStatusInput' readonly>
-                  <input type="hidden" value="" name="adoptionStatusInput">
-                  <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                  <label for="adoptionStatusInput" class="mdl-textfield__label"></label>
-                  <ul for="adoptionStatusInput" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                      <li class="mdl-menu__item" data-val="available">Available</li>
-                      <li class="mdl-menu__item" data-val="pending">Pending</li>
-                      <li class="mdl-menu__item" data-val="adopted">Adopted</li>
-                  </ul>
-              </div>
+              <select name="adoptionStatusInput">
+                <option value="available">Available</option>
+                <option value="pending">Pending</option>
+                <option value="adopted">Adopted</option>
+              </select>
             </div>
           </div>
 
@@ -50,7 +44,7 @@
             <div>
               <div>
                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="gender-option-1">
-                  <input type="radio" id="gender-option-1" class="mdl-radio__button" name="genderInput" value="male" checked>
+                  <input type="radio" id="gender-option-1" class="mdl-radio__button" name="genderInput" value="male" checked />
                   <span class="mdl-radio__label">Male</span>
                 </label>
               </div>
@@ -77,17 +71,11 @@
           <div class="field">
             <label>Species</label>
             <div>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield getmdl-select getmdl-select__fix-height">
-                  <input type="text" value="" class="mdl-textfield__input" name="speciesVisibleInput" id="speciesInput" readonly>
-                  <input type="hidden" value="" name="speciesInput">
-                  <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                  <label for="speciesInput" class="mdl-textfield__label"></label>
-                  <ul for="speciesInput" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                      <li class="mdl-menu__item" data-val="bird">Bird</li>
-                      <li class="mdl-menu__item" data-val="cat">Cat</li>
-                      <li class="mdl-menu__item" data-val="dog">Dog</li>
-                  </ul>
-              </div>
+              <select id="speciesInput" name="speciesInput">
+                <option value="bird">Bird</option>
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+              </select>
             </div>
           </div>
 

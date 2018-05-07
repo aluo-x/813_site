@@ -100,9 +100,6 @@ const populateModalWithData = (entityType) => (data) => {
         $("input[name='" + f + "Street2Input']").val(street2);
         $("input[name='" + f + "CityInput']").val(city);
         $("select[name='" + f + "StateInput']").val(state);
-      } else if (type === 'mdlselect') {
-        $("input[name='" + f + "Input']").val(value);
-        $("input[name='" + f + "VisibleInput']").val($("li[data-val='" + value + "']").text()).trigger('change');
       }
     }
   });
@@ -144,8 +141,6 @@ function getModalData(entityType) {
       var city = $("input[name='" + f + "CityInput']").val();
       var state = $("select[name='" + f + "StateInput']").val();
       value = { name, street1, street2, city, state };
-    } else if (type === 'mdlselect') {
-      value = $("input[name='" + f + "Input']").val();
     }
     // console.log(f + ':', type, ',', value); // DEBUG:
     if (value) {
@@ -193,8 +188,10 @@ function getImage() {
 
 $(document).ready(function() {
   $("#speciesInput").on('change', populateBreedsInput);
-
   $('select[name="breedsInput"]').select2();
+  $('select[name="speciesInput"]').select2();
+  $('select[name="adoptionStatusInput"]').select2();
+
   // $('.select2-results__options').addClass('mdl-menu');
   // $('.select2-results__options').addClass('mdl-menu--bottom-left');
   // $('.select2-results__options').addClass('mdl-js-menu');
@@ -205,10 +202,10 @@ const inputs = {
   'animal': [
     { f: 'picture',             type: 'file'      },
     { f: 'name',                type: 'text'      },
-    { f: 'adoptionStatus',      type: 'mdlselect' },
+    { f: 'adoptionStatus',      type: 'select'    },
     { f: 'gender',              type: 'radio'     },
     { f: 'fixed',               type: 'checkbox'  },
-    { f: 'species',             type: 'mdlselect' },
+    { f: 'species',             type: 'select'    },
     { f: 'breeds',              type: 'select'    },
     { f: 'birthdate',           type: 'date'      },
     { f: 'microchipNumber',     type: 'text'      },
@@ -219,7 +216,7 @@ const inputs = {
     { f: 'lastName',            type: 'text'      },
     { f: 'phoneNumber',         type: 'text'      },
     { f: 'email',               type: 'text'      },
-    { f: 'roles',               type: 'text'      },
+    { f: 'roles',               type: 'checkbox'  },
   ],
   'event': [
     { f: 'name',                type: 'text'      },
