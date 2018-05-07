@@ -83,13 +83,14 @@ body {
 }
 
 .dataTables_filter {
+  margin-bottom: 15px;
 }
 
 .dataTables_filter label {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-}
+/*    justify-content: space-between;
+*/}
 
 table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting {
     background-image: none;
@@ -195,10 +196,6 @@ button {
     background-color: hsl(204, 86%, 43%);
 }
 
-.dataTables_scroll {
-    margin-top: 40px;
-}
-
 .fixedAdd {
     position: fixed;
     bottom: 50px;
@@ -246,10 +243,6 @@ input {
 
 label i.material-icons {
     color: rgba(0, 0, 0, 0.54);
-}
-
-.detailsButton {
-    margin-top: 10px;
 }
 
 .titleText {
