@@ -195,6 +195,10 @@ $(document).ready(function() {
   $("#speciesInput").on('change', populateBreedsInput);
 
   $('select[name="breedsInput"]').select2();
+  // $('.select2-results__options').addClass('mdl-menu');
+  // $('.select2-results__options').addClass('mdl-menu--bottom-left');
+  // $('.select2-results__options').addClass('mdl-js-menu');
+  // $('.select2-results__options li').addClass('mdl-menu__item')
 })
 
 const inputs = {
