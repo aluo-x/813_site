@@ -425,12 +425,19 @@ canvas {
   display: none;
 }
 
-#deleteText,#saveText {
-  padding-left:5px;
-  text-align: right;
-}
 #saveButton {
   width:calc(65px + 2 * 12px);
+  background-color: #00d1b2;
+  color: white;
+}
+
+.modal-card-foot > button {
+  margin-right:20px;
+  margin-left:10px;
+}
+
+.rightAlign {
+  margin-left:auto;
 }
 /*
 .cross:before {

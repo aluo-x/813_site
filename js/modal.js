@@ -6,6 +6,7 @@ function openModal(entityType, entityId) {
   $('button.is-success').removeAttr('disabled');
   $('.mdl-layout__drawer').get(0).style['z-index'] = 0;
   $('.mdl-layout__drawer-button').get(0).style['z-index'] = 0;
+  hideSaveLoading();
   if (entityId) {
     // editing entity
     $('#' + entityType + 'DeleteButton').show();
@@ -26,17 +27,29 @@ function openModal(entityType, entityId) {
   }
 }
 
-function closeModal() {
+function closeModal(entityType) {
   $('.mdl-layout__drawer').css('z-index',5);
   $('.mdl-layout__drawer-button').get(0).style['z-index'] = 4;
   $('.modal').removeClass('is-active');
-  $('#animalModal').load('animalModal.html', prepareModal);
+  if(entityType){
+    $('#' + entityType + 'Modal').load(entityType + 'Modal.html', prepareModal);
+  }
+  else {
+    $('#' + 'animal' + 'Modal').load('animal' + 'Modal.html', prepareModal);
+    $('#' + 'person' + 'Modal').load('person' + 'Modal.html', prepareModal);
+    $('#' + 'event' + 'Modal').load('event' + 'Modal.html', prepareModal);
+  }
 }
 
 function showSaveLoading() {
   var modalSave = $('#modalSave')
   modalSave.addClass("fa fa-spinner fa-spin");
   modalSave.text("");
+}
+function hideSaveLoading() {
+  var modalSave = $('#modalSave')
+  modalSave.removeClass("fa fa-spinner fa-spin");
+  modalSave.text("save");
 }
 
 function saveModal(entityType) {
@@ -54,7 +67,7 @@ function saveModal(entityType) {
 
 const saveModalSuccess = (entityType) => () => {
   reloadTable(entityType);
-  closeModal();
+  closeModal(entityType);
 }
 
 function saveModalError(error) {
@@ -68,17 +81,16 @@ function errorOpeningModal(error) {
 
 function deleteModalEntity(event, entityType) {
   event.preventDefault();
-  //TODO: LOADER FOR DELETE?
   const [id, data] = getModalData(entityType);
   (id === '')
     ? console.error('attempted to delete non-created entity')
     : deleteEntity(entityType, id, deleteModalEntitySuccess(entityType), deleteModalEntityError);
-  closeModal();
+  closeModal(entityType);
 }
 
 const deleteModalEntitySuccess = (entityType) => () => {
   reloadTable(entityType);
-  closeModal();
+  closeModal(entityType);
 }
 
 function deleteModalEntityError(error) {

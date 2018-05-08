@@ -115,7 +115,7 @@
               </div>
               <div>
                 <input type="file" id="file-select" title="" name="pictureInput" onchange="getImage()" class="hidden"/>
-                <label class="button is-success" id="browseButton" for="file-select" id="#browseButton">Change Picture</label>
+                <label class="mdl-button mdl-js-button mdl-button--raised blue" id="browseButton" for="file-select" id="#browseButton">Change Picture</label>
               </div>
             </div>
           </div>
@@ -125,9 +125,10 @@
       </form>
     </section>
     <footer class="modal-card-foot">
-<!--         <button class="button" onclick="closeModal()">Cancel</button>
- -->       <button id="saveButton" class="button is-success" onclick="saveModal('animal')"><i id="modalSave" class="material-icons ">save</i><span id="saveText">Save</span></button>
-          <button id="animalDeleteButton" class="button" onclick="deleteModalEntity(event, 'animal')"><i class="material-icons">delete</i><span id="deleteText">Delete Animal</span></button>
+      <div class="rightAlign">
+        <button id="animalDeleteButton" class="mdl-button mdl-js-button" onclick="deleteModalEntity(event, 'animal')"><i class="material-icons">delete</i></button>
+        <button id="saveButton" class="mdl-button mdl-js-button mdl-button--raised green" onclick="saveModal('animal')"><i id="modalSave" class="material-icons">save</i><span id="saveText">Save</span></button>
+      </div>
     </footer>
 </div>
 </html>

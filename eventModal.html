@@ -63,8 +63,10 @@
       </form>
     </section>
     <footer class="modal-card-foot">
-      <button class="button" onclick="closeModal()">Cancel</button>
-      <button class="button is-success" onclick="saveModal('event')"><i id="modalSave" class="fa fa-spinner fa-spin" style="display: none"></i>Save</button>
+      <div class="rightAlign">
+        <button class="mdl-button mdl-js-button" onclick="closeModal()" >Cancel</button>
+        <button id="saveButton" class="mdl-button mdl-js-button mdl-button--raised green" onclick="saveModal('event')"><i id="modalSave" class="material-icons">save</i><span id="saveText">Save</span></button>
+      </div>
     </footer>
   </div>
 </html>
