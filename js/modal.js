@@ -8,6 +8,7 @@ function openModal(entityType, entityId) {
   $('.mdl-layout__drawer-button').get(0).style['z-index'] = 0;
   if (entityId) {
     // editing entity
+    $('#' + entityType + 'DeleteButton').show();
     $('#' + entityType + 'ModalTitle').text('Edit ' + entityType.charAt(0).toUpperCase() + entityType.substr(1));
     $('#modalLoader').show();
     getEntities(
@@ -17,6 +18,7 @@ function openModal(entityType, entityId) {
       errorOpeningModal
     );
   } else {
+    $('#' + entityType + 'DeleteButton').hide();
     if(entityType === "animal" || entityType === "person"){
       $("#currentImg").get(0).src = "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png";
     }
@@ -61,6 +63,28 @@ function saveModalError(error) {
 function errorOpeningModal(error) {
   $('#modalLoader').hide();
   console.error(error);
+}
+
+function deleteModalEntity(event, entityType) {
+  event.preventDefault();
+  $('#modalSave').show();
+  const [id, data] = getModalData(entityType);
+  (id === '')
+    ? console.error('attempted to delete non-created entity')
+    : deleteEntity(entityType, id, deleteModalEntitySuccess(entityType), deleteModalEntityError);
+  closeModal();
+}
+
+const deleteModalEntitySuccess = (entityType) => () => {
+  reloadTable(entityType);
+  $('#modalSave').hide();
+  closeModal();
+}
+
+function deleteModalEntityError(error) {
+  console.error('Error deleting entity:', error);
+  $('#modalSave').hide();
+  closeModal();
 }
 
 const populateModalWithData = (entityType) => (data) => {

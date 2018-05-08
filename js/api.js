@@ -54,3 +54,13 @@ function updateEntity(entityType, entityId, newProperties, onSuccess, onError) {
     getEntities(entityType, entityId, onSuccess, () => console.warn('[ERROR] Unable to fetch updated ' + entityType + ' [' + entityId + ']'));
   }).catch(error => onError(error));
 }
+
+function deleteEntity(entityType, entityId, onSuccess, onError) {
+  if (!db) {
+    console.error('[ERROR] Database not yet initialized');
+    return;
+  }
+  db.collection(entityType).doc(entityId).delete()
+    .then(() => onSuccess())
+    .catch(err => onError(err));
+}
