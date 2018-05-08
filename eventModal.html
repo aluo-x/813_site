@@ -30,17 +30,11 @@
         <div class="field">
           <label>Type</label>
           <div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield getmdl-select getmdl-select__fix-height">
-                <input type="text" value="" class="mdl-textfield__input" name="adoptionStatusVisibleInput" id='adoptionStatusInput' readonly>
-                <input type="hidden" value="" name="adoptionStatusInput">
-                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                <label for="adoptionStatusInput" class="mdl-textfield__label"></label>
-                <ul for="adoptionStatusInput" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                    <li class="mdl-menu__item" data-val="adoption event">Adoption Event</li>
-                    <li class="mdl-menu__item" data-val="fundraiser event">Fundraiser Event</li>
-                    <li class="mdl-menu__item" data-val="vet appointment">Vet Appointment</li>
-                </ul>
-            </div>
+            <select id="adoptionStatusInput" name="adoptionStatusInput">
+              <option value="adoption event">Adoption Event</option>
+              <option value="fundraiser event">Fundraiser Event</option>
+              <option value="vet appointment">Vet Appointment</option>
+            </select>
           </div>
         </div>
 
@@ -51,76 +45,7 @@
               <input class="mdl-textfield__input" id="locationNameInput" name='locationNameInput' type="text" placeholder="">
               <label class="mdl-textfield__label" for="locationNameInput"></label>
             </div>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" id="locationStreet1Input" name='locationStreet1Input' type="text" placeholder="">
-              <label class="mdl-textfield__label" for="locationStreet1Input"></label>
-            </div>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" id="locationStreet2Input" name='locationStreet2Input' type="text" placeholder="">
-              <label class="mdl-textfield__label" for="locationStreet2Input"></label>
-            </div>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" id="locationCityInput" name='locationCityInput' type="text" placeholder="">
-              <label class="mdl-textfield__label" for="locationCityInput"></label>
-            </div>
-          </div>       
-        <!--   <input name="locationNameInput" type="text" />
-          <input name="locationStreet1Input" type="text" />
-          <input name="locationStreet2Input" type="text" />
-          <input name="locationCityInput" type="text" /> -->
-          <select name="locationStateInput">
-            <option value="AL">Alabama</option>
-          	<option value="AK">Alaska</option>
-          	<option value="AZ">Arizona</option>
-          	<option value="AR">Arkansas</option>
-          	<option value="CA">California</option>
-          	<option value="CO">Colorado</option>
-          	<option value="CT">Connecticut</option>
-          	<option value="DE">Delaware</option>
-          	<option value="DC">District Of Columbia</option>
-          	<option value="FL">Florida</option>
-          	<option value="GA">Georgia</option>
-          	<option value="HI">Hawaii</option>
-          	<option value="ID">Idaho</option>
-          	<option value="IL">Illinois</option>
-          	<option value="IN">Indiana</option>
-          	<option value="IA">Iowa</option>
-          	<option value="KS">Kansas</option>
-          	<option value="KY">Kentucky</option>
-          	<option value="LA">Louisiana</option>
-          	<option value="ME">Maine</option>
-          	<option value="MD">Maryland</option>
-          	<option value="MA">Massachusetts</option>
-          	<option value="MI">Michigan</option>
-          	<option value="MN">Minnesota</option>
-          	<option value="MS">Mississippi</option>
-          	<option value="MO">Missouri</option>
-          	<option value="MT">Montana</option>
-          	<option value="NE">Nebraska</option>
-          	<option value="NV">Nevada</option>
-          	<option value="NH">New Hampshire</option>
-          	<option value="NJ">New Jersey</option>
-          	<option value="NM">New Mexico</option>
-          	<option value="NY">New York</option>
-          	<option value="NC">North Carolina</option>
-          	<option value="ND">North Dakota</option>
-          	<option value="OH">Ohio</option>
-          	<option value="OK">Oklahoma</option>
-          	<option value="OR">Oregon</option>
-          	<option value="PA">Pennsylvania</option>
-          	<option value="RI">Rhode Island</option>
-          	<option value="SC">South Carolina</option>
-          	<option value="SD">South Dakota</option>
-          	<option value="TN">Tennessee</option>
-          	<option value="TX">Texas</option>
-          	<option value="UT">Utah</option>
-          	<option value="VT">Vermont</option>
-          	<option value="VA">Virginia</option>
-          	<option value="WA">Washington</option>
-          	<option value="WV">West Virginia</option>
-          	<option value="WI">Wisconsin</option>
-          	<option value="WY">Wyoming</option>
-          </select>
+          </div>
         </div>
 
         <div class="field">
