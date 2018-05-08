@@ -196,6 +196,9 @@ function prepareModal() {
   $('select[name="breedsInput"]').select2();
   $('select[name="speciesInput"]').select2();
   $('select[name="adoptionStatusInput"]').select2();
+  if(!(typeof(componentHandler) == 'undefined')){
+    componentHandler.upgradeAllRegistered();
+  }
 }
 
 $(document).ready(prepareModal);
