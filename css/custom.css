@@ -424,6 +424,14 @@ canvas {
 .select2-search.select2-search--dropdown {
   display: none;
 }
+
+#deleteText,#saveText {
+  padding-left:5px;
+  text-align: right;
+}
+#saveButton {
+  width:calc(65px + 2 * 12px);
+}
 /*
 .cross:before {
     height: 2px;

@@ -10,7 +10,6 @@ function openModal(entityType, entityId) {
     // editing entity
     $('#' + entityType + 'DeleteButton').show();
     $('#' + entityType + 'ModalTitle').text('Edit ' + entityType.charAt(0).toUpperCase() + entityType.substr(1));
-    $('#modalLoader').show();
     getEntities(
       entityType,
       entityId,
@@ -34,8 +33,14 @@ function closeModal() {
   $('#animalModal').load('animalModal.html', prepareModal);
 }
 
+function showSaveLoading() {
+  var modalSave = $('#modalSave')
+  modalSave.addClass("fa fa-spinner fa-spin");
+  modalSave.text("");
+}
+
 function saveModal(entityType) {
-  $('#modalSave').show();
+  showSaveLoading();
   $('.button.is-success').attr('disabled');
   const [id, data] = getModalData(entityType);
   (id === '')
@@ -49,24 +54,21 @@ function saveModal(entityType) {
 
 const saveModalSuccess = (entityType) => () => {
   reloadTable(entityType);
-  $('#modalSave').hide();
   closeModal();
 }
 
 function saveModalError(error) {
   console.error('Error saving modal:', error);
-  $('#modalSave').hide();
   closeModal();
 }
 
 function errorOpeningModal(error) {
-  $('#modalLoader').hide();
-  console.error(error);
+  console.error('Error opening modal:', error);
 }
 
 function deleteModalEntity(event, entityType) {
   event.preventDefault();
-  $('#modalSave').show();
+  //TODO: LOADER FOR DELETE?
   const [id, data] = getModalData(entityType);
   (id === '')
     ? console.error('attempted to delete non-created entity')
@@ -76,13 +78,11 @@ function deleteModalEntity(event, entityType) {
 
 const deleteModalEntitySuccess = (entityType) => () => {
   reloadTable(entityType);
-  $('#modalSave').hide();
   closeModal();
 }
 
 function deleteModalEntityError(error) {
   console.error('Error deleting entity:', error);
-  $('#modalSave').hide();
   closeModal();
 }
 

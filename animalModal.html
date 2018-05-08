@@ -119,16 +119,15 @@
               </div>
             </div>
           </div>
-
-          <button id="animalDeleteButton" class="button" onclick="deleteModalEntity(event, 'animal')" style="color: red;">Delete Animal</button>
         </div>
 
 
       </form>
     </section>
     <footer class="modal-card-foot">
-        <button class="button" onclick="closeModal()">Cancel</button>
-        <button class="button is-success" onclick="saveModal('animal')"><i id="modalSave" class="fa fa-spinner fa-spin" style="display: none"></i>Save</button>
+<!--         <button class="button" onclick="closeModal()">Cancel</button>
+ -->       <button id="saveButton" class="button is-success" onclick="saveModal('animal')"><i id="modalSave" class="material-icons ">save</i><span id="saveText">Save</span></button>
+          <button id="animalDeleteButton" class="button" onclick="deleteModalEntity(event, 'animal')"><i class="material-icons">delete</i><span id="deleteText">Delete Animal</span></button>
     </footer>
 </div>
 </html>
