@@ -38,7 +38,6 @@ function saveModal(entityType) {
   $('#modalSave').show();
   $('.button.is-success').attr('disabled');
   const [id, data] = getModalData(entityType);
-  // console.log(data);
   (id === '')
     ? createEntity(entityType, data, saveModalSuccess(entityType), saveModalError)
     : updateEntity(entityType, id, data, saveModalSuccess(entityType), saveModalError);
@@ -180,7 +179,7 @@ function getModalData(entityType) {
 }
 
 function populateBreedsInput() {
-  const species = $('input[name="speciesInput"]').val();
+  const species = $('select[name="speciesInput"]').val();
   const selector = 'select[name="breedsInput"]';
   // hide the breeds field by default
   $('#breedsField').hide();
