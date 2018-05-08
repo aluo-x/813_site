@@ -17,7 +17,9 @@ function openModal(entityType, entityId) {
       errorOpeningModal
     );
   } else {
-    $("#currentImg").get(0).src = "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png";
+    if(entityType === "animal" || entityType === "person"){
+      $("#currentImg").get(0).src = "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png";
+    }
     // adding entity
     $('#' + entityType + 'ModalTitle').text('Add ' + entityType.charAt(0).toUpperCase() + entityType.substr(1));
   }
@@ -27,6 +29,7 @@ function closeModal() {
   $('.mdl-layout__drawer').css('z-index',5);
   $('.mdl-layout__drawer-button').get(0).style['z-index'] = 4;
   $('.modal').removeClass('is-active');
+  $('#animalModal').load('animalModal.html', prepareModal);
 }
 
 function saveModal(entityType) {
@@ -188,16 +191,14 @@ function getImage() {
 
 }
 
-$(document).ready(function() {
+function prepareModal() {
   $("#speciesInput").on('change', populateBreedsInput);
   $('select[name="breedsInput"]').select2();
   $('select[name="speciesInput"]').select2();
   $('select[name="adoptionStatusInput"]').select2();
-  // $('.select2-results__options').addClass('mdl-menu');
-  // $('.select2-results__options').addClass('mdl-menu--bottom-left');
-  // $('.select2-results__options').addClass('mdl-js-menu');
-  // $('.select2-results__options li').addClass('mdl-menu__item')
-})
+}
+
+$(document).ready(prepareModal);
 
 const inputs = {
   'animal': [
@@ -221,7 +222,7 @@ const inputs = {
   ],
   'event': [
     { f: 'name',                type: 'text'      },
-    { f: 'type',                type: 'text'      },
+    { f: 'type',                type: 'select'    },
     { f: 'location',            type: 'address'   },
     { f: 'starts',              type: 'dateTime'  },
     { f: 'ends',                type: 'dateTime'  },
