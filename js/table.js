@@ -150,7 +150,7 @@ const animalColumns = [
   { data: 'name',           title: 'Name',                                    },
   { data: 'adoptionStatus', title: 'Adoption Status',                         },
   { data: 'gender',         title: 'Gender',                                  },
-  { data: 'fixed',          title: 'Fixed',                                   },
+  { data: 'fixed',          title: 'Altered',                                 },
   { data: 'species',        title: 'Species',                                 },
   { data: 'breeds',         title: 'Breeds',                                  },
 ];
