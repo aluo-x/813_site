@@ -444,6 +444,13 @@ canvas {
 .rightAlign {
   margin-left:auto;
 }
+
+#modalActionBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 /*
 .cross:before {
     height: 2px;
