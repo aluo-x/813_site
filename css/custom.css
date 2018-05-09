@@ -270,6 +270,8 @@ label i.material-icons {
 
 canvas {
     margin-bottom: 10px;
+    margin-left:auto;
+    margin-right:auto;
 }
 .tile {
   padding:10px;
@@ -366,6 +368,14 @@ canvas {
   padding-top:0;
   padding-bottom: 0;
 
+}
+
+.select2.select2-container.select2-container--default {
+  width:300px !important;
+}
+
+.select2.select2-container.select2-container--default.select2-container--focus {
+  width:300px !important;
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
