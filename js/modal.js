@@ -239,6 +239,7 @@ function getImage() {
     // }
     ImageTools.resize(file, {
         width: 100, // maximum width
+        height:100
     }, function(blob, didItResize) {
         console.log("didItResize",didItResize);
         if(!didItResize && file.size > 10000){
