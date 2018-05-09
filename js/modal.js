@@ -109,6 +109,8 @@ const populateModalWithData = (entityType) => (data) => {
         if(value === 'yes'){
           $("input[name='" + f + "Input']").trigger('click');
         }
+      } else if (type === 'checklist') {
+        value.forEach(v => $("input[name='" + f + "Input" + v + "']").trigger('click'));
       } else if (type === 'radio') {
         $("input[name='" + f + "Input']")
           .filter("[value=" + value + "]")
@@ -158,6 +160,12 @@ function getModalData(entityType) {
       value = (f === 'fixed')
         ? (value) ? 'yes' : 'no'
         : value;
+    } else if (type === 'checklist') {
+      value = [];
+      // TODO
+      // $(".rolesInput").each(() => {
+      //   console.log(this);
+      // });
     } else if (type === 'radio') {
       value = $("input[name='" + f + "Input']:checked").val();
     } else if (type === 'select') {
@@ -256,7 +264,7 @@ const inputs = {
     { f: 'lastName',            type: 'text'      },
     { f: 'phoneNumber',         type: 'text'      },
     { f: 'email',               type: 'text'      },
-    { f: 'roles',               type: 'checkbox'  },
+    { f: 'roles',               type: 'checklist' },
   ],
   'event': [
     { f: 'name',                type: 'text'      },
