@@ -99,9 +99,9 @@
             <label>Microchip #</label>
             <div>
               <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" id="microchipNumberInput" name='microchipNumberInput' type="text" pattern="-?[0-9]*(\.[0-9]+)?" >
+                <input class="mdl-textfield__input" id="microchipNumberInput" name='microchipNumberInput' type="text" pattern="^(?=(?:.{9}|.{10}|.{15})$)[a-zA-Z0-9]*$" >
                 <label class="mdl-textfield__label" for="microchipNumberInput"></label>
-                <span class="mdl-textfield__error">Input is not a number!</span>
+                <span class="mdl-textfield__error">Must be 9, 10, or 15 numbers and letters</span>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@
               </div>
               <div>
                 <input type="file" id="file-select" title="" name="pictureInput" onchange="getImage()" class="hidden"/>
-                <label class="mdl-button mdl-js-button mdl-button--raised blue" id="browseButton" for="file-select" id="#browseButton">Change Picture</label>
+                <label class="mdl-button mdl-js-button mdl-button--raised blue" id="browseButton" for="file-select">Change Picture</label>
               </div>
             </div>
           </div>
