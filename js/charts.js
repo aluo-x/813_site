@@ -8,16 +8,19 @@ var chart1 = new Chart(ctx, {
             data: [4, 12],
             backgroundColor: [
                 '#00d1b2',
-                'hsl(204, 86%, 53%)',
+                '#e4e4e4',
             ],
             borderColor: [
                 '#00d1b2',
-                'hsl(204, 86%, 53%)',
+                '#e4e4e4',
             ],
             borderWidth: 1
         }]
     },
     options: {
+        legend: {
+            reverse:true,
+        }
     }
 });
 var ctx2 = document.getElementById("chart2").getContext('2d');
@@ -30,19 +33,23 @@ var chart2 = new Chart(ctx2, {
             data: [13, 12],
             backgroundColor: [
                 '#00d1b2',
-                'hsl(204, 86%, 53%)',
+                '#e4e4e4',
             ],
             borderColor: [
                 '#00d1b2',
-                'hsl(204, 86%, 53%)',
+                '#e4e4e4',
             ],
             borderWidth: 0
         }]
     },
     options: {
+        legend: {
+            reverse:true,
+        }
     }
 
 });
+
 var ctx3 = document.getElementById("chart3").getContext('2d');
 var chart3 = new Chart(ctx3, {
     type: 'bar',
@@ -52,17 +59,17 @@ var chart3 = new Chart(ctx3, {
             label:"Count",
             data: [11, 14,7,3],
             backgroundColor: [
-                'hsl(204, 86%, 53%)',
-                'hsl(204, 86%, 53%)',
-                'hsl(204, 86%, 53%)',
-                'hsl(204, 86%, 53%)',
+                '#00d1b2',
+                '#00d1b2',
+                '#00d1b2',
+                '#00d1b2',
 
             ],
             borderColor: [
-                'hsl(204, 86%, 53%)',
-                'hsl(204, 86%, 53%)',
-                'hsl(204, 86%, 53%)',
-                'hsl(204, 86%, 53%)',
+                '#00d1b2',
+                '#00d1b2',
+                '#00d1b2',
+                '#00d1b2',
 
             ],
             borderWidth: 0
@@ -86,6 +93,7 @@ var chart3 = new Chart(ctx3, {
         },
         legend:{
             display:false
-        }
+        },
+        responsive:false
     }
 });

@@ -257,6 +257,7 @@ label i.material-icons {
     font-size: 34px;
     color: #1a1a1a;
     line-height: 1.5;
+    height:100px;
 }
 
 .modal-card {
@@ -271,6 +272,10 @@ canvas {
     margin-bottom: 10px;
 }
 
+.chart-container {
+  margin-left:auto;
+  margin-right:auto;
+}
 .mdl-navigation__link {
     outline: none;
 }
@@ -287,9 +292,9 @@ canvas {
     border-radius: 50%;
 }
 
-.top-block {
+/*.top-block {
     max-width: 33.3333%
-}
+}*/
 
 #currentImg {
   width:150px;
