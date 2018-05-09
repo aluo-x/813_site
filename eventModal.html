@@ -21,7 +21,7 @@
           <label>Event Name</label>
           <div>
             <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" id="nameInput" name='nameInput' type="text" placeholder="">
+              <input class="mdl-textfield__input" id="nameInput" name='nameInput' type="text" placeholder="" />
               <label class="mdl-textfield__label" for="nameInput"></label>
             </div>
           </div>
@@ -42,7 +42,7 @@
           <label class="label">Location</label>
           <div>
             <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" id="locationNameInput" name='locationNameInput' type="text" placeholder="">
+              <input class="mdl-textfield__input" id="locationNameInput" name='locationNameInput' type="text" placeholder="" />
               <label class="mdl-textfield__label" for="locationNameInput"></label>
             </div>
           </div>
@@ -64,7 +64,7 @@
     </section>
     <footer class="modal-card-foot">
       <div class="rightAlign">
-        <button class="mdl-button mdl-js-button" onclick="closeModal()" >Cancel</button>
+        <button id="eventDeleteButton" class="mdl-button mdl-js-button" onclick="deleteModalEntity(event, 'event')"><i class="material-icons">delete</i></button>
         <button id="saveButton" class="mdl-button mdl-js-button mdl-button--raised green" onclick="saveModal('event')"><i id="modalSave" class="material-icons">save</i><span id="saveText">Save</span></button>
       </div>
     </footer>
