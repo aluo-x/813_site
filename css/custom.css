@@ -433,6 +433,7 @@ canvas {
 #saveButton {
   background-color: #00d1b2;
   color: white;
+  float: right;
 }
 
 .modal-card-foot > button {
@@ -446,6 +447,4 @@ canvas {
 
 #modalActionBar {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
