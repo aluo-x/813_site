@@ -223,17 +223,30 @@ function populateBreedsInput() {
   }
 }
 imageFile = '';
-/* stackoverflow */
+
 function getImage() {
 
     var reader = new FileReader();
-    var f = document.getElementById("file-select").files;
-
+    var file = document.getElementById("file-select").files[0];
+    // if(f[0].size > 10000){
+    //   alert("file size too big!");
+    //   return;
+    // }
+    ImageTools.resize(file, {
+        width: 100, // maximum width
+    }, function(blob, didItResize) {
+        console.log("didItResize",didItResize);
+        if(!didItResize && file.size > 10000){
+          alert("Please try resizing your image to 100px x 100px");
+          return;
+        }
+        reader.readAsDataURL(blob);
+    });
     reader.onloadend = function () {
         imageFile = reader.result;
         $("#currentImg").get(0).src = imageFile;
     }
-    reader.readAsDataURL(f[0]);
+    
 
 }
 
