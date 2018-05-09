@@ -11,6 +11,7 @@ function openModal(entityType, entityId) {
     // editing entity
     $('#' + entityType + 'DeleteButton').show();
     $('#' + entityType + 'ModalTitle').text('Edit ' + entityType.charAt(0).toUpperCase() + entityType.substr(1));
+    $('#modalLoader').show();
     getEntities(
       entityType,
       entityId,
@@ -76,6 +77,7 @@ function saveModalError(error) {
 }
 
 function errorOpeningModal(error) {
+  $('#modalLoader').hide();
   console.error('Error opening modal:', error);
 }
 
