@@ -36,7 +36,7 @@ function closeModal(entityType) {
   }
   else {
     $('#' + 'animal' + 'Modal').load('animal' + 'Modal.html', prepareModal);
-    $('#' + 'person' + 'Modal').load('person' + 'Modal.html', prepareModal);
+    $('#' + 'people' + 'Modal').load('people' + 'Modal.html', prepareModal);
     $('#' + 'event' + 'Modal').load('event' + 'Modal.html', prepareModal);
   }
 }
@@ -110,7 +110,7 @@ const populateModalWithData = (entityType) => (data) => {
           $("input[name='" + f + "Input']").trigger('click');
         }
       } else if (type === 'checklist') {
-        value.forEach(v => $("input[name='" + f + "Input" + v + "']").trigger('click'));
+        value.forEach(v => $("input[name='" +  v + "']").trigger('click'));
       } else if (type === 'radio') {
         $("input[name='" + f + "Input']")
           .filter("[value=" + value + "]")
@@ -162,10 +162,11 @@ function getModalData(entityType) {
         : value;
     } else if (type === 'checklist') {
       value = [];
-      // TODO
-      // $(".rolesInput").each(() => {
-      //   console.log(this);
-      // });
+      $(".rolesInput").each((k, v) => {
+        if (v.checked) {
+          value.push(v.name);
+        }
+      });
     } else if (type === 'radio') {
       value = $("input[name='" + f + "Input']:checked").val();
     } else if (type === 'select') {
