@@ -431,7 +431,6 @@ canvas {
 }
 
 #saveButton {
-  width:calc(65px + 2 * 12px);
   background-color: #00d1b2;
   color: white;
 }
@@ -450,25 +449,3 @@ canvas {
   display: flex;
   justify-content: space-between;
 }
-
-/*
-.cross:before {
-    height: 2px;
-    width: 50%;
-}
-.cross:after {
-    height: 50%;
-    width: 2px;
-}
-.cross:before, .cross:after {
-    background-color: white;
-    content: "";
-    display: block;
-    left: 50%;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    -webkit-transform-origin: center center;
-    transform-origin: center center;
-}*/
