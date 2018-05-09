@@ -252,7 +252,7 @@ function getImage() {
         imageFile = reader.result;
         $("#currentImg").get(0).src = imageFile;
     }
-    
+
 
 }
 
@@ -298,6 +298,6 @@ const inputs = {
 };
 
 const breeds = {
-  'dog': ['Australian Cattle Dog', 'Australian Shepard', 'Border Collie', 'Labrador Retriever', 'Poodle'],
-  'cat': ['Domestic Shorthair', 'Maine Coon', 'Russian Blue', 'Siamese'],
+  'dog': ["Affenpinscher", "Afghan Hound", "Airedale Terrier", "Akita", "Alaskan Malamute", "American Bulldog", "American Cocker Spaniel", "Australian Cattle Dog", "Australian Shepherd", "Basenji", "Basset Hound", "Beagle", "Bernese Mountain Dog", "Bloodhound", "Border Collie", "Border Terrier", "Boston Terrier", "Bull Terrier", "Bulldog", "Chihuahua", "Dachshund", "Dalmatian", "Doberman Pinscher", "English Cocker Spaniel", "Flat-Coated Retriever", "Fox Terrier", "German Shepherd", "Golden Retriever", "Great Dane", "Greyhound", "Irish Setter", "Jack Russell Terrier", "King Charles Spaniel", "Labrador Retriever", "Maltese", "Miniature American Shepherd", "Miniature Pinscher", "Newfoundland", "Papillon", "Pointer", "Pomeranian", "Poodle", "Pug", "Rat Terrier", "Rottweiler", "Shiba Inu", "Shih Tzu", "Siberian Husky", "St. Bernard", "Vizsla", "Weimaraner", "West Highland White Terrier", "Whippet"],
+  'cat': ['Bengal', 'Bobtail', 'Domestic Shorthair', 'Maine Coon', 'Persian', 'Ragdoll', 'Russian Blue', 'Scottish Fold', 'Siamese', 'Sphynx'],
 }
