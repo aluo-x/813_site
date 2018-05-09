@@ -44,35 +44,33 @@
         <div id="mainContainer">
             <div style="height: 100%; overflow-x: hidden">
                 <p class="titleText">Overview</p>
-                <div class="tile is-vertical is-12">
-                    <div class="tile">
-                        <div class="tile is-parent top-block">
-                            <article class="tile is-child box has-text-centered mdl-shadow--2dp">
+                <div class="tile columns is-multiline is-12" style="width:100%">
+                        <div class="column is-4">
+                            <article class="tile is-vertical box has-text-centered mdl-shadow--2dp">
                                 <p class="sectionTitleText">Kennel Availability</p>
-                                <div class="chart-container" style="position: relative; width:33vh;">
+                                <div class="chart-container" style="position: relative; max-width: 100%">
                                     <canvas id="chart1"></canvas>
                                 </div>
                                 <div class="is-2 is-bold">4/16 Kennels Available</div>
                             </article>
                         </div>
-                        <div class="tile is-parent top-block">
-                            <article class="tile is-child box has-text-centered mdl-shadow--2dp">
+                        <div class="column is-4">
+                            <article class="tile is-vertical box has-text-centered mdl-shadow--2dp">
                                 <p class="sectionTitleText">Foster Status</p>
-                                <div class="chart-container" style="position: relative; width:33vh;">
+                                <div class="chart-container" style="position: relative; max-width: 100%">
                                     <canvas id="chart2"></canvas>
                                 </div>
                                 <div class="is-2 is-bold">13/25 Animals Fostered</div>
                             </article>
                         </div>
-                        <div class="tile is-parent top-block">
-                            <article class="tile is-child box has-text-centered mdl-shadow--2dp">
+                        <div class="column is-4">
+                            <article class="tile is-vertical box has-text-centered mdl-shadow--2dp">
                                 <p class="sectionTitleText">Species Distribution</p>
-                                <div class="chart-container" style="position: relative; height:33vh;">
+                                <div class="chart-container" style="position: relative; max-width: 100%">
                                     <canvas id="chart3"></canvas>
                                 </div>
                             </article>
                         </div>
-                    </div>
 <!--                     <div class="tile">
                         <div class="tile is-parent is-12">
                             <article class="tile is-child box mdl-shadow--2dp">

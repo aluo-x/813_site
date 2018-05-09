@@ -57,7 +57,7 @@ body {
 
 #mainContainer {
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: scroll;
     max-height: 100vh;
     height: 100vh;
     margin-left: auto;
@@ -271,6 +271,9 @@ label i.material-icons {
 canvas {
     margin-bottom: 10px;
 }
+.tile {
+  padding:10px;
+}
 
 .chart-container {
   margin-left:auto;
@@ -447,4 +450,9 @@ canvas {
 
 #modalActionBar {
   width: 100%;
+}
+
+article {
+  height: 300px;
+  min-width: 300px;
 }
