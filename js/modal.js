@@ -192,6 +192,11 @@ function getModalData(entityType) {
       var city = $("input[name='" + f + "CityInput']").val();
       var state = $("select[name='" + f + "StateInput']").val();
       value = { name, street1, street2, city, state };
+      for (var p in value) {
+        if (value[p] === null || value[p] === undefined) {
+          delete value[p];
+        }
+      }
     }
     // console.log(f + ':', type, ',', value); // DEBUG:
     if (value) {
