@@ -61,18 +61,16 @@
           <div class="field">
             <label>Roles</label>
             <div>
-              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="rolesInput1">
-                <span class="mdl-checkbox__label">Administrator</span>
-                <input type="checkbox" id="rolesInput1" name="admin" class="mdl-checkbox__input rolesInput"></input>
-              </label>
-              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="rolesInput2">
-                <span class="mdl-checkbox__label">Cage Cleaner</span>
-                <input type="checkbox" id="rolesInput2" name="cage cleaner" class="mdl-checkbox__input rolesInput"></input>
-              </label>
-              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="rolesInput3">
-                <span class="mdl-checkbox__label">Foster</span>
-                <input type="checkbox" id="rolesInput3" name="foster" class="mdl-checkbox__input rolesInput"></input>
-              </label>
+             <input type="checkbox" id="rolesInput1" class="rolesInput" name="admin" />
+             <label for="rolesInput1"><span onclick="toggleCheckbox(this)" class="checkboxSpan"><i class="material-icons">check_box_outline_blank</i></span><span class="checkboxText">Administrator</span></label>
+            </div>
+            <div>
+               <input type="checkbox" id="rolesInput2" class="rolesInput" name="cage cleaner" />
+               <label for="rolesInput2"><span onclick="toggleCheckbox(this)" class="checkboxSpan"><i class="material-icons">check_box_outline_blank</i></span><span class="checkboxText">Cage Cleaner</span></label>
+            </div>
+            <div>
+              <input type="checkbox" id="rolesInput3" class="rolesInput" name="foster" />
+              <label for="rolesInput3"><span onclick="toggleCheckbox(this)" class="checkboxSpan"><i class="material-icons">check_box_outline_blank</i></span><span class="checkboxText" >Foster</span></label>
             </div>
           </div>
         </div>

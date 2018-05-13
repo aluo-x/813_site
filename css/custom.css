@@ -401,14 +401,15 @@ canvas {
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   border:0px solid transparent;
   border-radius: 17px;
-  padding-top:5px;
-  padding-bottom: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding:0 10px 0 0;
+  height:36px;
+  line-height: 36px;
+  vertical-align: middle;
+
 }
 
 .select2-search__field {
-  line-height:34px;
+  line-height:36px;
 }
 .select2-selection {
   border:none !important;
@@ -418,12 +419,12 @@ canvas {
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
   margin-right:6px;
-  background:#b4b4b4;
+  background:hsl(204, 86%, 43%);
   border-radius: 50%;
   padding-right: 0;
-  width:24px;
-  height:24px;
-  font-size:16px;
+  width:36px;
+  height:36px;
+  font-size:18px;
   text-align: center;
   color:#e4e4e4 !important;
 }
@@ -465,4 +466,41 @@ canvas {
 article {
   height: 300px;
   min-width: 300px;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    margin:-2px 0 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type="checkbox"] + label span i.material-icons {
+  vertical-align: middle;
+  text-indent:-3px;
+  font-size: 22px;
+  color: hsl(204, 86%, 43%);
+}
+
+.checkboxText {
+  text-indent:5px;
+}
+
+.mdl-radio__ripple-container .mdl-ripple, .mdl-radio.is-checked .mdl-radio__inner-circle {
+  background-color:hsl(204, 86%, 43%);
+}
+
+.mdl-radio__outer-circle,.mdl-radio__inner-circle,.mdl-radio.is-checked .mdl-radio__outer-circle {
+  border-color:hsl(204, 86%, 43%);
+}
+
+.field > label {
+  font-weight: normal;
+}
+
+.field {
+  margin-bottom:25px !important;
 }

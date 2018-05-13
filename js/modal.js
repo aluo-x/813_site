@@ -100,6 +100,26 @@ function deleteModalEntityError(error) {
   closeModal();
 }
 
+function toggleCheckbox(capturer) {
+  var checkbox = $(capturer);
+  var checkboxIcon = $(capturer).find('i.material-icons');
+  if(checkbox.text() === 'check_box') {
+    checkboxIcon.text('check_box_outline_blank')
+    checkbox.prop('checked',false);
+  }
+  else {
+    checkboxIcon.text('check_box');
+    checkbox.prop('checked',true);
+  }
+}
+
+function checkCheckbox(capturer) {
+  var checkbox = $(capturer);
+  var checkboxIcon = $(capturer).parent().find('i.material-icons');
+  checkboxIcon.text('check_box');
+  checkbox.prop('checked',true);
+}
+
 const populateModalWithData = (entityType) => (data) => {
   $("input[name='idInput']").val(data.id);
   var fields = inputs[entityType];
@@ -108,11 +128,17 @@ const populateModalWithData = (entityType) => (data) => {
     var value = data[f];
     if (value !== null && value !== undefined) {
       if (type === 'checkbox') {
-        if(value === 'yes'){
-          $("input[name='" + f + "Input']").trigger('click');
+        var checkbox = $("input[name='" + f + "Input']");
+        console.log("value",value);
+        if(value==='yes'){
+          checkCheckbox(checkbox);
         }
+        checkbox.prop('checked',(value === 'yes'));
       } else if (type === 'checklist') {
-        value.forEach(v => $("input[name='" +  v + "']").trigger('click'));
+        value.forEach(v => {
+          var checkbox = $("input[name='" +  v + "']");
+          checkCheckbox(checkbox);
+        });
       } else if (type === 'radio') {
         $("input[name='" + f + "Input']")
           .filter("[value=" + value + "]")
@@ -227,6 +253,7 @@ function populateBreedsInput() {
     $(selector).trigger('change');
   }
 }
+
 imageFile = '';
 
 function getImage() {
@@ -257,6 +284,7 @@ function getImage() {
 }
 
 function prepareModal() {
+  imageFile = '';
   $("#speciesInput").on('change', populateBreedsInput);
   $('select[name="breedsInput"]').select2();
   $('select[name="speciesInput"]').select2();

@@ -85,7 +85,7 @@ function parseStringField(field) {
 function parseArrayField(field) {
   return field
     ? field.arrayValue.values
-      ? field.arrayValue.values.map(v => parseStringField(v))
+      ? field.arrayValue.values.map(v =>  ' ' + parseStringField(v))
       : []
     : [];
 }
