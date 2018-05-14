@@ -20,6 +20,9 @@ var chart1 = new Chart(ctx, {
     options: {
         legend: {
             reverse:true,
+            onClick: function (e) {
+                e.stopPropagation();
+            }
         }
     }
 });
@@ -45,6 +48,9 @@ var chart2 = new Chart(ctx2, {
     options: {
         legend: {
             reverse:true,
+            onClick: function (e) {
+                e.stopPropagation();
+            }
         }
     }
 
