@@ -252,7 +252,8 @@ label i.material-icons {
 
 .titleText {
     font-size: 56px;
-    color: #1a1a1a;
+    font-weight: bolder;
+    color: #4A4A4A;
     line-height: 1.5;
     width: 100%;
     text-align: center;
