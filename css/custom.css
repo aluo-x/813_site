@@ -1,6 +1,11 @@
 * {
   outline: none;
 }
+
+html {
+  overflow:hidden !important;
+}
+
 body {
     color: #1a1a1a;
     font-family: "Roboto", -apple-system, "Helvetica Neue", Sans-serif;
