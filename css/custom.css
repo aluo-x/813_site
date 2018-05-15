@@ -62,7 +62,7 @@ body {
 
 #mainContainer {
     width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
     max-height: 100vh;
     height: 100vh;
     margin-left: auto;
