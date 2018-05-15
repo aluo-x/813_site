@@ -504,3 +504,8 @@ input[type="checkbox"] + label span i.material-icons {
 .field {
   margin-bottom:25px !important;
 }
+
+.deleteSpan, #saveText {
+  line-height: 24px;
+  vertical-align: middle;
+}
